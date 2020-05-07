@@ -243,7 +243,7 @@ var RBY = {
     Gastly: {
         t1: 'Ghost',
         t2: 'Poison',
-        bs: { hp: 30, at: 35, df: 30, sp: 90, sl: 100 },
+        bs: { hp: 30, at: 35, df: 30, sp: 80, sl: 100 },
         w: 0.1,
         canEvolve: true
     },
@@ -416,14 +416,12 @@ var RBY = {
     Lickitung: {
         t1: 'Normal',
         bs: { hp: 90, at: 55, df: 75, sp: 30, sl: 60 },
-        w: 65.5,
-        canEvolve: true
+        w: 65.5
     },
     Machamp: {
         t1: 'Fighting',
         bs: { hp: 90, at: 130, df: 80, sp: 55, sl: 65 },
-        w: 130,
-        canEvolve: true
+        w: 130
     },
     Machoke: {
         t1: 'Fighting',
@@ -446,8 +444,7 @@ var RBY = {
     Magmar: {
         t1: 'Fire',
         bs: { hp: 65, at: 95, df: 57, sp: 93, sl: 85 },
-        w: 44.5,
-        canEvolve: true
+        w: 44.5
     },
     Magnemite: {
         t1: 'Electric',
@@ -458,8 +455,7 @@ var RBY = {
     Magneton: {
         t1: 'Electric',
         bs: { hp: 50, at: 60, df: 95, sp: 70, sl: 120 },
-        w: 60,
-        canEvolve: true
+        w: 60
     },
     Mankey: {
         t1: 'Fighting',
@@ -567,8 +563,7 @@ var RBY = {
         t1: 'Rock',
         t2: 'Ground',
         bs: { hp: 35, at: 45, df: 160, sp: 70, sl: 30 },
-        w: 210,
-        canEvolve: true
+        w: 210
     },
     Paras: {
         t1: 'Bug',
@@ -673,14 +668,14 @@ var RBY = {
         t1: 'Ground',
         t2: 'Rock',
         bs: { hp: 105, at: 130, df: 120, sp: 40, sl: 45 },
-        w: 120,
-        canEvolve: true
+        w: 120
     },
     Rhyhorn: {
         t1: 'Ground',
         t2: 'Rock',
         bs: { hp: 80, at: 85, df: 95, sp: 25, sl: 30 },
-        w: 115
+        w: 115,
+        canEvolve: true
     },
     Sandshrew: {
         t1: 'Ground',
@@ -947,8 +942,8 @@ var GSC = util_1.extend(true, {}, RBY, {
     Machop: { bs: { sa: 35, sd: 35 } },
     Magikarp: { bs: { sa: 15, sd: 20 } },
     Magmar: { bs: { sa: 100, sd: 85 } },
-    Magnemite: { t2: 'Steel', bs: { sa: 95, sd: 55 } },
-    Magneton: { t2: 'Steel', bs: { sa: 120, sd: 70 } },
+    Magnemite: { t2: 'Steel', bs: { sa: 95, sd: 55 }, gender: 'N' },
+    Magneton: { t2: 'Steel', bs: { sa: 120, sd: 70 }, gender: 'N' },
     Mankey: { bs: { sa: 35, sd: 45 } },
     Marowak: { bs: { sa: 50, sd: 80 } },
     Meowth: { bs: { sa: 40, sd: 40 } },
@@ -968,7 +963,7 @@ var GSC = util_1.extend(true, {}, RBY, {
     Oddish: { bs: { sa: 75, sd: 65 } },
     Omanyte: { bs: { sa: 90, sd: 55 } },
     Omastar: { bs: { sa: 115, sd: 70 } },
-    Onix: { bs: { sa: 30, sd: 45 } },
+    Onix: { bs: { sa: 30, sd: 45 }, canEvolve: true },
     Paras: { bs: { sa: 45, sd: 55 } },
     Parasect: { bs: { sa: 60, sd: 80 } },
     Persian: { bs: { sa: 65, sd: 65 } },
@@ -1002,8 +997,8 @@ var GSC = util_1.extend(true, {}, RBY, {
     Snorlax: { bs: { sa: 65, sd: 110 } },
     Spearow: { bs: { sa: 31, sd: 31 } },
     Squirtle: { bs: { sa: 50, sd: 64 } },
-    Starmie: { bs: { sa: 100, sd: 85 } },
-    Staryu: { bs: { sa: 70, sd: 55 } },
+    Starmie: { bs: { sa: 100, sd: 85 }, gender: 'N' },
+    Staryu: { bs: { sa: 70, sd: 55 } }, gender: 'N',
     Tangela: { bs: { sa: 100, sd: 40 } },
     Tauros: { bs: { sa: 40, sd: 70 } },
     Tentacool: { bs: { sa: 50, sd: 100 } },
@@ -1014,7 +1009,7 @@ var GSC = util_1.extend(true, {}, RBY, {
     Venusaur: { bs: { sa: 100, sd: 100 } },
     Victreebel: { bs: { sa: 100, sd: 60 } },
     Vileplume: { bs: { sa: 100, sd: 90 } },
-    Voltorb: { bs: { sa: 55, sd: 55 } },
+    Voltorb: { bs: { sa: 55, sd: 55 }, gender: 'N' },
     Vulpix: { bs: { sa: 50, sd: 65 } },
     Wartortle: { bs: { sa: 65, sd: 80 } },
     Weedle: { bs: { sa: 20, sd: 20 } },
@@ -1761,7 +1756,7 @@ var ADV = util_1.extend(true, {}, GSC, {
     Tyranitar: { ab: 'Sand Stream' },
     Tyrogue: { ab: 'Guts' },
     Umbreon: { ab: 'Synchronize' },
-    Unkown: { ab: 'Levitate' },
+    Unown: { ab: 'Levitate' },
     Ursaring: { ab: 'Guts' },
     Wobbuffet: { ab: 'Shadow Tag' },
     Wooper: { ab: 'Water Absorb' },
@@ -1917,7 +1912,44 @@ var ADV = util_1.extend(true, {}, GSC, {
         t1: 'Normal',
         bs: { hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70 },
         w: 0.8,
-        ab: 'Forecast'
+        ab: 'Forecast',
+        formes: ['Castform', 'Castform-Rainy', 'Castform-Snowy', 'Castform-Sunny', 'Castform-Sandy', 'Castform-Cloudy']
+    },
+    'Castform-Rainy': {
+    	t1: 'Water',
+    	bs: {hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70},
+    	w: 0.8,
+    	ab: 'Forecast',
+    	isAlternateForme: true,
+    },
+    'Castform-Snowy': {
+    	t1: 'Ice',
+    	bs: {hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70},
+    	w: 0.8,
+    	ab: 'Forecast',
+    	isAlternateForme: true,
+    },
+    'Castform-Sunny': {
+    	t1: 'Fire',
+    	bs: {hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70},
+    	w: 0.8,
+    	ab: 'Forecast',
+    	isAlternateForme: true,
+    },
+    'Castform-Sandy': {
+    	t1: 'Rock',
+    	t2: 'Ground',
+    	bs: {hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70},
+    	w: 0.8,
+    	ab: 'Forecast',
+    	isAlternateForme: true,
+    },
+    'Castform-Cloudy': {
+    	t1: 'Dark',
+    	bs: {hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70},
+    	w: 0.8,
+    	ab: 'Forecast',
+    	isAlternateForme: true,
     },
     Chimecho: {
         t1: 'Psychic',
@@ -1980,34 +2012,37 @@ var ADV = util_1.extend(true, {}, GSC, {
         bs: { hp: 50, at: 150, df: 50, sa: 150, sd: 50, sp: 150 },
         w: 60.8,
         ab: 'Pressure',
-        gender: 'N'
+        gender: 'N',
+        formes: ['Deoxys', 'Deoxys-Attack', 'Deoxys-Defense', 'Deoxys-Speed']
     },
     'Deoxys-Attack': {
         t1: 'Psychic',
         bs: { hp: 50, at: 180, df: 20, sa: 180, sd: 20, sp: 150 },
         w: 60.8,
         ab: 'Pressure',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Deoxys-Defense': {
         t1: 'Psychic',
         bs: { hp: 50, at: 70, df: 160, sa: 70, sd: 160, sp: 90 },
         w: 60.8,
         ab: 'Pressure',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Deoxys-Speed': {
         t1: 'Psychic',
         bs: { hp: 50, at: 95, df: 90, sa: 95, sd: 90, sp: 180 },
         w: 60.8,
         ab: 'Pressure',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     Dusclops: {
         t1: 'Ghost',
         bs: { hp: 40, at: 70, df: 130, sa: 60, sd: 130, sp: 25 },
         w: 30.6,
-        canEvolve: true,
         ab: 'Pressure'
     },
     Duskull: {
@@ -2739,13 +2774,19 @@ var ADV = util_1.extend(true, {}, GSC, {
 });
 var DPP = util_1.extend(true, {}, ADV, {
     Aipom: { canEvolve: true },
+    Dusclops: { canEvolve: true },
     Electabuzz: { canEvolve: true },
     Gligar: { canEvolve: true },
+    Lickitung: { canEvolve: true },
+    Magmar: { canEvolve: true },
+    Magneton: { canEvolve: true },
     Misdreavus: { canEvolve: true },
     Murkrow: { canEvolve: true },
+    Nosepass: { canEvolve: true },
+    Pichu: { canEvolve: true },
     Piloswine: { canEvolve: true },
     Porygon2: { canEvolve: true },
-    Rhyhorn: { canEvolve: true },
+    Rhydon: { canEvolve: true },
     Roselia: { canEvolve: true },
     Tangela: { canEvolve: true },
     Togetic: { canEvolve: true },
@@ -2768,119 +2809,154 @@ var DPP = util_1.extend(true, {}, ADV, {
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        formes: [
+            'Arceus',
+            'Arceus-Bug',
+            'Arceus-Dark',
+            'Arceus-Dragon',
+            'Arceus-Electric',
+            'Arceus-Fighting',
+            'Arceus-Fire',
+            'Arceus-Flying',
+            'Arceus-Ghost',
+            'Arceus-Grass',
+            'Arceus-Ground',
+            'Arceus-Ice',
+            'Arceus-Poison',
+            'Arceus-Psychic',
+            'Arceus-Rock',
+            'Arceus-Steel',
+            'Arceus-Water',
+          ],
     },
     'Arceus-Bug': {
         t1: 'Bug',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Dark': {
         t1: 'Dark',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Dragon': {
         t1: 'Dragon',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Electric': {
         t1: 'Electric',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Fighting': {
         t1: 'Fighting',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Fire': {
         t1: 'Fire',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Flying': {
         t1: 'Flying',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Ghost': {
         t1: 'Ghost',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Grass': {
         t1: 'Grass',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Ground': {
         t1: 'Ground',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Ice': {
         t1: 'Ice',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Poison': {
         t1: 'Poison',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Psychic': {
         t1: 'Psychic',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Rock': {
         t1: 'Rock',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Steel': {
         t1: 'Steel',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Arceus-Water': {
         t1: 'Water',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
         ab: 'Multitype',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     Arghonaut: {
         t1: 'Water',
@@ -2996,6 +3072,13 @@ var DPP = util_1.extend(true, {}, ADV, {
         bs: { hp: 70, at: 60, df: 70, sa: 87, sd: 78, sp: 85 },
         w: 9.3,
         ab: 'Flower Gift'
+    },
+    'Cherrim-Sunshine': {
+	    t1: 'Grass',
+	    bs: {hp: 70, at: 60, df: 70, sa: 87, sd: 78, sp: 85},
+	    w: 9.3,
+	    ab: 'Flower Gift',
+	    isAlternateForme: true,
     },
     Cherubi: {
         t1: 'Grass',
@@ -3202,14 +3285,16 @@ var DPP = util_1.extend(true, {}, ADV, {
         t2: 'Dragon',
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         w: 750,
-        ab: 'Pressure'
+        ab: 'Pressure',
+        formes: ['Giratina', 'Giratina-Origin']
     },
     'Giratina-Origin': {
         t1: 'Ghost',
         t2: 'Dragon',
         bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         w: 650,
-        ab: 'Levitate'
+        ab: 'Levitate',
+        isAlternateForme: true
     },
     Glaceon: {
         t1: 'Ice',
@@ -3552,7 +3637,8 @@ var DPP = util_1.extend(true, {}, ADV, {
         bs: { hp: 50, at: 50, df: 77, sa: 95, sd: 77, sp: 91 },
         w: 0.3,
         ab: 'Levitate',
-        gender: 'N'
+        gender: 'N',
+        formes: ['Rotom', 'Rotom-Fan', 'Rotom-Frost', 'Rotom-Heat', 'Rotom-Mow', 'Rotom-Wash']
     },
     'Rotom-Mow': {
         t1: 'Electric',
@@ -3560,7 +3646,8 @@ var DPP = util_1.extend(true, {}, ADV, {
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         w: 0.3,
         ab: 'Levitate',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Rotom-Frost': {
         t1: 'Electric',
@@ -3568,7 +3655,8 @@ var DPP = util_1.extend(true, {}, ADV, {
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         w: 0.3,
         ab: 'Levitate',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Rotom-Heat': {
         t1: 'Electric',
@@ -3576,7 +3664,8 @@ var DPP = util_1.extend(true, {}, ADV, {
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         w: 0.3,
         ab: 'Levitate',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Rotom-Fan': {
         t1: 'Electric',
@@ -3584,7 +3673,8 @@ var DPP = util_1.extend(true, {}, ADV, {
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         w: 0.3,
         ab: 'Levitate',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Rotom-Wash': {
         t1: 'Electric',
@@ -3592,14 +3682,16 @@ var DPP = util_1.extend(true, {}, ADV, {
         bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
         w: 0.3,
         ab: 'Levitate',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     Shaymin: {
         t1: 'Grass',
         bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
         w: 2.1,
         ab: 'Natural Cure',
-        gender: 'N'
+        gender: 'N',
+        formes: ['Shaymin', 'Shaymin-Sky']
     },
     'Shaymin-Sky': {
         t1: 'Grass',
@@ -3607,7 +3699,8 @@ var DPP = util_1.extend(true, {}, ADV, {
         bs: { hp: 100, at: 103, df: 75, sa: 120, sd: 75, sp: 127 },
         w: 5.2,
         ab: 'Serene Grace',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     Shellos: {
         t1: 'Water',
@@ -3688,6 +3781,7 @@ var DPP = util_1.extend(true, {}, ADV, {
         t1: 'Rock',
         bs: { hp: 90, at: 60, df: 65, sa: 120, sd: 70, sp: 130 },
         w: 45,
+        gender: 'N',
         ab: 'Technician'
     },
     Stunky: {
@@ -3795,21 +3889,24 @@ var DPP = util_1.extend(true, {}, ADV, {
         t2: 'Grass',
         bs: { hp: 60, at: 59, df: 85, sa: 79, sd: 105, sp: 36 },
         w: 6.5,
-        ab: 'Overcoat'
+        ab: 'Overcoat',
+        formes: ['Wormadam', 'Wormadam-Sandy', 'Wormadam-Trash']
     },
     'Wormadam-Sandy': {
         t1: 'Bug',
         t2: 'Ground',
         bs: { hp: 60, at: 79, df: 105, sa: 59, sd: 85, sp: 36 },
         w: 6.5,
-        ab: 'Overcoat'
+        ab: 'Overcoat',
+        isAlternateForme: true
     },
     'Wormadam-Trash': {
         t1: 'Bug',
         t2: 'Steel',
         bs: { hp: 60, at: 69, df: 95, sa: 69, sd: 95, sp: 36 },
         w: 6.5,
-        ab: 'Overcoat'
+        ab: 'Overcoat',
+        isAlternateForme: true
     },
     Yanmega: {
         t1: 'Bug',
@@ -3947,10 +4044,10 @@ var BW = util_1.extend(true, {}, DPP, {
     Rhyperior: { ab: 'Lightning Rod' },
     Riolu: { ab: 'Prankster' },
     Roserade: { ab: 'Technician' },
-    'Rotom-Mow': { t2: 'Grass' },
+    'Rotom-Fan': { t2: 'Flying' },
     'Rotom-Frost': { t2: 'Ice' },
     'Rotom-Heat': { t2: 'Fire' },
-    'Rotom-Fan': { t2: 'Flying' },
+    'Rotom-Mow': { t2: 'Grass' },
     'Rotom-Wash': { t2: 'Water' },
     Sableye: { ab: 'Prankster' },
     Sandshrew: { ab: 'Sand Rush' },
@@ -4561,7 +4658,8 @@ var BW = util_1.extend(true, {}, DPP, {
         bs: { hp: 125, at: 130, df: 90, sa: 130, sd: 90, sp: 95 },
         w: 325,
         ab: 'Pressure',
-        gender: 'N'
+        gender: 'N',
+        formes: ['Kyurem', 'Kyurem-Black', 'Kyurem-White']
     },
     'Kyurem-Black': {
         t1: 'Dragon',
@@ -4569,7 +4667,8 @@ var BW = util_1.extend(true, {}, DPP, {
         bs: { hp: 125, at: 170, df: 100, sa: 120, sd: 90, sp: 95 },
         w: 325,
         ab: 'Teravolt',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     'Kyurem-White': {
         t1: 'Dragon',
@@ -4577,7 +4676,8 @@ var BW = util_1.extend(true, {}, DPP, {
         bs: { hp: 125, at: 120, df: 90, sa: 170, sd: 100, sp: 95 },
         w: 325,
         ab: 'Turboblaze',
-        gender: 'N'
+        gender: 'N',
+        isAlternateForme: true
     },
     Lampent: {
         t1: 'Ghost',
@@ -4592,14 +4692,16 @@ var BW = util_1.extend(true, {}, DPP, {
         t2: 'Flying',
         bs: { hp: 89, at: 125, df: 90, sa: 115, sd: 80, sp: 101 },
         w: 68,
-        ab: 'Sheer Force'
+        ab: 'Sheer Force',
+        formes: ['Landorus', 'Landorus-Therian']
     },
     'Landorus-Therian': {
         t1: 'Ground',
         t2: 'Flying',
         bs: { hp: 89, at: 145, df: 90, sa: 105, sd: 80, sp: 91 },
         w: 68,
-        ab: 'Intimidate'
+        ab: 'Intimidate',
+        isAlternateForme: true
     },
     Larvesta: {
         t1: 'Bug',
@@ -5038,14 +5140,16 @@ var BW = util_1.extend(true, {}, DPP, {
         t2: 'Flying',
         bs: { hp: 79, at: 115, df: 70, sa: 125, sd: 80, sp: 111 },
         w: 61,
-        ab: 'Prankster'
+        ab: 'Prankster',
+        formes: ['Thundurus', 'Thundurus-Therian']
     },
     'Thundurus-Therian': {
         t1: 'Electric',
         t2: 'Flying',
         bs: { hp: 79, at: 105, df: 70, sa: 145, sd: 80, sp: 101 },
         w: 61,
-        ab: 'Volt Absorb'
+        ab: 'Volt Absorb',
+        isAlternateForme: true
     },
     Timburr: {
         t1: 'Fighting',
@@ -5073,13 +5177,15 @@ var BW = util_1.extend(true, {}, DPP, {
         t1: 'Flying',
         bs: { hp: 79, at: 115, df: 70, sa: 125, sd: 80, sp: 111 },
         w: 63,
-        ab: 'Prankster'
+        ab: 'Prankster',
+        formes: ['Tornadus', 'Tornadus-Therian']
     },
     'Tornadus-Therian': {
         t1: 'Flying',
         bs: { hp: 79, at: 100, df: 80, sa: 110, sd: 90, sp: 121 },
         w: 63,
-        ab: 'Regenerator'
+        ab: 'Regenerator',
+        isAlternateForme: true
     },
     Tranquill: {
         t1: 'Normal',
@@ -5152,6 +5258,21 @@ var BW = util_1.extend(true, {}, DPP, {
         w: 4,
         ab: 'Victory Star',
         gender: 'N'
+    },
+    Volkraken: {
+        t1: 'Water',
+        t2: 'Fire',
+        bs: {hp: 100, at: 45, df: 80, sa: 135, sd: 100, sp: 95},
+        w: 44.5,
+        ab: 'Analytic',
+    },
+    Volkritter: {
+        t1: 'Water',
+        t2: 'Fire',
+        bs: {hp: 60, at: 30, df: 50, sa: 80, sd: 60, sp: 70},
+        w: 15,
+        canEvolve: true,
+        ab: 'Anticipation',
     },
     Virizion: {
         t1: 'Grass',
@@ -5247,7 +5368,7 @@ var BW = util_1.extend(true, {}, DPP, {
         canEvolve: true
     }
 });
-var XY = util_1.extend(true, {}, BW, {
+var XY_BASE = util_1.extend(true, {}, BW, {
     Abomasnow: { formes: ['Abomasnow', 'Abomasnow-Mega'] },
     Absol: { formes: ['Absol', 'Absol-Mega'] },
     Aerodactyl: { formes: ['Aerodactyl', 'Aerodactyl-Mega'] },
@@ -5341,7 +5462,7 @@ var XY = util_1.extend(true, {}, BW, {
     Snubbull: { t1: 'Fairy' },
     Staraptor: { bs: { sd: 60 } },
     Starly: { ab: 'Reckless' },
-    Steelix: { formes: ['Steelix', 'Steelix-Mega'] },
+    Steelix: { formes: ['Steelix', 'Steelix-Mega', 'Steelix-Mega (Fire)'] },
     Stoutland: { bs: { at: 110 } },
     Swampert: { formes: ['Swampert', 'Swampert-Mega'] },
     Tepig: { ab: 'Thick Fat' },
@@ -5364,7 +5485,7 @@ var XY = util_1.extend(true, {}, BW, {
         t1: 'Steel',
         t2: 'Ghost',
         bs: { hp: 60, at: 150, df: 50, sa: 150, sd: 50, sp: 60 },
-        w: 10,
+        w: 53,
         ab: 'Stance Change',
         formes: ['Aegislash-Blade', 'Aegislash-Shield', 'Aegislash-Both']
     },
@@ -5372,7 +5493,7 @@ var XY = util_1.extend(true, {}, BW, {
         t1: 'Steel',
         t2: 'Ghost',
         bs: { hp: 60, at: 50, df: 150, sa: 50, sd: 150, sp: 60 },
-        w: 52,
+        w: 53,
         ab: 'Stance Change',
         isAlternateForme: true
     },
@@ -5380,7 +5501,7 @@ var XY = util_1.extend(true, {}, BW, {
         t1: 'Steel',
         t2: 'Ghost',
         bs: { hp: 60, at: 150, df: 150, sa: 150, sd: 150, sp: 60 },
-        w: 52,
+        w: 53,
         ab: 'Stance Change',
         isAlternateForme: true
     },
@@ -5396,7 +5517,9 @@ var XY = util_1.extend(true, {}, BW, {
         t1: 'Fairy',
         bs: { hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120 },
         w: 320,
-        ab: 'Multitype'
+        ab: 'Multitype',
+        gender: 'N',
+        isAlternateForme: true
     },
     Aromatisse: {
         t1: 'Fairy',
@@ -5501,7 +5624,8 @@ var XY = util_1.extend(true, {}, BW, {
         t2: 'Poison',
         bs: { hp: 106, at: 105, df: 65, sa: 75, sd: 85, sp: 104 },
         w: 23.6,
-        ab: 'Regenerator'
+        ab: 'Regenerator',
+        formes: ['Crucibelle', 'Crucibelle-Mega']
     },
     Diancie: {
         t1: 'Rock',
@@ -5530,7 +5654,7 @@ var XY = util_1.extend(true, {}, BW, {
         t1: 'Normal',
         t2: 'Ground',
         bs: { hp: 85, at: 56, df: 77, sa: 50, sd: 77, sp: 78 },
-        w: 10,
+        w: 42.4,
         ab: 'Huge Power'
     },
     Doublade: {
@@ -5573,7 +5697,7 @@ var XY = util_1.extend(true, {}, BW, {
         t1: 'Fire',
         t2: 'Flying',
         bs: { hp: 62, at: 73, df: 55, sa: 56, sd: 52, sp: 84 },
-        w: 10,
+        w: 16,
         canEvolve: true,
         ab: 'Gale Wings'
     },
@@ -5635,7 +5759,6 @@ var XY = util_1.extend(true, {}, BW, {
         t1: 'Grass',
         bs: { hp: 123, at: 100, df: 62, sa: 97, sd: 81, sp: 68 },
         w: 91,
-        canEvolve: true,
         ab: 'Sap Sipper'
     },
     Goodra: {
@@ -5655,29 +5778,33 @@ var XY = util_1.extend(true, {}, BW, {
         t1: 'Ghost',
         t2: 'Grass',
         bs: { hp: 65, at: 90, df: 122, sa: 58, sd: 75, sp: 84 },
-        w: 10,
-        ab: 'Frisk'
+        w: 12.5,
+        ab: 'Frisk',
+        formes: ['Gourgeist', 'Gourgeist-Large', 'Gourgeist-Small', 'Gourgeist-Super']
     },
     'Gourgeist-Large': {
         t1: 'Ghost',
         t2: 'Grass',
         bs: { hp: 75, at: 95, df: 122, sa: 58, sd: 75, sp: 69 },
-        w: 10,
-        ab: 'Frisk'
+        w: 14,
+        ab: 'Frisk',
+        isAlternateForme: true
     },
     'Gourgeist-Small': {
         t1: 'Ghost',
         t2: 'Grass',
         bs: { hp: 55, at: 85, df: 122, sa: 58, sd: 75, sp: 99 },
-        w: 10,
-        ab: 'Frisk'
+        w: 9.5,
+        ab: 'Frisk',
+        isAlternateForme: true
     },
     'Gourgeist-Super': {
         t1: 'Ghost',
         t2: 'Grass',
         bs: { hp: 85, at: 100, df: 122, sa: 58, sd: 75, sp: 54 },
-        w: 10,
-        ab: 'Frisk'
+        w: 39,
+        ab: 'Frisk',
+        isAlternateForme: true
     },
     Greninja: {
         t1: 'Water',
@@ -5722,7 +5849,8 @@ var XY = util_1.extend(true, {}, BW, {
         bs: { hp: 80, at: 110, df: 60, sa: 150, sd: 130, sp: 70 },
         w: 9,
         gender: 'N',
-        ab: 'Magician'
+        ab: 'Magician',
+        formes: ['Hoopa', 'Hoopa-Unbound']
     },
     'Hoopa-Unbound': {
         t1: 'Psychic',
@@ -5730,7 +5858,8 @@ var XY = util_1.extend(true, {}, BW, {
         bs: { hp: 80, at: 160, df: 60, sa: 170, sd: 130, sp: 80 },
         w: 490,
         gender: 'N',
-        ab: 'Magician'
+        ab: 'Magician',
+        isAlternateForme: true
     },
     Inkay: {
         t1: 'Dark',
@@ -5887,7 +6016,7 @@ var XY = util_1.extend(true, {}, BW, {
     'Crucibelle-Mega': {
         t1: 'Rock',
         t2: 'Poison',
-        bs: { hp: 106, at: 135, df: 75, sa: 85, sd: 125, sp: 108 },
+        bs: { hp: 106, at: 135, df: 75, sa: 85, sd: 125, sp: 114 },
         w: 22.5,
         ab: 'Magic Guard',
         isAlternateForme: true
@@ -6074,7 +6203,8 @@ var XY = util_1.extend(true, {}, BW, {
         bs: { hp: 105, at: 180, df: 100, sa: 180, sd: 100, sp: 115 },
         w: 392,
         ab: 'Delta Stream',
-        isAlternateForme: true
+        isAlternateForme: true,
+        gender: 'N'
     },
     'Sableye-Mega': {
         t1: 'Dark',
@@ -6156,13 +6286,14 @@ var XY = util_1.extend(true, {}, BW, {
         ab: 'Thick Fat',
         isAlternateForme: true
     },
-    'Meowstic-F': {
+    Meowstic: {
         t1: 'Psychic',
         bs: { hp: 74, at: 48, df: 76, sa: 83, sd: 81, sp: 104 },
         w: 8.5,
-        ab: 'Infiltrator'
+        ab: 'Infiltrator',
+        formes: ['Meowstic', 'Meowstic-F']
     },
-    Meowstic: {
+    'Meowstic-F': {
         t1: 'Psychic',
         bs: { hp: 74, at: 48, df: 76, sa: 83, sd: 81, sp: 104 },
         w: 8.5,
@@ -6243,11 +6374,11 @@ var XY = util_1.extend(true, {}, BW, {
         isAlternateForme: true,
         gender: 'N'
     },
-    'Pumpkaboo-Average': {
+    Pumpkaboo: {
         t1: 'Ghost',
         t2: 'Grass',
         bs: { hp: 49, at: 66, df: 70, sa: 44, sd: 55, sp: 51 },
-        w: 10,
+        w: 5,
         canEvolve: true,
         ab: 'Insomnia'
     },
@@ -6255,25 +6386,28 @@ var XY = util_1.extend(true, {}, BW, {
         t1: 'Ghost',
         t2: 'Grass',
         bs: { hp: 54, at: 66, df: 70, sa: 44, sd: 55, sp: 46 },
-        w: 10,
+        w: 7.5,
         canEvolve: true,
-        ab: 'Frisk'
+        ab: 'Frisk',
+        formes: ['Pumpkaboo', 'Pumpkaboo-Large', 'Pumpkaboo-Small', 'Pumpkaboo-Super']
     },
     'Pumpkaboo-Small': {
         t1: 'Ghost',
         t2: 'Grass',
         bs: { hp: 44, at: 66, df: 70, sa: 44, sd: 55, sp: 56 },
-        w: 10,
+        w: 3.5,
         canEvolve: true,
-        ab: 'Frisk'
+        ab: 'Frisk',
+        isAlternateForme: true
     },
     'Pumpkaboo-Super': {
         t1: 'Ghost',
         t2: 'Grass',
         bs: { hp: 59, at: 66, df: 70, sa: 44, sd: 55, sp: 41 },
-        w: 10,
+        w: 15,
         canEvolve: true,
-        ab: 'Insomnia'
+        ab: 'Insomnia',
+        isAlternateForme: true
     },
     Pyroar: {
         t1: 'Fire',
@@ -6441,7 +6575,3871 @@ var XY = util_1.extend(true, {}, BW, {
         w: 305,
         ab: 'Aura Break',
         gender: 'N'
-    }
+    },
+});
+
+var XY = util_1.extend(true, {}, XY_BASE, {
+    //Form changes to core series Pokemon
+	Eevee: { formes: ["Eevee", "Eevee-Mega", "Eevee-Vaporeon", "Eevee-Jolteon", "Eevee-Flareon", "Eevee-Espeon", "Eevee-Umbreon", "Eevee-Leafeon", "Eevee-Glaceon", "Eevee-Sylveon"] },
+	Marowak: { formes: ["Marowak", "Marowak-Mega"] },
+	Poliwrath: { formes: ["Poliwrath", "Poliwrath-Mega"] },
+	Donphan: { formes: ["Donphan", "Donphan-Mega"] },
+	Feraligatr: { formes: ["Feraligatr", "Feraligatr-Mega"] },
+	Girafarig: { formes: ["Girafarig", "Girafarig-Mega"] },
+	Magcargo: { formes: ["Magcargo", "Magcargo-Mega"] },
+	Meganium: { formes: ["Meganium", "Meganium-Mega"] },
+	Miltank: { formes: ["Miltank", "Miltank-Mega"] },
+	Politoed: { formes: ["Politoed", "Politoed-Mega"] },
+	Sudowoodo: { formes: ["Sudowoodo", "Sudowoodo-Mega"] },
+	Sunflora: { formes: ["Sunflora", "Sunflora-Mega (F)", "Sunflora-Mega (M)"] },
+	Typhlosion: { formes: ["Typhlosion", "Typhlosion-Mega"] },
+	Cacturne: { formes: ["Cacturne", "Cacturne-Mega"] },
+	Crawdaunt: { formes: ["Crawdaunt", "Crawdaunt-Mega"] },
+	Flygon: { formes: ["Flygon", "Armor Flygon", "Flygon-Mega"] },
+	Jirachi: { formes: ["Jirachi", "Jirachi-Mega"] },
+	Milotic: { formes: ["Milotic", "Milotic-Mega"] },
+	Shiftry: { formes: ["Shiftry", "Shiftry-Mega"] },
+	Arceus: { formes: ["Arceus", "Primal Arceus"] },
+	Chatot: { formes: ["Chatot", "Chatot-Mega"] },
+	Froslass: { formes: ["Froslass", "Froslass-Mega"] },
+	Giratina: { formes: ["Giratina", "Primal Giratina"] },
+	Regigigas: { formes: ["Regigigas", "Primal Regigigas"] },
+	Spiritomb: { formes: ["Spiritomb", "Spiritomb-Mega"] },
+	Bisharp: { formes: ["Bisharp", "Bisharp-Mega"] },
+	Cryogonal: { formes: ["Cryogonal", "Cryogonal-Mega"] },
+	Gothitelle: { formes: ["Gothitelle", "Gothitelle-Mega"] },
+	Haxorus: { formes: ["Haxorus", "Haxorus-Mega"] },
+	Hydreigon: { formes: ["Hydreigon", "Hydreigon-Mega"] },
+	Leavanny: { formes: ["Leavanny", "Armor Leavanny"] },
+	Reuniclus: { formes: ["Reuniclus", "Reuniclus-Mega"] },
+	Stunfisk: { formes: ["Stunfisk", "Stunfisk-Mega"] },
+	Zebstrika: { formes: ["Zebstrika", "Zebstrika-Mega"] },
+	Zekrom: { formes: ["Zekrom", "Armor Zekrom"] },
+	Zoroark: { formes: ["Zoroark", "Zoroark-Mega"] },
+	//Delta Pokemon
+    "Delta Bulbasaur": {
+        t1: 'Fairy',
+        t2: 'Psychic',
+        bs: {
+          hp: 45,
+          at: 49,
+          df: 49,
+          sa: 65,
+          sd: 65,
+          sp: 45
+        },
+        w: 6.9
+      },
+      "Delta Ivysaur": {
+        t1: 'Fairy',
+        t2: 'Psychic',
+        bs: {
+          hp: 60,
+          at: 62,
+          df: 63,
+          sa: 80,
+          sd: 80,
+          sp: 60
+        },
+        w: 13.0
+      },
+      "Delta Venusaur": {
+        t1: 'Fairy',
+        t2: 'Psychic',
+        bs: {
+          hp: 80,
+          at: 82,
+          df: 83,
+          sa: 100,
+          sd: 100,
+          sp: 80
+        },
+        w: 100.0,
+        formes: [
+            "Delta Venusaur",
+            "Delta Venusaur-Mega"
+          ]
+      },
+      "Delta Charmander": {
+        t1: 'Ghost',
+    	t2: 'Dragon',
+        bs: {
+          hp: 39,
+          at: 52,
+          df: 43,
+          sa: 60,
+          sd: 50,
+          sp: 65
+        },
+        w: 8.5
+      },
+      "Delta Charmeleon": {
+        t1: 'Ghost',
+    	t2: 'Dragon',
+        bs: {
+          hp: 58,
+          at: 64,
+          df: 58,
+          sa: 80,
+          sd: 65,
+          sp: 80
+        },
+        w: 19.0
+      },
+      "Delta Charizard": {
+        t1: 'Ghost',
+    	t2: 'Dragon',
+        bs: {
+          hp: 78,
+          at: 84,
+          df: 78,
+          sa: 109,
+          sd: 85,
+          sp: 100
+        },
+        w: 90.5,
+        formes: [
+            "Delta Charizard",
+            "Delta Charizard-Mega"
+          ]
+      },
+      "Delta Squirtle": {
+        t1: 'Dark',
+    	t2: 'Fighting',
+        bs: {
+          hp: 44,
+          at: 48,
+          df: 65,
+          sa: 50,
+          sd: 64,
+          sp: 43
+        },
+        w: 9.0
+      },
+      "Delta Wartortle": {
+        t1: 'Dark',
+    	t2: 'Fighting',
+        bs: {
+          hp: 59,
+          at: 63,
+          df: 80,
+          sa: 65,
+          sd: 80,
+          sp: 58
+        },
+        w: 22.5
+      },
+      "Delta Blastoise": {
+        t1: 'Dark',
+    	t2: 'Fighting',
+        bs: {
+          hp: 79,
+          at: 83,
+          df: 100,
+          sa: 85,
+          sd: 105,
+          sp: 78
+        },
+        w: 85.5,
+        formes: [
+            "Delta Blastoise",
+            "Delta Blastoise-Mega"
+          ]
+      },
+      "Delta Pawniard": {
+        t1: 'Flying',
+        t2: 'Fighting',
+        bs: {
+          hp: 45,
+          at: 85,
+          df: 70,
+          sa: 40,
+          sd: 40,
+          sp: 60
+        },
+        w: 10.2
+      },
+      "Delta Bisharp": {
+        t1: 'Flying',
+        t2: 'Fighting',
+        bs: {
+          hp: 65,
+          at: 125,
+          df: 100,
+          sa: 60,
+          sd: 70,
+          sp: 70
+        },
+        w: 70.0,
+        formes: [
+            "Delta Bisharp",
+            "Delta Bisharp-Mega"
+          ]
+      },
+      "Delta Ralts": {
+        t1: 'Electric',
+    	t2: 'Ice',
+        bs: {
+          hp: 28,
+          at: 25,
+          df: 25,
+          sa: 45,
+          sd: 35,
+          sp: 40
+        },
+        w: 6.6
+      },
+      "Delta Kirlia": {
+        t1: 'Electric',
+    	t2: 'Ice',
+        bs: {
+          hp: 38,
+          at: 35,
+          df: 35,
+          sa: 65,
+          sd: 55,
+          sp: 50
+        },
+        w: 20.2
+      },
+      "Delta Gardevoir": {
+        t1: 'Electric',
+    	t2: 'Ice',	
+        bs: {
+          hp: 68,
+          at: 65,
+          df: 65,
+          sa: 125,
+          sd: 115,
+          sp: 80
+        },
+        w: 48.4,
+    	formes: [
+            "Delta Gardevoir",
+            "Delta Gardevoir-Mega"
+          ]
+      },
+      "Delta Gallade": {
+        t1: 'Electric',
+        t2: 'Ice',
+        bs: {
+          hp: 68,
+          at: 125,
+          df: 65,
+          sa: 65,
+          sd: 115,
+          sp: 80
+        },
+        w: 52.0,
+    	formes: [
+            "Delta Gallade",
+            "Delta Gallade-Mega"
+          ]
+      },
+      "Delta Sunkern": {
+        t1: 'Fire',
+    	t2: 'Poison',
+        bs: {
+          hp: 30,
+          at: 30,
+          df: 30,
+          sa: 30,
+          sd: 30,
+          sp: 30
+        },
+        w: 1.8
+      },
+      "Delta Sunflora": {
+        t1: 'Fire',
+    	t2: 'Poison',	
+        bs: {
+          hp: 75,
+          at: 75,
+          df: 55,
+          sa: 105,
+          sd: 85,
+          sp: 30
+        },
+        w: 8.5,
+        formes: [
+            "Delta Sunflora",
+            "Delta Sunflora-Mega"
+          ]
+      },
+      "Delta Bergmite": {
+        t1: 'Rock',
+        bs: {
+          hp: 55,
+          at: 69,
+          df: 85,
+          sa: 32,
+          sd: 35,
+          sp: 28
+        },
+        w: 99.5
+      },
+      "Delta Avalugg": {
+        t1: 'Rock',
+    	t2: 'Dragon',
+        bs: {
+          hp: 95,
+          at: 117,
+          df: 184,
+          sa: 44,
+          sd: 46,
+          sp: 28
+        },
+        w: 505.0
+      },
+      "Delta Scyther": {
+        t1: 'Ice',
+        t2: 'Fighting',
+        bs: {
+          hp: 70,
+          at: 110,
+          df: 80,
+          sa: 55,
+          sd: 80,
+          sp: 105
+        },
+        w: 56.0
+      },
+      "Delta Scizor": {
+        t1: 'Ice',
+        t2: 'Fighting',
+        bs: {
+          hp: 70,
+          at: 130,
+          df: 100,
+          sa: 55,
+          sd: 80,
+          sp: 65
+        },
+        w: 118.0,
+        formes: [
+            "Delta Scizor",
+            "Delta Scizor-Mega"
+          ]
+      },
+      "Delta Scraggy": {
+        t1: 'Grass',
+        bs: {
+          hp: 50,
+          at: 75,
+          df: 70,
+          sa: 35,
+          sd: 70,
+          sp: 48
+        },
+        w: 11.8
+      },
+      "Delta Scrafty": {
+        t1: 'Grass',
+        bs: {
+          hp: 65,
+          at: 90,
+          df: 115,
+          sa: 45,
+          sd: 115,
+          sp: 58
+        },
+        w: 30.0
+      },
+      "Delta Combee": {
+        t1: 'Steel',
+        t2: 'Fire',
+        bs: {
+          hp: 30,
+          at: 30,
+          df: 42,
+          sa: 30,
+          sd: 42,
+          sp: 70
+        },
+        w: 5.5
+      },
+      "Delta Vespiquen": {
+        t1: 'Steel',
+        t2: 'Fire',
+        bs: {
+          hp: 70,
+          at: 80,
+          df: 102,
+          sa: 80,
+          sd: 102,
+          sp: 40
+        },
+        w: 38.5
+      },
+      "Delta Koffing": {
+        t1: "Electrc",
+    	t2: 'Flying',
+        bs: {
+          hp: 40,
+          at: 65,
+          df: 95,
+          sa: 60,
+          sd: 45,
+          sp: 35
+        },
+        w: 1.0
+      },
+      "Delta Weezing": {
+        t1: 'Electric',
+    	t2: 'Flying',
+        bs: {
+          hp: 65,
+          at: 90,
+          df: 120,
+          sa: 85,
+          sd: 70,
+          sp: 60
+        },
+        w: 9.5
+      },
+      "Delta Purrloin": {
+        t1: 'Ghost',
+    	t2: 'Fairy',
+        bs: {
+          hp: 41,
+          at: 50,
+          df: 37,
+          sa: 50,
+          sd: 37,
+          sp: 66
+        },
+        w: 10.1
+      },
+      "Delta Liepard": {
+        t1: 'Ghost',
+    	t2: 'Fairy',
+        bs: {
+          hp: 64,
+          at: 88,
+          df: 50,
+          sa: 88,
+          sd: 50,
+          sp: 106
+        },
+        w: 37.5
+      },
+      "Delta Phantump": {
+        t1: 'Fairy',
+        t2: 'Fighting',
+        bs: {
+          hp: 43,
+          at: 70,
+          df: 48,
+          sa: 50,
+          sd: 60,
+          sp: 38
+        },
+        w: 7.0
+      },
+      "Delta Trevenant": {
+        t1: 'Fairy',
+        t2: 'Fighting',
+        bs: {
+          hp: 85,
+          at: 110,
+          df: 76,
+          sa: 65,
+          sd: 82,
+          sp: 56
+        },
+        w: 71.0
+      },
+      "Delta Snorunt": {
+        t1: 'Fire',
+        bs: {
+          hp: 50,
+          at: 50,
+          df: 50,
+          sa: 50,
+          sd: 50,
+          sp: 50
+        },
+        w: 16.8
+      },
+      "Delta Glalie": {
+        t1: 'Fire',
+    	t2: 'Rock',
+        bs: {
+          hp: 80,
+          at: 80,
+          df: 80,
+          sa: 80,
+          sd: 80,
+          sp: 80
+        },
+        w: 256.5,
+    	formes: [
+            "Delta Glalie",
+            "Delta Glalie-Mega"
+          ]
+      },
+      "Delta Froslass": {
+        t1: 'Fire',
+        bs: {
+          hp: 70,
+          at: 80,
+          df: 70,
+          sa: 80,
+          sd: 70,
+          sp: 110
+        },
+        w: 26.6,
+    	 formes: [
+    	     "Delta Froslass",
+    	     "Delta Froslass-Mega"
+    	   ]
+      },
+      "Delta Shinx": {
+        t1: 'Steel',
+    	t2: 'Poison',
+        bs: {
+          hp: 45,
+          at: 65,
+          df: 34,
+          sa: 40,
+          sd: 34,
+          sp: 45
+        },
+        w: 9.5
+      },
+      "Delta Luxio": {
+        t1: 'Steel',
+    	t2: 'Poison',
+        bs: {
+          hp: 60,
+          at: 85,
+          df: 49,
+          sa: 60,
+          sd: 49,
+          sp: 60
+        },
+        w: 30.5
+      },
+      "Delta Luxray": {
+        t1: 'Steel',
+    	t2: 'Poison',
+        bs: {
+          hp: 80,
+          at: 120,
+          df: 79,
+          sa: 95,
+          sd: 79,
+          sp: 70
+        },
+        w: 42.0
+      },
+      "Delta Noibat": {
+        t1: 'Grass',
+        t2: 'Steel',
+        bs: {
+          hp: 40,
+          at: 30,
+          df: 35,
+          sa: 45,
+          sd: 40,
+          sp: 55
+        },
+        w: 8.0
+      },
+      "Delta Noivern": {
+        t1: 'Grass',
+        t2: 'Steel',
+        bs: {
+          hp: 85,
+          at: 70,
+          df: 80,
+          sa: 97,
+          sd: 80,
+          sp: 123
+        },
+        w: 85.0
+      },
+      "Delta Budew": {
+        t1: 'Dark',
+        t2: 'Fairy',
+        bs: {
+          hp: 40,
+          at: 30,
+          df: 35,
+          sa: 50,
+          sd: 70,
+          sp: 55
+        },
+        w: 1.2
+      },
+      "Delta Roselia": {
+        t1: 'Dark',
+        t2: 'Fairy',
+        bs: {
+          hp: 50,
+          at: 60,
+          df: 45,
+          sa: 100,
+          sd: 80,
+          sp: 65
+        },
+        w: 2.0
+      },
+      "Delta Roserade": {
+        t1: 'Dark',
+        t2: 'Fairy',
+        bs: {
+          hp: 60,
+          at: 70,
+          df: 55,
+          sa: 125,
+          sd: 105,
+          sp: 90
+        },
+        w: 14.5
+      },
+      "Delta Grimer": {
+        t1: 'Ground',
+        bs: {
+          hp: 80,
+          at: 80,
+          df: 50,
+          sa: 40,
+          sd: 50,
+          sp: 25
+        },
+        w: 30.0
+      },
+      "Delta Muk": {
+	    t1: 'Ground',
+	    bs: {
+	      hp: 105,
+	      at: 105,
+	      df: 75,
+	      sa: 65,
+	      sd: 100,
+	      sp: 50
+	    },
+	    w: 30.0,
+		 formes: [
+			   "Delta Muk",
+			   "Delta Muk (Horsea)",
+			   "Delta Muk (Bellsprout)",
+			   "Delta Muk (Magby)",
+			   "Delta Muk (Deino)",
+			   "Delta Muk (Whismur)",
+			   "Delta Muk (Natu)"
+		   ]
+	  },
+	  "Delta Muk (Horsea)": {
+	    t1: 'Ground',
+	    bs: {
+	      hp: 105,
+	      at: 105,
+	      df: 75,
+	      sa: 65,
+	      sd: 100,
+	      sp: 50
+	    },
+	    w: 30.0,
+	    ab: "Regurgitation",
+		"isAlternateForme": true
+	  },
+	  "Delta Muk (Bellsprout)": {
+	    t1: 'Ground',
+	    bs: {
+	      hp: 105,
+	      at: 105,
+	      df: 75,
+	      sa: 65,
+	      sd: 100,
+	      sp: 50
+	    },
+	    w: 30.0,
+	    ab: "Regurgitation",
+		"isAlternateForme": true
+	  },
+	  "Delta Muk (Magby)": {
+	    t1: 'Ground',
+	    bs: {
+	      hp: 105,
+	      at: 105,
+	      df: 75,
+	      sa: 65,
+	      sd: 100,
+	      sp: 50
+	    },
+	    w: 30.0,
+	    ab: "Regurgitation",
+		"isAlternateForme": true
+	  },
+	  "Delta Muk (Deino)": {
+	    t1: 'Ground',
+	    bs: {
+	      hp: 105,
+	      at: 105,
+	      df: 75,
+	      sa: 65,
+	      sd: 100,
+	      sp: 50
+	    },
+	    w: 30.0,
+	    ab: "Regurgitation",
+		"isAlternateForme": true
+	  },
+	  "Delta Muk (Whismur)": {
+	    t1: 'Ground',
+	    bs: {
+	      hp: 105,
+	      at: 105,
+	      df: 75,
+	      sa: 65,
+	      sd: 100,
+	      sp: 50
+	    },
+	    w: 30.0,
+	    ab: "Regurgitation",
+		"isAlternateForme": true
+	  },
+	  "Delta Muk (Natu)": {
+	    t1: 'Ground',
+	    bs: {
+	      hp: 105,
+	      at: 105,
+	      df: 75,
+	      sa: 65,
+	      sd: 100,
+	      sp: 50
+	    },
+	    w: 30.0,
+	    ab: "Regurgitation",
+		"isAlternateForme": true
+	  },
+      "Delta Wooper": {
+   	    t1: 'Grass',
+   	    t2: 'Fire',
+   	    bs: {
+   	      hp: 55,
+          at: 45,
+          df: 45,
+          sa: 25,
+          sd: 25,
+          sp: 15
+        },
+        w: 8.5
+      },
+	  "Delta Quagsire": {
+	    t1: 'Grass',
+	    t2: 'Fire',
+	    bs: {
+	      hp: 95,
+	      at: 85,
+	      df: 85,
+	      sa: 65,
+	      sd: 65,
+	      sp: 35
+	    },
+	    w: 75.0
+	  },
+	  "Delta Munchlax": {
+	    t1: 'Grass',
+	    bs: {
+	      hp: 135,
+	      at: 85,
+	      df: 40,
+	      sa: 40,
+	      sd: 85,
+	      sp: 5
+	    },
+	    w: 105.0
+	  },
+	  "Delta Snorlax": {
+	    t1: 'Grass',
+	    bs: {
+	      hp: 160,
+	      at: 110,
+	      df: 65,
+	      sa: 65,
+	      sd: 110,
+	      sp: 30
+	    },
+	    w: 460.0
+	  },
+	  "Delta Misdreavus": {
+	    t1: 'Ice',
+		t2: 'Fairy',
+	    bs: {
+	      hp: 60,
+	      at: 60,
+	      df: 60,
+	      sa: 85,
+	      sd: 85,
+	      sp: 85
+	    },
+	    w: 1.0
+	  },
+	  "Delta Mismagius": {
+	    t1: 'Ice',
+		t2: 'Fairy',
+	    bs: {
+	      hp: 60,
+	      at: 60,
+	      df: 60,
+	      sa: 105,
+	      sd: 105,
+	      sp: 105
+	    },
+	    w: 4.4
+	  },
+	  "Delta Cyndaquil": {
+		 t1: 'Electric',
+		 bs: {
+		   hp: 39,
+		   at: 52,
+		   df: 43,
+		   sa: 60,
+		   sd: 50,
+		   sp: 65
+		 },
+		 w: 7.9
+	  },
+	  "Delta Quilava": {
+		 t1: 'Electric',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 58,
+		   at: 64,
+		   df: 58,
+		   sa: 80,
+		   sd: 65,
+		   sp: 80
+		 },
+		 w: 28.5
+	  },
+	  "Delta Typhlosion": {
+		 t1: 'Electric',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 78,
+		   at: 84,
+		   df: 78,
+		   sa: 109,
+		   sd: 85,
+		   sp: 100
+		 },
+		 w: 159.0,
+		 formes: [
+		     "Delta Typhlosion",
+		     "Delta Typhlosion-Mega"
+		   ]
+	  },
+	  "Delta Treecko": {
+		 t1: 'Normal',
+		 t2: 'Fighting',
+		 bs: {
+		   hp: 40,
+		   at: 45,
+		   df: 35,
+		   sa: 65,
+		   sd: 55,
+		   sp: 70
+		 },
+		 w: 5.0
+	  },
+	  "Delta Grovyle": {
+		 t1: 'Normal',
+		 t2: 'Fighting',
+		 bs: {
+		   hp: 50,
+		   at: 65,
+		   df: 45,
+		   sa: 85,
+		   sd: 65,
+		   sp: 95
+		 },
+		 w: 21.6
+	  },
+	  "Delta Sceptile": {
+		 t1: 'Dragon',
+		 t2: 'Fighting',
+		 bs: {
+		   hp: 70,
+		   at: 85,
+		   df: 65,
+		   sa: 105,
+		   sd: 85,
+		   sp: 120
+		 },
+		 w: 52.2
+	  },
+	  "Delta Torchic": {
+		 t1: 'Psychic',
+		 bs: {
+		   hp: 45,
+		   at: 60,
+		   df: 40,
+		   sa: 70,
+		   sd: 50,
+		   sp: 45
+		 },
+		 w: 2.5
+	  },
+	  "Delta Combusken": {
+		 t1: 'Psychic',
+		 bs: {
+		   hp: 60,
+		   at: 85,
+		   df: 60,
+		   sa: 85,
+		   sd: 60,
+		   sp: 55
+		    },
+		 w: 19.5
+	  },
+	  "Delta Blaziken": {
+		 t1: 'Psychic',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 80,
+		   at: 120,
+		   df: 70,
+		   sa: 110,
+		   sd: 70,
+		   sp: 80
+		 },
+		 w: 52.0
+	  },
+	  "Delta Turtwig": {
+		 t1: 'Water',
+		 t2: 'Ground',
+		 bs: {
+		   hp: 55,
+		   at: 68,
+		   df: 64,
+		   sa: 45,
+		   sd: 55,
+		   sp: 31
+		 },
+		 w: 10.2
+	  },
+	   "Delta Grotle": {
+	     t1: 'Water',
+	     t2: 'Ground',
+	     bs: {
+	       hp: 75,
+	       at: 89,
+	       df: 85,
+	       sa: 55,
+	       sd: 65,
+	       sp: 36
+	     },
+	     w: 97.0
+	  },
+	  "Delta Torterra": {
+		 t1: 'Water',
+		 t2: 'Ground',
+		 bs: {
+		   hp: 95,
+		   at: 109,
+		   df: 105,
+		   sa: 75,
+		   sd: 85,
+		   sp: 56
+		 },
+		 w: 310.0
+	  },
+	  "Delta Snivy": {
+		 t1: 'Water',
+		 bs: {
+		   hp: 45,
+		   at: 45,
+		   df: 55,
+		   sa: 45,
+		   sd: 55,
+		   sp: 63
+		 },
+		 w: 8.1
+	  },
+	  "Delta Servine": {
+		 t1: 'Water',
+		 bs: {
+		   hp: 60,
+		   at: 60,
+		   df: 75,
+		   sa: 60,
+		   sd: 75,
+		   sp: 83
+		 },
+		 w: 16.0
+	  },
+	  "Delta Serperior": {
+		 t1: 'Water',
+		 t2: 'Dragon',
+		 bs: {
+		   hp: 75,
+		   at: 75,
+		   df: 95,
+		   sa: 75,
+		   sd: 95,
+		   sp: 113
+		 },
+		 w: 63.0
+	  },
+	  "Delta Froakie": {
+		 t1: 'Grass',
+		 bs: {
+		   hp: 41,
+		   at: 56,
+		   df: 40,
+		   sa: 62,
+		   sd: 44,
+		   sp: 71
+		 },
+		 w: 7.0
+	  },
+	  "Delta Frogadier": {
+		 t1: 'Grass',
+		 bs: {
+		   hp: 54,
+		   at: 63,
+		   df: 52,
+		   sa: 83,
+		   sd: 56,
+		   sp: 97
+		 },
+		 w: 10.9
+	  },
+	  "Delta Greninja": {
+		 t1: 'Grass',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 72,
+		   at: 95,
+		   df: 67,
+		   sa: 103,
+		   sd: 71,
+		   sp: 122
+		 },
+		 w: 40.0
+	  },
+	  "Delta Pidgey": {
+		 t1: 'Dark',
+		 t2: 'Dragon',
+		 bs: {
+		   hp: 40,
+		   at: 45,
+		   df: 40,
+		   sa: 35,
+		   sd: 35,
+		   sp: 56
+		 },
+		 w: 1.8
+	  },
+	  "Delta Pidgeotto": {
+		 t1: 'Dark',
+		 t2: 'Dragon',
+		 bs: {
+		   hp: 63,
+		   at: 60,
+		   df: 55,
+		   sa: 50,
+		   sd: 50,
+		   sp: 71
+		 },
+		 w: 30.0
+	  },
+	  "Delta Pidgeot": {
+		  t1: 'Dark',
+		  t2: 'Dragon',
+		  bs: {
+		    hp: 83,
+		    at: 80,
+		    df: 75,
+		    sa: 70,
+		    sd: 70,
+		    sp: 91
+		  },
+		  w: 39.5,
+		  formes: [
+		      "Delta Pidgeot",
+		      "Delta Pidgeot-Mega"
+		    ]
+	   },
+	   "Delta Diglett": {
+		 t1: 'Ice',
+		 t2: 'Normal',
+		 bs: {
+		   hp: 10,
+		   at: 55,
+		   df: 25,
+		   sa: 35,
+		   sd: 45,
+		   sp: 95
+		 },
+		 w: 0.8
+	  },
+	  "Delta Dugtrio": {
+		 t1: 'Ice',
+		 t2: 'Normal',
+		 bs: {
+		   hp: 35,
+		   at: 80,
+		   df: 50,
+		   sa: 50,
+		   sd: 70,
+		   sp: 120
+		 },
+		 w: 33.3
+	  },
+	  "Delta Growlithe": {
+		 t1: 'Normal',
+		 t2: 'Dragon',
+		 bs: {
+		   hp: 55,
+		   at: 70,
+		   df: 45,
+		   sa: 70,
+		   sd: 50,
+		   sp: 60
+		 },
+		 w: 19.0
+	  },
+	  "Delta Arcanine": {
+		 t1: 'Normal',
+		 t2: 'Dragon',
+		 bs: {
+		   hp: 90,
+		   at: 110,
+		   df: 80,
+		   sa: 100,
+		   sd: 80,
+		   sp: 95
+		 },
+		 w: 155.0
+	  },
+	  "Delta Geodude": {
+		 t1: 'Psychic',
+		 t2: 'Rock',
+		 bs: {
+		   hp: 40,
+		   at: 80,
+		   df: 100,
+		   sa: 30,
+		   sd: 30,
+		   sp: 20
+		 },
+		 w: 20.0
+	  },
+	  "Delta Graveler": {
+		 t1: 'Psychic',
+		 t2: 'Rock',
+		 bs: {
+		   hp: 55,
+		   at: 95,
+		   df: 115,
+		   sa: 45,
+		   sd: 45,
+		   sp: 35
+		 },
+		 w: 105.0
+	  },
+	  "Delta Golem": {
+		 t1: 'Psychic',
+		 t2: 'Rock',
+		 bs: {
+		   hp: 80,
+		   at: 110,
+		   df: 130,
+		   sa: 55,
+		   sd: 65,
+		   sp: 45,
+		   "sl": 55
+		 },
+		 w: 300.0
+	  },
+	  "Delta Tentacool": {
+		 t1: 'Grass',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 40,
+		   at: 40,
+		   df: 35,
+		   sa: 50,
+		   sd: 100,
+		   sp: 70
+		 },
+		 w: 45.5
+	  },
+	  "Delta Tentacruel": {
+		 t1: 'Grass',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 80,
+		   at: 70,
+		   df: 65,
+		   sa: 80,
+		   sd: 120,
+		   sp: 100
+		 },
+		 w: 55.0
+	  },
+	  "Delta Doduo": {
+		 t1: 'Psychic',
+		 bs: {
+		   hp: 35,
+		   at: 85,
+		   df: 45,
+		   sa: 35,
+		   sd: 35,
+		   sp: 75,
+		   "sl": 35
+		 },
+		 w: 39.2
+	  },
+	  "Delta Dodrio": {
+		  t1: 'Psychic',
+		  bs: {
+		    hp: 60,
+		    at: 110,
+		    df: 70,
+		    sa: 60,
+		    sd: 60,
+		    sp: 100
+		},
+		w: 85.2
+	  },
+	  "Delta Tangela": {
+		 t1: 'Ground',
+		  bs: {
+		   hp: 65,
+		   at: 55,
+		   df: 115,
+		   sa: 100,
+		   sd: 40,
+		   sp: 60
+		 },
+		 w: 35.0
+	  },
+	  "Delta Tangrowth": {
+		 t1: 'Ground',
+		 t2: 'Fighting',
+		 bs: {
+		   hp: 100,
+		   at: 100,
+		   df: 125,
+		   sa: 110,
+		   sd: 50,
+		   sp: 50
+		 },
+		 w: 128.6
+	  },
+	  "Delta Ditto": {
+		 t1: 'Water',
+		 bs: {
+		   hp: 48,
+		   at: 48,
+		   df: 48,
+		   sa: 48,
+		   sd: 48,
+		   sp: 48
+		 },
+		 w: 4.0
+	  },
+	  "Delta Kabuto": {
+		 t1: 'Bug',
+		 t2: 'Dark',
+		 bs: {
+		   hp: 30,
+		   at: 80,
+		   df: 90,
+		   sa: 55,
+		   sd: 45,
+		   sp: 55
+		 },
+		 w: 11.5
+	  },
+	  "Delta Kabutops": {
+		 t1: 'Bug',
+		 t2: 'Dark',
+		 bs: {
+		   hp: 60,
+		   at: 115,
+		   df: 105,
+		   sa: 65,
+		   sd: 70,
+		   sp: 80
+		 },
+		 w: 40.5
+	  },
+	  "Delta Dratini": {
+		 t1: 'Electric',
+		 t2: 'Water',
+		 bs: {
+		   hp: 41,
+		   at: 64,
+		   df: 45,
+		   sa: 50,
+		   sd: 50,
+		   sp: 50
+		 },
+		 w: 3.3
+	  },
+	  "Delta Dragonair": {
+		 t1: 'Electric',
+		 t2: 'Water',
+		 bs: {
+		   hp: 61,
+		   at: 84,
+		   df: 65,
+		   sa: 70,
+		   sd: 70,
+		   sp: 70
+		 },
+		 w: 16.5
+	  },
+	  "Delta Dragonite": {
+		 t1: 'Electric',
+		 t2: 'Water',
+		 bs: {
+		   hp: 91,
+		   at: 134,
+		   df: 95,
+		   sa: 100,
+		   sd: 100,
+		   sp: 80
+		 },
+		 w: 210.0
+	  },
+	  "Delta Hoothoot": {
+		 t1: 'Ice',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 60,
+		   at: 30,
+		   df: 30,
+		   sa: 36,
+		   sd: 56,
+		   sp: 50
+		 },
+		 w: 21.2
+	  },
+	  "Delta Noctowl": {
+		 t1: 'Ice',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 100,
+		   at: 50,
+		   df: 50,
+		   sa: 76,
+		   sd: 96,
+		   sp: 70
+		 },
+		 w: 40.8
+	  },
+	  "Delta Chinchou": {
+		 t1: 'Ghost',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 75,
+		   at: 38,
+		   df: 38,
+		   sa: 56,
+		   sd: 56,
+		   sp: 67
+		 },
+		 w: 12.0
+	  },
+	  "Delta Lanturn": {
+		 t1: 'Ghost',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 125,
+		   at: 58,
+		   df: 58,
+		   sa: 76,
+		   sd: 76,
+		   sp: 67
+		 },
+		 w: 22.5
+	  },
+	  "Delta Pichu": {
+		 t1: 'Fairy',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 20,
+		   at: 40,
+		   df: 15,
+		   sa: 35,
+		   sd: 35,
+		   sp: 60
+		 },
+		 w: 2.0
+	  },
+	  "Delta Pikachu": {
+		 t1: 'Fairy',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 35,
+		   at: 55,
+		   df: 30,
+		   sa: 50,
+		   sd: 40,
+		   sp: 90
+		 },
+		 w: 6.0
+	  },
+	  "Delta Raichu": {
+		 t1: 'Fairy',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 60,
+		   at: 90,
+		   df: 55,
+		   sa: 90,
+		   sd: 80,
+		   sp: 100
+		 },
+		 w: 30.0
+	  },
+	  "Delta Aipom": {
+		 t1: 'Ghost',
+		 t2: 'Normal',
+		 bs: {
+		   hp: 55,
+		   at: 70,
+		   df: 55,
+		   sa: 40,
+		   sd: 55,
+		   sp: 85
+		 },
+		 w: 11.5
+	  },
+	  "Delta Ambipom": {
+		 t1: 'Ghost',
+		 t2: 'Normal',
+		 bs: {
+		   hp: 75,
+		   at: 100,
+		   df: 66,
+		   sa: 60,
+		   sd: 66,
+		   sp: 115
+		 },
+		 w: 20.3
+	  },
+	  "Delta Yanma": {
+		 t1: 'Grass',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 65,
+		   at: 65,
+		   df: 45,
+		   sa: 75,
+		   sd: 45,
+		   sp: 95
+		 },
+		 w: 38.0
+	  },
+	  "Delta Yanmega": {
+		 t1: 'Grass',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 86,
+		   at: 76,
+		   df: 86,
+		   sa: 116,
+		   sd: 56,
+		   sp: 95
+	    },
+	    w: 51.5
+	  },
+	  "Delta Girafarig": {
+		 t1: 'Steel',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 70,
+		   at: 80,
+		   df: 65,
+		   sa: 90,
+		   sd: 65,
+		   sp: 85
+		 },
+		 w: 41.5,
+		 formes: [
+		     "Delta Girafarig",
+		     "Delta Girafarig-Mega"
+		   ]
+	  },
+	  "Delta Dunsparce": {
+		 t1: 'Bug',
+		 t2: 'Water',
+		 bs: {
+		   hp: 100,
+		   at: 70,
+		   df: 70,
+		   sa: 65,
+		   sd: 65,
+		   sp: 45
+		 },
+		 w: 14.0
+	  },
+	  "Delta Shuckle": {
+		 t1: 'Fighting',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 20,
+		   at: 10,
+		   df: 230,
+		   sa: 10,
+		   sd: 230,
+		   sp: 5
+		 },
+		 w: 20.5
+	  },
+	  "Delta Remoraid": {
+		 t1: 'Fire',
+		 bs: {
+		   hp: 35,
+		   at: 65,
+		   df: 35,
+		   sa: 65,
+		   sd: 35,
+		   sp: 65
+		 },
+		 w: 12.0
+	  },
+	  "Delta Octillery": {
+		 t1: 'Fire',
+		 bs: {
+		   hp: 75,
+		   at: 105,
+		   df: 75,
+		   sa: 105,
+		   sd: 75,
+		   sp: 45
+		 },
+		 w: 28.5
+	  },
+	  "Delta Elekid": {
+		 t1: 'Rock',
+		 bs: {
+		   hp: 45,
+		   at: 63,
+		   df: 37,
+		   sa: 65,
+		   sd: 55,
+		   sp: 95
+		 },
+		 w: 23.5
+	  },
+	  "Delta Electabuzz": {
+		 t1: 'Rock',
+		 bs: {
+		   hp: 65,
+		   at: 83,
+		   df: 57,
+		   sa: 95,
+		   sd: 85,
+		   sp: 105,
+		   "sl": 85
+		 },
+		 w: 30.0
+	  },
+	  "Delta Electivire": {
+		 t1: 'Electric',
+		 bs: {
+		   hp: 75,
+		   at: 123,
+		   df: 67,
+		   sa: 95,
+		   sd: 85,
+		   sp: 95
+		 },
+		 w: 138.6
+	  },
+	  "Delta Magby": {
+		 t1: 'Water',
+		 bs: {
+		   hp: 45,
+		   at: 75,
+		   df: 37,
+		   sa: 70,
+		   sd: 55,
+		   sp: 83
+		 },
+		 w: 21.4
+	  },
+	  "Delta Magmar": {
+		  t1: 'Water',
+		  bs: {
+			hp: 65,
+			at: 95,
+			df: 57,
+			sa: 100,
+			sd: 85,
+			sp: 93
+		  },
+		  w: 44.5
+	  },
+	  "Delta Magmortar": {
+		 t1: 'Water',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 75,
+		   at: 95,
+		   df: 67,
+		   sa: 125,
+		   sd: 95,
+		   sp: 83
+		 },
+		 w: 68.0
+	  },
+	  "Delta Lotad": {
+		 t1: 'Water',
+		 t2: 'Psychic',
+		 bs: {
+		   hp: 40,
+		   at: 30,
+		   df: 30,
+		   sa: 40,
+		   sd: 50,
+		   sp: 30
+		 },
+		 w: 2.6
+	  },
+	  "Delta Lombre": {
+		 t1: 'Water',
+		 t2: 'Psychic',
+		 bs: {
+		   hp: 60,
+		   at: 50,
+		   df: 50,
+		   sa: 60,
+		   sd: 70,
+		   sp: 50
+		 },
+		 w: 32.5
+	  },
+	  "Delta Ludicolo": {
+		 t1: 'Water',
+		 t2: 'Psychic',
+		 bs: {
+		   hp: 80,
+		   at: 70,
+		   df: 70,
+		   sa: 90,
+		   sd: 100,
+		   sp: 70
+		 },
+		 w: 55.0
+	  },
+	  "Delta Seedot": {
+		 t1: 'Electric',
+		 bs: {
+		   hp: 40,
+		   at: 40,
+		   df: 50,
+		   sa: 30,
+		   sd: 30,
+		   sp: 30
+		 },
+		 w: 4.0
+	  },
+	  "Delta Nuzleaf": {
+		 t1: 'Electric',
+		 bs: {
+		   hp: 70,
+		   at: 70,
+		   df: 40,
+		   sa: 60,
+		   sd: 40,
+		   sp: 60
+		 },
+		 w: 28.0
+	  },
+	  "Delta Shiftry": {
+		 t1: 'Electric',
+		 bs: {
+		   hp: 90,
+		   at: 100,
+		   df: 60,
+		   sa: 90,
+		   sd: 60,
+		   sp: 80
+		 },
+		 w: 59.6
+	  },
+	  "Delta Sableye": {
+		 t1: 'Fire',
+		 t2: 'Rock',
+		 bs: {
+		   hp: 50,
+		   at: 75,
+		   df: 75,
+		   sa: 65,
+		   sd: 65,
+		   sp: 50
+		 },
+		 w: 11.0,
+		 formes: [
+		     "Delta Sableye",
+		     "Delta Sableye-Mega"
+		   ]
+	  },
+	  "Delta Mawile": {
+		 t1: 'Grass',
+		 t2: 'Dark',
+		 bs: {
+		   hp: 50,
+		   at: 85,
+		   df: 85,
+		   sa: 55,
+		   sd: 55,
+		   sp: 50
+		 },
+		 w: 11.5,
+		 formes: [
+		     "Delta Mawile",
+		     "Delta Mawile-Mega"
+		   ]
+	  },
+	  "Delta Aron": {
+		 t1: 'Fire',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 50,
+		   at: 70,
+		   df: 100,
+		   sa: 40,
+		   sd: 40,
+		   sp: 30
+		 },
+		 w: 60.0
+	  },
+	  "Delta Lairon": {
+		 t1: 'Fire',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 60,
+		   at: 90,
+		   df: 140,
+		   sa: 50,
+		   sd: 50,
+		   sp: 40
+		 },
+		 w: 120.0
+	  },
+	  "Delta Aggron": {
+		 t1: 'Fire',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 70,
+		   at: 110,
+		   df: 180,
+		    sa: 60,
+		   sd: 60,
+		   sp: 50
+		 },
+		 w: 360.0
+	  },
+	  "Delta Meditite": {
+		 t1: 'Fairy',
+		 bs: {
+		   hp: 30,
+		   at: 40,
+		   df: 55,
+		   sa: 40,
+		   sd: 55,
+		   sp: 60
+		 },
+		 w: 11.2
+	  },
+	  "Delta Medicham": {
+		 t1: 'Fairy',
+		 t2: 'Ground',
+		 bs: {
+		   hp: 60,
+		   at: 60,
+		   df: 75,
+		   sa: 60,
+		   sd: 75,
+		   sp: 80
+		 },
+		 w: 31.5,
+		 formes: [
+		     "Delta Medicham",
+		     "Delta Medicham-Mega"
+		   ]
+	  },
+	  "Delta Numel": {
+		 t1: 'Poison',
+		 bs: {
+		   hp: 60,
+		   at: 60,
+		   df: 40,
+		   sa: 65,
+		   sd: 45,
+		   sp: 35
+		 },
+		 w: 24.0
+	  },
+	  "Delta Camerupt": {
+		 t1: 'Poison',
+		 bs: {
+		   hp: 70,
+		   at: 100,
+		   df: 70,
+		   sa: 105,
+		   sd: 75,
+		   sp: 40
+		 },
+		 w: 220.0,
+		 formes: [
+		     "Delta Camerupt",
+		     "Delta Camerupt-Mega"
+		   ]
+	  },
+	  "Delta Plusle": {
+		 t1: 'Fire',
+		 t2: 'Fairy',
+		 bs: {
+		   hp: 60,
+		   at: 50,
+		   df: 40,
+		   sa: 85,
+		   sd: 75,
+		   sp: 95
+		 },
+		 w: 4.2
+	  },
+	  "Delta Minun": {
+		 t1: 'Ice',
+		 t2: 'Fairy',
+		 bs: {
+			hp: 60,
+			at: 40,
+			df: 50,
+			sa: 75,
+			sd: 85,
+			sp: 95
+		 },
+		 w: 4.2
+	  },
+	  "Delta Wailmer": {
+		 t1: 'Ice',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 130,
+		   at: 70,
+		   df: 35,
+		   sa: 70,
+		   sd: 35,
+		   sp: 60
+		 },
+		 w: 130.0
+	  },
+	  "Delta Wailord": {
+		 t1: 'Ice',
+		 t2: 'Flying',
+		 bs: {
+		   hp: 170,
+		   at: 90,
+		   df: 45,
+		   sa: 90,
+		   sd: 45,
+		   sp: 60
+		 },
+		 w: 398.0
+	  },
+	  "Delta Feebas": {
+		 t1: 'Ghost',
+		 bs: {
+		   hp: 20,
+		   at: 15,
+		   df: 20,
+		   sa: 10,
+		   sd: 55,
+		   sp: 80
+		 },
+		 w: 7.4
+	  },
+	  "Delta Milotic": {
+		 t1: 'Ghost',
+		 bs: {
+		   hp: 95,
+		   at: 60,
+		   df: 79,
+		   sa: 100,
+		   sd: 125,
+		   sp: 81
+		 },
+		 w: 162.0,
+		 formes: [
+		     "Delta Milotic",
+		     "Delta Milotic-Mega"
+		   ]
+	  },
+	  "Delta Clamperl": {
+		 t1: 'Dragon',
+		 bs: {
+		   hp: 35,
+		   at: 64,
+		   df: 85,
+		   sa: 74,
+		   sd: 55,
+		   sp: 32
+		 },
+		 w: 52.5
+	  },
+	  "Delta Huntail": {
+		 t1: 'Dragon',
+		 t2: 'Dark',
+		 bs: {
+		   hp: 55,
+		   at: 104,
+		   df: 105,
+		   sa: 94,
+		   sd: 75,
+		   sp: 52
+		 },
+		 w: 27.0
+	  },
+	  "Delta Gorebyss": {
+		 t1: 'Dragon',
+		 t2: 'Fairy',
+		 bs: {
+		   hp: 55,
+		   at: 84,
+		   df: 105,
+		   sa: 114,
+		   sd: 75,
+		   sp: 52
+		 },
+		 w: 22.6
+	  },
+	  "Delta Beldum (Spider)": {
+		 t1: 'Ground',
+		 t2: 'Bug',
+		 bs: {
+		   hp: 40,
+		   at: 55,
+		   df: 80,
+		   sa: 35,
+		   sd: 60,
+		   sp: 30
+		 },
+		 w: 47.5
+	  },
+	  "Delta Metang (Spider)": {
+		 t1: 'Ground',
+		 t2: 'Bug',
+		 bs: {
+		   hp: 60,
+		   at: 75,
+		   df: 100,
+		   sa: 55,
+		   sd: 80,
+		   sp: 50
+		 },
+		 w: 101.3
+	  },
+	  "Delta Metagross (Spider)": {
+		 t1: 'Ground',
+		 t2: 'Bug',
+		 bs: {
+		   hp: 80,
+		   at: 135,
+		   df: 130,
+		   sa: 95,
+		   sd: 90,
+		   sp: 70
+		 },
+		 w: 224.0,
+		 formes: [
+		     "Delta Metagross (Spider)",
+		     "Delta Metagross (Spider)-Mega"
+		   ]
+	  },
+	  "Delta Beldum (Ruin)": {
+		 t1: 'Rock',
+		 t2: 'Grass',
+		 bs: {
+		   hp: 40,
+		   at: 55,
+		   df: 80,
+		   sa: 35,
+		   sd: 60,
+		   sp: 30
+		 },
+		 w: 95.2
+	  },
+	  "Delta Metang (Ruin)": {
+		 t1: 'Rock',
+		 t2: 'Grass',
+		 bs: {
+		   hp: 60,
+		   at: 75,
+		   df: 100,
+		   sa: 55,
+		   sd: 80,
+		   sp: 50
+		 },
+		 w: 202.5
+	  },
+	  "Delta Metagross (Ruin)": {
+		 t1: 'Rock',
+		 t2: 'Grass',
+		 bs: {
+		   hp: 80,
+		   at: 135,
+		   df: 130,
+		   sa: 95,
+	       sd: 90,
+	       sp: 70
+		 },
+		 w: 550,
+		 formes: [
+		     "Delta Metagross (Ruin)",
+		     "Delta Metagross (Ruin)-Mega"
+		   ]
+	  },
+	  "Delta Buneary": {
+		 t1: 'Fighting',
+		 bs: {
+		   hp: 55,
+		   at: 66,
+		   df: 44,
+		   sa: 44,
+		   sd: 56,
+		   sp: 85
+		 },
+		 w: 5.5
+	  },
+	  "Delta Lopunny": {
+		 t1: 'Fighting',
+		 bs: {
+		   hp: 65,
+		   at: 76,
+		   df: 84,
+		   sa: 54,
+		   sd: 96,
+		   sp: 105
+		 },
+		 w: 33.3,
+		 formes: [
+		     "Delta Lopunny",
+		     "Delta Lopunny-Mega"
+		   ]
+	  },
+	  "Delta Riolu": {
+		 t1: 'Dark',
+		 bs: {
+		   hp: 40,
+		   at: 70,
+		   df: 40,
+		   sa: 35,
+		   sd: 40,
+		   sp: 60
+		 },
+		 w: 20.2
+	  },
+	  "Delta Lucario": {
+		 t1: 'Dark',
+		 t2: 'Ground',
+		 bs: {
+		   hp: 70,
+		   at: 110,
+		   df: 70,
+		   sa: 115,
+		   sd: 70,
+		   sp: 90
+		 },
+		 w: 54.0,
+		 formes: [
+		     "Delta Lucario",
+		     "Delta Lucario-Mega"
+		   ]
+	  },
+	  "Delta Croagunk": {
+		 t1: 'Fire',
+		 bs: {
+		   hp: 48,
+		   at: 61,
+		   df: 40,
+		   sa: 61,
+		   sd: 40,
+		   sp: 50
+		 },
+		 w: 23.0
+	  },
+	  "Delta Toxicroak": {
+		 t1: 'Fire',
+		 bs: {
+		   hp: 83,
+		   at: 106,
+		   df: 65,
+		   sa: 86,
+		   sd: 65,
+		   sp: 85
+		 },
+		 w: 44.4
+	  },
+	  "Delta Venipede": {
+		 t1: 'Rock',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 30,
+		   at: 45,
+		   df: 59,
+		   sa: 30,
+		   sd: 39,
+		   sp: 57
+		 },
+		 w: 5.3
+	  },
+	  "Delta Whirlipede": {
+		 t1: 'Rock',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 40,
+		   at: 55,
+		   df: 99,
+		   sa: 40,
+		   sd: 79,
+		   sp: 47
+		 },
+		 w: 58.5
+	  },
+	  "Delta Scolipede": {
+		 t1: 'Rock',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 60,
+		   at: 90,
+		   df: 89,
+		   sa: 55,
+		   sd: 69,
+		   sp: 112
+		 },
+		 w: 200.5
+	  },
+	  "Delta Petilil (Water)": {
+		 t1: 'Water',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 45,
+		   at: 35,
+		   df: 50,
+		   sa: 70,
+		   sd: 50,
+		   sp: 30
+		 },
+		 w: 6.6
+	  },
+	  "Delta Lilligant (Water)": {
+		 t1: 'Water',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 70,
+		   at: 60,
+		   df: 75,
+		   sa: 110,
+		   sd: 75,
+		   sp: 90
+		  },
+		  w: 16.3
+	  },
+	  "Delta Petilil (Fairy)": {
+		  t1: 'Fairy',
+		  t2: 'Flying',
+		  bs: {
+			hp: 45,
+			at: 35,
+			df: 50,
+			sa: 70,
+			sd: 50,
+			sp: 30
+		  },
+		  w: 6.6
+	  },
+	  "Delta Lilligant (Fairy)": {
+		  t1: 'Fairy',
+		  t2: 'Flying',
+		  bs: {
+			hp: 70,
+			at: 60,
+			df: 75,
+			sa: 110,
+			sd: 75,
+			sp: 90
+		  },
+		  w: 16.3
+	  },
+	  "Delta Solosis": {
+		 t1: 'Ghost',
+		 t2: 'Rock',
+		 bs: {
+		   hp: 45,
+		   at: 30,
+		   df: 40,
+		   sa: 105,
+		   sd: 50,
+		   sp: 20
+		 },
+		  w: 1.0
+	  },
+	  "Delta Duosion": {
+		 t1: 'Ghost',
+		 t2: 'Rock',
+		 bs: {
+		   hp: 65,
+		   at: 40,
+		   df: 50,
+		   sa: 125,
+		   sd: 60,
+		   sp: 30
+		 },
+		 w: 8.0
+	  },
+	  "Delta Reuniclus": {
+		 t1: 'Ghost',
+		 t2: 'Rock',
+		 bs: {
+		   hp: 110,
+		   at: 65,
+		   df: 75,
+		   sa: 125,
+		   sd: 85,
+		   sp: 30
+		 },
+		 w: 20.1
+	  },
+	  "Delta Darumaka": {
+		 t1: 'Dark',
+		 t2: 'Ghost',
+		 bs: {
+		   hp: 70,
+		   at: 90,
+		   df: 45,
+		   sa: 15,
+		   sd: 45,
+		   sp: 50
+		 },
+		 w: 37.5
+	  },
+	  "Delta Darmanitan": {
+		 t1: 'Dark',
+		 t2: 'Ghost',
+		 bs: {
+		   hp: 105,
+		   at: 140,
+		   df: 55,
+		   sa: 30,
+		   sd: 55,
+		   sp: 95
+		 },
+		 w: 92.9
+	  },
+	  "Delta Maractus": {
+		 t1: 'Steel',
+		 bs: {
+		   hp: 75,
+		   at: 86,
+		   df: 67,
+		   sa: 106,
+		   sd: 67,
+		   sp: 60
+		 },
+		 w: 28.0
+	  },
+	  "Delta Dwebble (Berry)": {
+		 t1: 'Grass',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 50,
+		   at: 65,
+		   df: 85,
+		   sa: 35,
+		   sd: 35,
+		   sp: 55
+		 },
+		 w: 14.5
+	  },
+	  "Delta Crustle (Berry)": {
+		 t1: 'Grass',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 70,
+		   at: 95,
+		   df: 125,
+		   sa: 65,
+		   sd: 75,
+		   sp: 45
+		 },
+		 w: 150.0
+	  },
+	  "Delta Dwebble (Cake)": {
+		 t1: 'Fairy',
+		 t2: 'Normal',
+		 bs: { 
+		   hp: 50,
+		   at: 65,
+		   df: 85,
+		   sa: 35,
+		   sd: 35,
+		   sp: 55
+		 },
+		 w: 14.5
+	  },
+	  "Delta Crustle (Cake)": {
+		 t1: 'Fairy',
+		 t2: 'Normal',
+		 bs: {
+		   hp: 70,
+		   at: 95,
+		   df: 125,
+		   sa: 65,
+		   sd: 75,
+		   sp: 45
+		 },
+		 w: 100.0
+	  },
+	  "Delta Yamask": {
+		 t1: 'Steel',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 38,
+		   at: 30,
+		   df: 85,
+		   sa: 55,
+		   sd: 65,
+		   sp: 30
+		 },
+		 w: 1.5
+	  },
+	  "Delta Cofagrigus": {
+		 t1: 'Steel',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 58,
+		   at: 50,
+		   df: 145,
+		   sa: 95,
+		   sd: 105,
+		   sp: 30
+		 },
+		 w: 76.5
+	  },
+	  "Delta Emolga": {
+		 t1: 'Fire',
+		 t2: 'Dark',
+		 bs: {
+		   hp: 55,
+		   at: 75,
+		   df: 60,
+		   sa: 75,
+		   sd: 60,
+		   sp: 103
+		 },
+		 w: 5.0
+	  },
+	  "Delta Karrablast": {
+		 t1: 'Fairy',
+		 bs: {
+		   hp: 50,
+		   at: 75,
+		   df: 45,
+		   sa: 40,
+		   sd: 45,
+		   sp: 60
+		 },
+		 w: 5.9
+	  },
+	  "Delta Escavalier": {
+		 t1: 'Fairy',
+		 bs: {
+		   hp: 70,
+		   at: 135,
+		   df: 105,
+		   sa: 60,
+		   sd: 105,
+		   sp: 20
+		 },
+		 w: 33.0
+	  },
+	  "Delta Foongus": {
+		 t1: 'Ghost',
+		 t2: 'Dark',
+		 bs: {
+		   hp: 69,
+		   at: 55,
+		   df: 45,
+		   sa: 55,
+		   sd: 55,
+		   sp: 15
+		 },
+		 w: 1.0
+	  },
+	  "Delta Amoonguss": {
+		 t1: 'Ghost',
+		 t2: 'Dark',
+		 bs: {
+		   hp: 114,
+		   at: 85,
+		   df: 70,
+		   sa: 85,
+		   sd: 80,
+		   sp: 30
+		 },
+		 w: 10.5
+	  },
+	  "Delta Litwick": {
+		 t1: 'Fairy',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 50,
+		   at: 30,
+		   df: 55,
+		   sa: 65,
+		   sd: 55,
+		   sp: 20
+		 },
+		 w: 3.1
+	  },
+	  "Delta Lampent": {
+		 t1: 'Fairy',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 60,
+		   at: 40,
+		   df: 60,
+		   sa: 95,
+		   sd: 60,
+		   sp: 55
+		 },
+		 w: 13.0
+	  },
+	  "Delta Chandelure": {
+		 t1: 'Fairy',
+		 t2: 'Fire',
+		 bs: {
+		   hp: 60,
+		   at: 55,
+		   df: 90,
+		   sa: 145,
+		   sd: 90,
+		   sp: 80
+		 },
+		 w: 34.3
+	  },
+	  "Delta Axew": {
+		 t1: 'Water',
+		 bs: {
+		   hp: 46,
+		   at: 87,
+		   df: 60,
+		   sa: 30,
+		   sd: 40,
+		   sp: 57
+		 },
+		 w: 18.0
+	  },
+	  "Delta Fraxure": {
+		 t1: 'Water',
+		 bs: {
+		   hp: 66,
+		   at: 117,
+		   df: 70,
+		   sa: 40,
+		   sd: 50,
+		   sp: 67
+		 },
+		 w: 36.0
+	  },
+	  "Delta Haxorus": {
+		 t1: 'Water',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 76,
+		   at: 147,
+		   df: 90,
+		   sa: 60,
+		   sd: 70,
+		   sp: 97
+		 },
+		 w: 105.5
+	  },
+	  "Delta Golett": {
+		 t1: 'Fighting',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 59,
+		   at: 74,
+		   df: 50,
+		   sa: 35,
+		   sd: 50,
+		   sp: 35
+		 },
+		 w: 92.0
+	  },
+	  "Delta Golurk": {
+		 t1: 'Fighting',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 89,
+		   at: 124,
+		   df: 80,
+		   sa: 55,
+		   sd: 80,
+		   sp: 55
+		 },
+		 w: 330.0
+	  },
+	  "Delta Heatmor": {
+		 t1: 'Poison',
+		 t2: 'Steel',
+		 bs: {
+		   hp: 85,
+		   at: 97,
+		   df: 66,
+		   sa: 105,
+		   sd: 66,
+		   sp: 65
+		 },
+		 w: 58.0
+	  },
+	  "Delta Deino": {
+		 t1: 'Ground',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 52,
+		   at: 65,
+		   df: 50,
+		   sa: 45,
+		   sd: 50,
+		   sp: 38
+		 },
+		 w: 17.3
+	  },
+	  "Delta Zweilous": {
+		 t1: 'Ground',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 72,
+		   at: 85,
+		   df: 70,
+		   sa: 65,
+		   sd: 70,
+		   sp: 58
+		 },
+		 w: 50.0
+	  },
+	  "Delta Hydreigon": {
+		 t1: 'Ground',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 92,
+		   at: 105,
+		   df: 90,
+		   sa: 125,
+		   sd: 90,
+		   sp: 98
+		 },
+		 w: 160.0
+	  },
+	  "Delta Larvesta": {
+		 t1: 'Dark',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 55,
+		   at: 85,
+		   df: 55,
+		   sa: 50,
+		   sd: 55,
+		   sp: 60
+		 },
+		 w: 28.8
+	  },
+	  "Delta Volcarona": {
+		 t1: 'Dark',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 85,
+		   at: 60,
+		   df: 65,
+		   sa: 135,
+		   sd: 105,
+		   sp: 100
+		 },
+		 w: 46.0,
+		 formes: [
+		        "Delta Volcarona",
+		        "Armor D. Volcarona"
+		      ]
+	  },
+	  "Delta Amaura": {
+		 t1: 'Grass',
+		 t2: 'Water',
+		 bs: {
+		   hp: 77,
+		   at: 59,
+		   df: 50,
+		   sa: 67,
+		   sd: 63,
+		   sp: 46
+		 },
+		 w: 25.2
+	  },
+	  "Delta Aurorus": {
+		 t1: 'Grass',
+		 t2: 'Water',
+		 bs: {
+		   hp: 123,
+		   at: 77,
+		   df: 72,
+		   sa: 99,
+		   sd: 92,
+		   sp: 58
+		 },
+		 w: 225.0
+	  },
+	  "Delta Goomy": {
+		 t1: 'Ground',
+		 t2: 'Water',
+		 bs: {
+		   hp: 45,
+		   at: 50,
+		   df: 35,
+		   sa: 55,
+		   sd: 75,
+		   sp: 40
+		 },
+		 w: 2.8
+	  },
+	  "Delta Sliggoo": {
+		 t1: 'Ground',
+		 t2: 'Water',
+		 bs: {
+		   hp: 68,
+		   at: 75,
+		   df: 53,
+		   sa: 83,
+		   sd: 113,
+		   sp: 60
+		 },
+		 w: 17.5
+	  },
+	  "Delta Goodra": {
+		 t1: 'Ground',
+		 t2: 'Water',
+		 bs: {
+		   hp: 90,
+		   at: 100,
+		   df: 70,
+		   sa: 110,
+		   sd: 150,
+		   sp: 80
+		 },
+		 w: 150.5
+	  },
+	  "Delta Regirock": {
+		 t1: 'Ground',
+		 bs: {
+		   hp: 80,
+		   at: 100,
+		   df: 200,
+		   sa: 50,
+		   sd: 100,
+		   sp: 50
+		 },
+		 w: 230.0
+	  },
+	  "Delta Regice": {
+		 t1: 'Water',
+		 bs: {
+		   hp: 80,
+		   at: 50,
+		   df: 100,
+		   sa: 100,
+		    sd: 200,
+		   sp: 50
+		 },
+		 w: 175.0
+	  },
+	  "Delta Registeel": {
+		 t1: 'Fire',
+		 bs: {
+		   hp: 80,
+		   at: 75,
+		   df: 150,
+		   sa: 75,
+		   sd: 150,
+		   sp: 50
+		 },
+		 w: 205.0
+	  },
+	  "Delta Meloetta": {
+		 t1: 'Dark',
+		 t2: 'Fairy',
+		 bs: {
+		   hp: 100,
+		   at: 128,
+		   df: 90,
+		   sa: 77,
+		   sd: 77,
+		   sp: 128
+		 },
+		 w: 6.5,
+		 ab: "Filter",
+		 formes: [
+		   "Delta Meloetta",
+		   "Delta Meloetta-Magician"
+		 ]
+	  },
+	  "Delta Meloetta-Magician": {
+		 t1: 'Dark',
+		 t2: 'Fighting',
+		 bs: {
+		   hp: 100,
+		   at: 77,
+		   df: 77,
+		   sa: 128,
+		   sd: 128,
+		   sp: 90
+		 },
+		 w: 6.5,
+		 ab: "Filter",
+		 "isAlternateForme": true
+	  },
+	  "Delta Hoopa": {
+		 t1: 'Flying',
+		 bs: {
+		   hp: 80,
+		   at: 110,
+		   df: 60,
+		   sa: 150,
+		   sd: 130,
+		   sp: 70
+		 },
+		 w: 9.0
+	  },
+	  "Delta Hoopa-Unbound": {
+		 t1: 'Flying',
+		 bs: {
+		   hp: 80,
+		   at: 160,
+		   df: 60,
+		   sa: 170,
+		   sd: 130,
+		   sp: 80
+		 },
+		 w: 490.0
+	  },
+	  "UFI": {
+		 t1: 'Psychic',
+		 t2: 'Electric',
+		 bs: {
+		   hp: 100,
+		   at: 100,
+		   df: 100,
+		   sa: 100,
+		   sd: 100,
+		   sp: 100
+		 },
+		 w: 9.0
+	  },
+	  "MISSINGNO": {
+		  t1: 'Flying',
+		  t2: 'Normal',
+		  bs: {
+			hp: 33,
+			at: 136,
+			df: 0,
+			sa: 6,
+			sd: 6,
+			sp: 29
+		  },
+		  w: 4.0,
+		  ab: "Glitch"
+	  },
+		  
+	  //New Mega Forms
+	  "Poliwrath-Mega": {
+	    t1: 'Water',
+		t2: 'Fighting',
+	    bs: {
+	      hp: 90,
+	      at: 150,
+	      df: 120,
+	      sa: 70,
+	      sd: 105,
+	      sp: 70
+	    },
+	    w: 54.0,
+	    ab: "No Guard",
+	    isAlternateForm: true
+	  },  
+	  "Marowak-Mega": {
+	    t1: 'Ground',
+		t2: 'Ghost',
+	    bs: {
+	      hp: 60,
+	      at: 135,
+	      df: 120,
+	      sa: 50,
+	      sd: 100,
+	      sp: 60
+	    },
+	    w: 45.0,
+	    ab: "Parental Bond",
+	    isAlternateForm: true
+	  },
+	  "Eevee-Mega": {
+	    t1: 'Normal',
+	    bs: {
+	      hp: 83,
+	      at: 83,
+	      df: 83,
+	      sa: 83,
+	      sd: 83,
+	      sp: 83
+	    },
+	    w: 6.5,
+	    ab: "Protean Maxima",
+	    isAlternateForm: true
+	  },
+	  "Eevee-Vaporeon": {
+		 t1: 'Water',
+		 bs: {
+		   hp: 130,
+		   at: 65,
+		   df: 60,
+		   sa: 110,
+		   sd: 95,
+		   sp: 65,
+		   "sl": 110
+		 },
+		 w: 29.0,
+		 ab: "Water Absorb",
+		 isAlternateForm: true
+	  },
+	  "Eevee-Jolteon": {
+		 t1: 'Electric',
+		 bs: {
+		   hp: 65,
+		   at: 65,
+		   df: 60,
+		   sa: 110,
+		   sd: 95,
+		   sp: 130,
+		   "sl": 110
+		 },
+		 w: 24.5,
+		 ab: "Volt Absorb",
+		 isAlternateForm: true
+	  },
+	  "Eevee-Flareon": {
+	    t1: 'Fire',
+	    bs: {
+	      hp: 65,
+	      at: 130,
+	      df: 60,
+	      sa: 95,
+	      sd: 110,
+	      sp: 65,
+	      "sl": 110
+	    },
+	    w: 25.0,
+	    ab: "Flash Fire",
+		 isAlternateForm: true
+	  },
+	  "Eevee-Espeon": {
+	    t1: 'Psychic',
+	    bs: {
+	      hp: 65,
+	      at: 65,
+	      df: 60,
+	      sa: 130,
+	      sd: 95,
+	      sp: 110
+	    },
+	    w: 26.5,
+		 isAlternateForm: true
+	  },
+	  "Eevee-Umbreon": {
+	    t1: 'Dark',
+	    bs: {
+	      hp: 95,
+	      at: 65,
+	      df: 110,
+	      sa: 60,
+	      sd: 130,
+	      sp: 65
+	    },
+	    w: 27.0,
+		 isAlternateForm: true
+	  },
+	  "Eevee-Leafeon": {
+	    t1: 'Grass',
+	    bs: {
+	      hp: 65,
+	      at: 110,
+	      df: 130,
+	      sa: 60,
+	      sd: 65,
+	      sp: 95
+	    },
+	    w: 25.5,
+	    ab: "Chlorophyll",
+		 isAlternateForm: true
+	  },
+	  "Eevee-Glaceon": {
+	    t1: 'Ice',
+	    bs: {
+	      hp: 65,
+	      at: 60,
+	      df: 110,
+	      sa: 130,
+	      sd: 95,
+	      sp: 65
+	    },
+	    w: 25.9,
+	    ab: "Snow Cloak",
+		 isAlternateForm: true
+	  },
+	  "Eevee-Sylveon": {
+	    t1: 'Fairy',
+	    bs: {
+	      hp: 95,
+	      at: 65,
+	      df: 65,
+	      sa: 110,
+	      sd: 130,
+	      sp: 60
+	    },
+	    w: 23.5,
+		isAlternateForm: true
+	  },
+	  "Meganium-Mega": {
+	    t1: 'Grass',
+		t2: 'Fairy',
+	    bs: {
+	      hp: 80,
+	      at: 82,
+	      df: 140,
+	      sa: 83,
+	      sd: 140,
+	      sp:100 
+	    },
+	    w: 100.5,
+	    ab: "Magic Bounce",
+	    isAlternateForm: true
+	  },
+	  "Typhlosion-Mega": {
+	    t1: 'Fire',
+	    bs: {
+	      hp: 78,
+	      at: 90,
+	      df: 88,
+	      sa: 160,
+	      sd: 110,
+	      sp: 125
+	    },
+	    w: 79.5,
+	    ab: "Hubris",
+	    isAlternateForm: true
+	  },
+	  "Feraligatr-Mega": {
+	    t1: 'Water',
+	    bs: {
+	      hp: 85,
+	      at: 140,
+	      df: 110,
+	      sa: 89,
+	      sd: 103,
+	      sp: 103
+	    },
+	    w: 88.8,
+	    ab: "Tough Claws",
+	    isAlternateForm: true
+	  },
+	  "Sudowoodo-Mega": {
+	    t1: 'Rock',
+		t2: 'Grass',
+	    bs: {
+	      hp: 70,
+	      at: 140,
+	      df: 145,
+	      sa: 40,
+	      sd: 95,
+	      sp: 20
+	    },
+	    w: 38.0,
+	    ab: "Analytic",
+	    isAlternateForm: true
+	  },
+	  "Politoed-Mega": {
+	    t1: 'Water',
+	    bs: {
+	      hp: 90,
+	      at: 75,
+	      df: 95,
+	      sa: 120,
+	      sd: 140,
+	      sp: 80
+	    },
+	    w: 33.9,
+	    ab: "Drizzle",
+	    isAlternateForm: true
+	  },
+	  "Sunflora-Mega (M)": {
+	    t1: 'Grass',
+		t2: 'Fire',
+	    bs: {
+	      hp: 75,
+	      at: 85,
+	      df: 80,
+	      sa: 135,
+	      sd: 105,
+	      sp: 45 
+	    },
+	    w: 8.5,
+	    ab: "Unleafed",
+	    isAlternateForm: true
+	  },
+	  "Sunflora-Mega (F)": {
+	    t1: 'Grass',
+	    bs: {
+	      hp: 75,
+	      at: 85,
+	      df: 80,
+	      sa: 135,
+	      sd: 105,
+	      sp: 45 
+	    },
+	    w: 8.5,
+	    ab: "Unleafed",
+	    isAlternateForm: true
+	  },
+	  "Girafarig-Mega": {
+	    t1: 'Normal',
+		t2: 'Psychic',
+	    bs: {
+	      hp: 70,
+	      at: 100,
+	      df: 85,
+	      sa: 130,
+	      sd: 95,
+	      sp: 85 
+	    },
+	    w: 41.5,
+	    ab: "Spectral Jaws",
+	    isAlternateForm: true
+	  },
+	  "Steelix-Mega (Fire)": {
+	    t1: 'Steel',
+		t2: 'Fire',
+	    bs: {
+	      hp: 75,
+	      at: 135,
+	      df: 225,
+	      sa: 65,
+	      sd: 55,
+	      sp: 55
+	    },
+	    w: 400.0,
+	    ab: "Foundry",
+	    isAlternateForm: true
+	  },
+	  "Magcargo-Mega": {
+	    t1: 'Fire',
+	    bs: {
+	      hp: 50,
+	      at: 70,
+	      df: 100,
+	      sa: 150,
+	      sd: 100,
+	      sp: 50
+	    },
+	    w: 55.0,
+	    ab: "Vaporization",
+	    isAlternateForm: true
+	  },
+	  "Donphan-Mega": {
+	    t1: 'Ground',
+	    bs: {
+	      hp: 90,
+	      at: 150,
+	      df: 150,
+	      sa: 60,
+	      sd: 100,
+	      sp: 50
+	    },
+	    w: 120.0,
+	    ab: "Irrelephant",
+	    isAlternateForm: true
+	  },
+	  "Miltank-Mega": {
+	    t1: 'Normal',
+	    bs: {
+	      hp: 95,
+	      at: 125,
+	      df: 145,
+	      sa: 40,
+	      sd: 115,
+	      sp: 70
+	    },
+	    w: 75.5,
+	    ab: "Pendulum",
+	    isAlternateForm: true
+	  },
+	  "Shiftry-Mega": {
+	    t1: 'Grass',
+		t2: 'Dark',
+	    bs: {
+	      hp: 90,
+	      at: 135,
+	      df: 70,
+	      sa: 125,
+	      sd: 60,
+	      sp: 100
+	    },
+	    w: 59.6,
+	    ab: "Shadow Dance",
+	    isAlternateForm: true
+	  },
+	  "Flygon-Mega": {
+	    t1: 'Bug',
+		t2: 'Dragon',
+	    bs: {
+	      hp: 80,
+	      at: 110,
+	      df: 90,
+	      sa: 140,
+	      sd: 80,
+	      sp: 120
+	    },
+	    w: 82.0,
+	    ab: "Amplifier",
+	    isAlternateForm: true
+	  },
+	  "Cacturne-Mega": {
+	    t1: 'Grass',
+		t2: 'Dark',
+	    bs: {
+	      hp: 70,
+	      at: 145,
+	      df: 70,
+	      sa: 145,
+	      sd: 70,
+	      sp: 75
+	    },
+	    w: 77.4,
+	    ab: "Sand Rush",
+	    isAlternateForm: true
+	  },
+	  "Crawdaunt-Mega": {
+	    t1: 'Water',
+		t2: 'Dark',
+	    bs: {
+	      hp: 63,
+	      at: 145,
+	      df: 95,
+	      sa: 100,
+	      sd: 85,
+	      sp: 80 
+	    },
+	    w: 32.8,
+	    ab: "Adaptability",
+	    isAlternateForm: true
+	  },
+	  "Milotic-Mega": {
+	    t1: 'Water',
+		t2: 'Fairy',
+	    bs: {
+	      hp: 95,
+	      at: 70,
+	      df: 109,
+	      sa: 130,
+	      sd: 155,
+	      sp: 81
+	    },
+	    w: 162.0,
+	    ab: "Prism Guard",
+	    isAlternateForm: true
+	  },
+	  "Jirachi-Mega": {
+	    t1: 'Steel',
+		t2: 'Psychic',
+	    bs: {
+	      hp: 100,
+	      at: 100,
+	      df: 140,
+	      sa: 130,
+	      sd: 115,
+	      sp: 115
+	    },
+	    w: 1.1,
+	    ab: "Periodic Orbit",
+	    isAlternateForm: true
+	  },
+	  "Chatot-Mega": {
+	    t1: 'Normal',
+		t2: 'Flying',
+	    bs: {
+	      hp: 76,
+	      at: 65,
+	      df: 55,
+	      sa: 147,
+	      sd: 52,
+	      sp: 116 
+	    },
+	    w: 1.9,
+	    ab: "Amplifier",
+	    isAlternateForm: true
+	  },
+	  "Spiritomb-Mega": {
+	    t1: 'Ghost',
+		t2: 'Dark',
+	    bs: {
+	      hp: 50,
+	      at: 142,
+	      df: 128,
+	      sa: 133,
+	      sd: 112,
+	      sp: 20
+	    },
+	    w: 108.0,
+	    ab: "Tough Claws",
+	    isAlternateForm: true
+	  },
+	  "Froslass-Mega": {
+	    t1: 'Ice',
+		t2: 'Ghost',
+	    bs: {
+	      hp: 70,
+	      at: 80 ,
+	      df: 85,
+	      sa: 120,
+	      sd: 105,
+	      sp:  120
+	    },
+	    w: 26.6,
+	    ab: "Fur Coat",
+	    isAlternateForm: true
+	  },
+	  "Primal Regigigas": {
+	    t1: 'Normal',
+	    bs: {
+	      hp: 110,
+	      at: 195,
+	      df: 140,
+	      sa: 95,
+	      sd: 100,
+	      sp: 100
+	    },
+	    w: 420.0,
+	    ab: "Unaware",
+		"isAlternateForme": true
+	  },
+	  "Primal Giratina": {
+	    t1: 'Ghost',
+		t2: 'Dragon',
+	    bs: {
+	      hp: 150,
+	      at: 135,
+	      df: 135,
+	      sa: 135,
+	      sd: 135,
+	      sp: 130 
+	    },
+	    w: 750.0,
+	    ab: "Omnitype",
+		"isAlternateForme": true
+	  },
+	  "Primal Arceus": {
+	    t1: 'Normal',
+		t2: 'Dragon',
+	    bs: {
+	      hp: 120,
+	      at: 145,
+	      df: 135,
+	      sa: 145,
+	      sd: 135,
+	      sp: 145 
+	    },
+	    w: 320.0,
+	    ab: "Ancient Presence",
+		"isAlternateForme": true
+	  },
+	  "Zebstrika-Mega": {
+	    t1: 'Electric',
+		t2: 'Fairy',
+	    bs: {
+	      hp: 75,
+	      at: 100,
+	      df: 63,
+	      sa: 131,
+	      sd: 83,
+	      sp: 141
+	    },
+	    w: 79.5,
+	    ab: "Competitive",
+	    isAlternateForm: true
+	  },
+	  "Zoroark-Mega": {
+	    t1: 'Dark',
+	    bs: {
+	      hp: 60,
+	      at: 130,
+	      df: 100,
+	      sa: 145,
+	      sd: 80,
+	      sp: 95
+	    },
+	    w: 81.1,
+	    ab: "Trace",
+	    isAlternateForm: true
+	  },
+	  "Gothitelle-Mega": {
+	    t1: 'Psychic',
+		t2: 'Dark',
+	    bs: {
+	      hp: 70,
+	      at: 55,
+	      df: 125,
+	      sa: 125,
+	      sd: 150,
+	      sp: 65 
+	    },
+	    w: 44.0,
+	    ab: "Ethereal Shroud",
+	    isAlternateForm: true
+	  },
+	  "Reuniclus-Mega": {
+	    t1: 'Psychic',
+	    bs: {
+	      hp: 110,
+	      at: 80,
+	      df: 65,
+	      sa: 160,
+	      sd: 90,
+	      sp: 80
+	    },
+	    w: 20.1,
+	    ab: "Speed Swap",
+	    isAlternateForm: true
+	  },
+	  "Haxorus-Mega": {
+	    t1: 'Dragon',
+		t2: 'Steel',
+	    bs: {
+	      hp: 76,
+	      at: 182,
+	      df: 130,
+	      sa: 80,
+	      sd: 90,
+	      sp: 82
+	    },
+	    w: 105.5,
+	    ab: "Weak Armor",
+	    isAlternateForm: true
+	  },
+	  "Cryogonal-Mega": {
+	    t1: 'Ice',
+	    bs: {
+	      hp: 70,
+	      at: 50,
+	      df: 65,
+	      sa: 115,
+	      sd: 150,
+	      sp: 135
+	    },
+	    w: 148.0,
+	    ab: "Sleet",
+	    isAlternateForm: true
+	  },
+	  "Stunfisk-Mega": {
+	    t1: 'Ground',
+		t2: 'Electric',
+	    bs: {
+	      hp: 109,
+	      at: 76,
+	      df: 104,
+	      sa: 91,
+	      sd: 134,
+	      sp: 57
+	    },
+	    w: 11.0,
+	    ab: "Athenian",
+	    isAlternateForm: true
+	  },
+	  "Bisharp-Mega": {
+	    t1: 'Dark',
+		t2: 'Steel',
+	    bs: {
+	      hp: 65,
+	      at: 145,
+	      df: 125,
+	      sa: 60,
+	      sd: 85,
+	      sp: 105 
+	    },
+	    w: 70.0,
+	    ab: "Moxie",
+	    isAlternateForm: true
+	  },
+	  "Hydreigon-Mega": {
+	    t1: 'Dark',
+		t2: 'Dragon',
+	    bs: {
+	      hp: 92,
+	      at: 130,
+	      df: 105,
+	      sa: 170,
+	      sd: 105,
+	      sp: 98
+	    },
+	    w: 160.0,
+	    ab: "Lernean",
+	    isAlternateForm: true
+	  },
+	  "Delta Venusaur-Mega": {
+	    t1: 'Fairy',
+	    t2: 'Psychic',
+	    bs: {
+	      hp: 80,
+	      at: 100,
+	      df: 123,
+	      sa: 122,
+	      sd: 120,
+	      sp: 80
+	    },
+	    w: 155.5,
+	    ab: "Hubris",
+	    isAlternateForm: true
+	  },
+	  "Delta Charizard-Mega": {
+	    t1: 'Ghost',
+	    t2: 'Dragon',
+	    bs: {
+	      hp: 78,
+	      at: 104,
+	      df: 78,
+	      sa: 159,
+	      sd: 115,
+	      sp: 100
+	    },
+	    w: 100.5,
+	    ab: "Noctem",
+	    isAlternateForm: true
+	  },
+	  "Delta Blastoise-Mega": {
+	    t1: 'Dark',
+		t2: 'Fighting',
+	    bs: {
+	      hp: 79,
+	      at: 103,
+	      df: 120,
+	      sa: 135,
+	      sd: 115,
+	      sp: 78
+	    },
+	    w: 101.1,
+	    ab: "Mega Launcher",
+	    isAlternateForm: true
+	  },
+	  "Delta Bisharp-Mega": {
+	    t1: 'Flying',
+		t2: 'Fighting',
+	    bs: {
+	      hp: 79,
+	      at: 165,
+	      df: 100,
+	      sa: 70,
+	      sd: 60,
+	      sp: 130
+	    },
+	    w: 70.0,
+	    ab: "Technician",
+	    isAlternateForm: true
+	  },
+	  "Delta Gardevoir-Mega": {
+	    t1: 'Electric',
+	    t2: 'Ice',
+	    bs: {
+	      hp: 68,
+	      at: 85,
+	      df: 65,
+	      sa: 165,
+	      sd: 135,
+	      sp: 100
+	    },
+	    w: 48.4,
+	    ab: "Lightning Rod",
+	    isAlternateForm: true
+	  },
+	  "Delta Gallade-Mega": {
+	    t1: 'Electric',
+	    t2: 'Ice',
+	    bs: {
+	      hp: 68,
+	      at: 165,
+	      df: 95,
+	      sa: 65,
+	      sd: 115,
+	      sp: 110
+	    },
+	    w: 56.4,
+	    ab: "Volt Absorb",
+	    isAlternateForm: true
+	  },
+	  "Delta Sunflora-Mega": {
+	    t1: 'Fire',
+		t2: 'Poison',
+	    bs: {
+	      hp: 75,
+	      at: 85,
+	      df: 80,
+	      sa: 135,
+	      sd: 105,
+	      sp: 45
+	    },
+	    w: 8.5,
+	    ab: "Chlorofury",
+	    isAlternateForm: true
+	  },
+	  "Delta Scizor-Mega": {
+	    t1: 'Ice',
+	    t2: 'Fighting',
+	    bs: {
+	      hp: 70,
+	      at: 150,
+	      df: 140,
+	      sa: 65,
+	      sd: 100,
+	      sp: 75
+	    },
+	    w: 125.0,
+	    ab: "Adaptability",
+	    isAlternateForm: true
+	  },
+	  "Delta Glalie-Mega": {
+	    t1: 'Fire',
+		t2: 'Rock',
+	    bs: {
+	      hp: 80,
+	      at: 120,
+	      df: 80,
+	      sa: 120,
+	      sd: 80,
+	      sp: 100
+	    },
+	    w: 256.5,
+	    ab: "Reckless",
+	    isAlternateForm: true
+	  },
+	  "Delta Froslass-Mega": {
+	    t1: 'Fire',
+		t2: 'Ghost',
+	    bs: {
+	      hp: 70,
+	      at: 80,
+	      df: 85,
+	      sa: 120,
+	      sd: 105,
+	      sp: 120
+	    },
+	    w: 26.6,
+	    ab: "Magic Guard",
+	    isAlternateForm: true
+	  },
+	  "Delta Typhlosion-Mega": {
+	    t1: 'Electric',
+		t2: 'Steel',
+	    bs: {
+	      hp: 78,
+	      at: 90,
+	      df: 88,
+	      sa: 160,
+	      sd: 110,
+	      sp: 125
+	    },
+	    w: 159.0,
+	    ab: "Supercell",
+	    isAlternateForm: true
+	  },
+	  "Delta Pidgeot-Mega": {
+	    t1: 'Dark',
+		t2: 'Dragon',
+	    bs: {
+	      hp: 83,
+	      at: 80,
+	      df: 80,
+	      sa: 135,
+	      sd: 80,
+	      sp: 121
+	    },
+	    w: 39.5,
+	    ab: "Intimidate",
+	    isAlternateForm: true
+	  },
+	  "Delta Girafarig-Mega": {
+	    t1: 'Steel',
+		t2: 'Poison',
+	    bs: {
+	      hp: 70,
+	      at: 100,
+	      df: 95,
+	      sa: 130,
+	      sd: 95,
+	      sp: 85
+	    },
+	    w: 41.5,
+	    ab: "Intimidate",
+	    isAlternateForm: true
+	  },
+	  "Delta Sableye-Mega": {
+	    t1: 'Fire',
+		t2: 'Rock',
+	    bs: {
+	      hp: 50,
+	      at: 85,
+	      df: 125,
+	      sa: 85,
+	      sd: 115,
+	      sp: 20
+	    },
+	    w: 11.0,
+	    ab: "Dry Skin",
+	    isAlternateForm: true
+	  },
+	  "Delta Mawile-Mega": {
+	    t1: 'Grass',
+		t2: 'Dark',
+	    bs: {
+	      hp: 50,
+	      at: 105,
+	      df: 125,
+	      sa: 55,
+	      sd: 95,
+	      sp: 50
+	    },
+	    w: 11.5,
+	    ab: "Arena Trap",
+	    isAlternateForm: true
+	  },
+	  "Delta Medicham-Mega": {
+	    t1: 'Fairy',
+		t2: 'Ground',
+	    bs: {
+	      hp: 60,
+	      at: 100,
+	      df: 85,
+	      sa: 80,
+	      sd: 85,
+	      sp: 100
+	    },
+	    w: 31.5,
+	    ab: "Athenian",
+	    isAlternateForm: true
+	  },
+	  "Delta Camerupt-Mega": {
+	    t1: 'Poison',
+	    bs: {
+	      hp: 70,
+	      at: 120,
+	      df: 100,
+	      sa: 145,
+	      sd: 105,
+	      sp: 20
+	    },
+	    w: 220.0,
+	    ab: "Venomous",
+	    isAlternateForm: true
+	  },
+	  "Delta Milotic-Mega": {
+	    t1: 'Ghost',
+	    bs: {
+	      hp: 95,
+	      at: 70,
+	      df: 109,
+	      sa: 130,
+	      sd: 155,
+	      sp: 81
+	    },
+	    w: "162.0",
+	    ab: "Absolution",
+	    isAlternateForm: true
+	  },
+	  "Delta Metagross-Mega (Spider)": {
+	    t1: 'Ground',
+		t2: 'Bug',
+	    bs: {
+	      hp: 80,
+	      at: 145,
+	      df: 150,
+	      sa: 105,
+	      sd: 110,
+	      sp: 110
+	    },
+	    w: 224,
+	    ab: "Mold Breaker",
+	    isAlternateForm: true
+	  },
+	  "Delta Metagross-Mega (Ruin)": {
+	    t1: 'Rock',
+		t2: 'Grass',
+	    bs: {
+	      hp: 80,
+	      at: 145,
+	      df: 150,
+	      sa: 105,
+	      sd: 110,
+	      sp: 110
+	    },
+	    w: 224,
+	    ab: "Rock Head",
+	    isAlternateForm: true
+	  },
+	  "Delta Lopunny-Mega": {
+	    t1: 'Psychic',
+		t2: 'Fighting',
+	    bs: {
+	      hp: 65,
+	      at: 136,
+	      df: 94,
+	      sa: 54,
+	      sd: 96,
+	      sp: 135
+	    },
+	    w: 33.3,
+	    ab: "Infiltrator",
+	    isAlternateForm: true
+	  },
+	  "Delta Lucario-Mega": {
+	    t1: 'Dark',
+		t2: 'Ground',
+	    bs: {
+	      hp: 70,
+	      at: 145,
+	      df: 88,
+	      sa: 140,
+	      sd: 70,
+	      sp: 112
+	    },
+	    w: 54.0,
+	    ab: "Defiant",
+	    isAlternateForm: true
+	  },
+	  //Other
+	  "Shadow Mewtwo": {
+		t1: 'Psychic',
+		t2: 'Dark',
+		bs: {
+		   hp: 106,
+		   at: 110,
+		   df: 90,
+		   sa: 154,
+		   sd: 90,
+		   sp: 130
+		 },
+		 w: 6.5,
+		 ab: "Intimidate",
+		 formes: [
+		   "Shadow Mewtwo",
+		   "Shadow Mewtwo-Mega-X"
+		 ]
+	  },
+	  "Shadow Mewtwo-Mega-X": {
+		t1: 'Psychic',
+		t2: 'Fighting',
+		bs: {
+		   hp: 106,
+		   at: 190,
+		   df: 100,
+		   sa: 154,
+		   sd: 100,
+		   sp: 130
+		 },
+		 w: 6.5,
+		 ab: "Shadow Synergy",
+		 isAlternateForm: true
+	  },
+	  "Armor Tyranitar": {
+		 t1: 'Rock',
+		 t2: 'Dark',
+		 bs: {
+		   hp: 100,
+		   at: 134,
+		   df: 143,
+		   sa: 95,
+		   sd: 130,
+		   sp: 61
+		 },
+		 w: 202.0,
+		 ab: "Sand Stream",
+		 isAlternateForm: true
+	  },
+	  "Armor Flygon": {
+		 t1: 'Ground',
+		 t2: 'Dragon',
+		 bs: {
+		   hp: 80,
+		   at: 100,
+		   df: 103,
+		   sa: 80,
+		   sd: 103,
+		   sp: 100
+		 },
+		 w: 82.0,
+		 ab: "Levitate",
+		 isAlternateForm: true
+	  },
+	  "Armor Leavanny": {
+		 t1: 'Bug',
+		 t2: 'Grass',
+		 bs: {
+		   hp: 75,
+		   at: 103,
+		   df: 112,
+		   sa: 70,
+		   sd: 98,
+		   sp: 92
+		 },
+		 w: 20.5,
+		 isAlternateForm: true
+	  },
+	  "Armor Zekrom": {
+		 t1: 'Dragon',
+		 t2: 'Electric',
+		 bs: {
+		   hp: 100,
+		   at: 150,
+		   df: 156,
+		   sa: 120,
+		   sd: 130,
+		   sp: 90
+		 },
+		 w: 345.0,
+		 ab: "Teravolt",
+		 isAlternateForm: true
+	  },
+	  "Armor D. Volcarona": {
+		 t1: 'Dark',
+		 t2: 'Poison',
+		 bs: {
+		   hp: 85,
+		   at: 60,
+		   df: 90,
+		   sa: 135,
+		   sd: 130,
+		   sp: 100
+		 },
+		 w: 46.0,
+		 isAlternateForm: true
+	  },
+      
 });
 var SM = util_1.extend(true, {}, XY, {
     'Alakazam-Mega': { bs: { sd: 105 } },

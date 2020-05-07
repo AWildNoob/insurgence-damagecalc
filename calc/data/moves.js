@@ -3598,6 +3598,136 @@ var XY = util_1.extend(true, {}, BW, {
         maxPower: 90
     }
 });
+var XY = util_1.extend(true, {}, XY, {
+	'Achilles Heel': {
+        bp: 45,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Ancient Roar': {
+        bp: 80,
+        type: 'Rock',
+        category: 'Special',
+        isSound: true
+    },
+    'Corrode': {
+        bp: 70,
+        type: 'Poison',
+        category: 'Special'
+    },
+    'Crystal Rush': {
+        bp: 45,
+        type: 'Crystal'
+    },
+    'Dark Matter': {
+        bp: 150,
+        type: 'Dark',
+        category: 'Special'
+    },
+    'Dark Nova': {
+        bp: 135,
+        type: 'Dark',
+        category: 'Special',
+        usesHighestAttackStat: true,
+        isTwoHit: true
+    },
+    'Draco Jet': {
+    	bp: 40,
+		type: 'Dragon',
+        category: 'Physical',
+        makesContact: true,
+        hasPriority: true
+    },
+    'Dragonify': {
+        bp: 0,
+        type: 'Dragon'
+    },
+    'Drakon Voice': {
+    	bp: 105,
+    	type: 'Dragon',
+        category: 'Special',
+        isSound: true
+    },
+    'Fairy Tempest': {
+    	bp: 180,
+    	type: 'Fairy',
+        category: 'Special',
+        isSpread: true
+    },
+    'Jet Stream': {
+        bp: 0,
+        type: 'Dragon'
+    },
+    'Livewire': {
+        bp: 0,
+        type: 'Electric'
+    },
+    'Lunar Cannon': {
+    	bp: 105,
+    	type: 'Dark',
+        category: 'Special'
+    },
+    'Medusa Ray': {
+        bp: 0,
+        type: 'Rock'
+    },
+    'Morph': {
+        bp: 0,
+        type: 'Normal'
+    },
+    'Nanorepair': {
+        bp: 0,
+        type: 'Steel'
+    },
+    'New Moon': {
+        bp: 0,
+        type: 'Dark'
+    },
+    'Permafrost': {
+        bp: 0,
+        type: 'Ice'
+    },
+    'Retrograde': {
+        bp: 0,
+        type: 'Normal'
+    },
+    'Spirit Away': {
+        bp: 100,
+        type: 'Fairy',
+        makesContact: true
+    },
+    'Wildfire': {
+    	bp: 0,
+    	type: 'Fire'
+    },
+    'Wormhole': {
+    	bp: 40,
+    	type: 'Psychic',
+        category: 'Special',
+        hasPriority: true
+    },
+    'Regurgitation': {
+    	bp: 40,
+    	type: 'Psychic',
+        category: 'Physical'
+    },
+    'Zombie Strike': {
+    	bp: 90,
+    	type: 'Ghost',
+        category: 'Physical',
+        makesContact: true
+    },
+    //Not Insurgence-exclusive but not present in Gen 6 calculator
+    'Core Enforcer': {
+        bp: 100,
+        type: 'Dragon',
+        category: 'Special',
+        isSpread: true
+    },
+    
+});
+
 var SM = util_1.extend(true, {}, XY, {
     '10,000,000 Volt Thunderbolt': {
         bp: 195,
