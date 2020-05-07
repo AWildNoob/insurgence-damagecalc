@@ -46,6 +46,11 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
         recovery[0] += Math.min(minDamage * move.percentHealed, max);
         recovery[1] += Math.min(maxDamage * move.percentHealed, max);
     }
+    if (attacker.hasAbility('Vampiric') && move.makesContact) {
+        var max = defender.maxHP() * 0.25;
+        recovery[0] += Math.min(minDamage * 0.25, max);
+        recovery[1] += Math.min(maxDamage * 0.25, max);
+    }
     if (recovery[1] === 0)
         return { recovery: recovery, text: text };
     var minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
@@ -254,7 +259,7 @@ function getHazards(gen, defender, defenderSide) {
         texts.push('Steelsurge');
     }
     if (!defender.hasType('Flying') &&
-        !defender.hasAbility('Magic Guard', 'Levitate') &&
+        !defender.hasAbility('Magic Guard', 'Levitate', 'Omnitype') &&
         !defender.hasItem('Air Balloon')) {
         if (defenderSide.spikes === 1) {
             damage += Math.floor(defender.maxHP() / 8);
@@ -283,9 +288,13 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     var damage = 0;
     var texts = [];
     if (field.hasWeather('Sun', 'Harsh Sunshine')) {
-        if (defender.hasAbility('Dry Skin', 'Solar Power')) {
+        if (defender.hasAbility('Dry Skin', 'Solar Power', 'Heliophobia')) {
             damage -= Math.floor(defender.maxHP() / 8);
             texts.push(defender.ability + ' damage');
+        }
+        else if (defender.hasAbility('Phototroph')) {
+            damage += Math.floor(defender.maxHP() / 8);
+            texts.push('Sun-boosted Phototroph recovery');
         }
     }
     else if (field.hasWeather('Rain', 'Heavy Rain')) {
@@ -300,10 +309,14 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     }
     else if (field.hasWeather('Sand')) {
         if (!defender.hasType('Rock', 'Ground', 'Steel') &&
-            !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
+            !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil', 'Omnitype') &&
             !defender.hasItem('Safety Goggles')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
             texts.push('sandstorm damage');
+        }
+        if (defender.hasAbility('Phototroph')) {
+            damage += Math.floor(defender.maxHP() / 16);
+            texts.push('Phototroph recovery');
         }
     }
     else if (field.hasWeather('Hail')) {
@@ -312,11 +325,29 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             texts.push('Ice Body recovery');
         }
         else if (!defender.hasType('Ice') &&
-            !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') &&
+            !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak', 'Omnitype') &&
             !defender.hasItem('Safety Goggles')) {
             damage -= Math.floor(defender.maxHP() / 16);
             texts.push('hail damage');
         }
+        if (defender.hasAbility('Phototroph')) {
+            damage += Math.floor(defender.maxHP() / 16);
+            texts.push('Phototroph recovery');
+        }
+    }
+    else if (field.hasWeather('New Moon')) {
+        if (defender.hasAbility('Absolution')) {
+            damage -= Math.floor(defender.maxHP() / 8);
+            texts.push(defender.ability + ' damage');
+        }
+        else if (defender.hasAbility('Heliophobia')) {
+            damage += Math.floor(defender.maxHP() / 8);
+            texts.push('Heliophobia recovery');
+        }
+    }
+    else if (defender.hasAbility('Phototroph')) {
+        damage += Math.floor(defender.maxHP() / 16);
+        texts.push('Phototroph recovery');
     }
     var loseItem = move.name === 'Knock Off' && !defender.hasAbility('Sticky Hold');
     if (defender.item === 'Leftovers' && !loseItem) {
@@ -389,10 +420,20 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
     }
     else if ((defender.hasStatus('Asleep') || defender.hasAbility('Comatose')) &&
-        attacker.hasAbility('isBadDreams') &&
+        attacker.hasAbility('Bad Dreams') &&
         !defender.hasAbility('Magic Guard')) {
-        damage -= Math.floor(defender.maxHP() / 8);
+    		if (field.hasWeather('New Moon')) {
+    	        damage -= Math.floor(defender.maxHP() / 4);
+    	        description.weather = field.weather;
+    		}
+    		else {
+    			damage -= Math.floor(defender.maxHP() / 8);
+    		}
         texts.push('Bad Dreams');
+    }
+    if (defender.hasType('Water') && attacker.hasAbility('Vaporization') && !defender.hasAbility('Magic Guard')) {
+        damage -= Math.floor(defender.maxHP() / 8);
+        texts.push('Vaporization');
     }
     if ([
         'Bind',
