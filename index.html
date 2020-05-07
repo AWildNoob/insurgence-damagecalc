@@ -41,21 +41,14 @@
 <div class="wrapper">
 
     <div aria-label="Settings" role="region">
-        <span class="title-text">Pok&eacute;mon Damage Calculator</span>
+        <span class="title-text" style="margin-right:18em">Pok&eacute;mon Insurgence Damage Calculator</span>
         <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
             <span class="visually-hidden" id="selectGenInstruction">Select the generation.</span>
-            <input class="gen visually-hidden" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="3" id="gen3" /><label class="btn btn-small btn-mid" for="gen3">ADV</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="4" id="gen4" /><label class="btn btn-small btn-mid" for="gen4">DPP</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="5" id="gen5" /><label class="btn btn-small btn-mid" for="gen5">B/W</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="6" id="gen6" /><label class="btn btn-small btn-mid" for="gen6">X/Y</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="7" id="gen7" /><label class="btn btn-small btn-mid" for="gen7">S/M</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class="btn btn-small btn-right" for="gen8">S/S</label>
+            <input class="gen visually-hidden" type="radio" name="gen" value="6" id="gen6" checked="checked" />
         </span>
-        <span class="notationSelection" aria-labelledby="selectNotationInstruction" role="radiogroup" title="Select the output notation.">
-            <span class="visually-hidden" id="selectNotationInstruction">Select the output notation.</span>
-            <input class="notation visually-hidden" type="radio" name="notation" id="pixels" value="px" /><label class="btn btn-small btn-left" for="pixels">48th</label>
+        <span class="notationSelection" aria-labelledby="selectNotationInstruction" role="radiogroup" title="Select the output notation." style="margin-right:1em">
+            <span class="visually-hidden" id="selectNotationInstruction" >Select the output notation.</span>
+            <input class="notation visually-hidden" type="radio" name="notation" id="pixels" value="px"/><label class="btn btn-small btn-left" for="pixels">48th</label>
             <input class="notation visually-hidden" type="radio" name="notation" id="percentage" value="%" /><label class="btn btn-small btn-right" for="percentage">100%</label>
         </span>
         <span class="modeSelection" aria-labelledby="selectModeInstruction" role="radiogroup" title="Select the calculator's mode of function.">
@@ -648,7 +641,7 @@
                 <hr class="gen-specific g6 g7 g8" />
                 <div aria-labelledby="selectWeatherInstruction" role="radiogroup">
                     <span class="visually-hidden" id="selectWeatherInstruction">Select the current weather condition.</span>
-                    <div  class="gen-specific g3 g4 g5 g6 g7 g8" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
+                    <div  class="gen-specific g3 g4 g5 g6 g7 g8" style="width: 24.2em; margin: 5px auto;" title="Select the current weather condition.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
                         <label class="btn btn-small btn-left" for="clear">None</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
@@ -658,7 +651,9 @@
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
                         <label class="btn btn-small btn-mid" for="sand">Sand</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
-                        <label class="btn btn-small btn-right" for="hail">Hail</label>
+                        <label class="btn btn-small btn-mid" for="hail">Hail</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="New Moon" id="new-moon" />
+                        <label class="btn btn-small btn-right" for="new-moon">Dark</label>
                     </div>
                     <div class="gen-specific g6 g7 g8" title="Select the current weather condition.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
@@ -680,10 +675,13 @@
                     <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="Sand" id="gscSand" />
                     <label class="btn btn-small btn-right" for="gscSand">Sand</label>
                 </div>
-                <div class="gen-specific g4 g5 g6 g7 g8" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
+                <div class="gen-specific g4 g5 g6 g7 g8" style="margin: 5px auto;">
                     <span hidden id="gravityInstruction">Is gravity in effect?</span>
                     <input aria-describedby="gravityInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gravity" />
-                    <label class="btn" for="gravity">Gravity</label>
+                    <label class="btn" for="gravity" style="width:6em; margin-right:0px" title="Is gravity in effect?">Gravity</label>
+                    <span hidden id="sleetInstruction">Is Sleet in effect?</span>
+                    <input aria-describedby="sleetInstruction" class="visually-hidden calc-trigger" type="checkbox" id="sleet" />
+                    <label class="btn" for="sleet" style="width:6em; margin-left:0px" title="Is Sleet in effect?">Sleet</label>
                 </div>
                 <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8" />
                 <table class="field">
