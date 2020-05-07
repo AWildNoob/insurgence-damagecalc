@@ -201,12 +201,18 @@ $(".ability").bind("keyup change", function () {
 
 	var ability = $(this).closest(".poke-info").find(".ability").val();
 
-	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Unleafed'];
 
 	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
 		$(this).closest(".poke-info").find(".abilityToggle").show();
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
+	}
+	var $metronomeControl = $(this).closest('.poke-info').find('.metronome');
+	if ($(this).val() === "Pendulum") {
+		$metronomeControl.show();
+	} else {
+		$metronomeControl.hide();
 	}
 });
 
@@ -223,6 +229,7 @@ function autosetWeather(ability, i) {
 		lastManualWeather = currentWeather;
 		lastAutoWeather[1 - i] = "";
 	}
+	$("#sleet").prop("checked", false);
 	switch (ability) {
 	case "Drought":
 		lastAutoWeather[i] = "Sun";
@@ -240,6 +247,11 @@ function autosetWeather(ability, i) {
 		lastAutoWeather[i] = "Hail";
 		$("#hail").prop("checked", true);
 		break;
+	case "Sleet":
+		lastAutoWeather[i] = "Sleet";
+		$("#hail").prop("checked", true);
+		$("#sleet").prop("checked", true);
+		break;
 	case "Desolate Land":
 		lastAutoWeather[i] = "Harsh Sunshine";
 		$("#harsh-sunshine").prop("checked", true);
@@ -252,9 +264,17 @@ function autosetWeather(ability, i) {
 		lastAutoWeather[i] = "Strong Winds";
 		$("#strong-winds").prop("checked", true);
 		break;
+	case "Noctem":
+		lastAutoWeather[i] = "New Moon";
+		$("#new-moon").prop("checked", true);
+		break;
 	default:
 		lastAutoWeather[i] = "";
 		var newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : "";
+		if (newWeather === "Sleet") {
+			$("#hail").prop("checked", true);
+			$("#sleet").prop("checked", true);
+		}
 		$("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
 		break;
 	}
@@ -722,6 +742,7 @@ function getMoveDetails(moveInfo, ability, item, useMax) {
 function createField() {
 	var gameType = $("input:radio[name='format']:checked").val();
 	var isGravity = $("#gravity").prop("checked");
+	var isSleet = $("#gravity").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var weather;
 	var spikes;
@@ -813,10 +834,10 @@ var RANDDEX = [[], RANDOM_RBY, RANDOM_GSC, RANDOM_ADV, RANDOM_DPP, RANDOM_BW, RA
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 $(".gen").change(function () {
 	/*eslint-disable */
-	gen = ~~$(this).val() || 8;
+	gen = ~~$(this).val() || 6;
 	GENERATION = calc.Generations.get(gen);
 	var params = new URLSearchParams(window.location.search);
-	if (gen === 8) {
+	if (gen === 6) {
 		params.delete('gen');
 		params = '' + params;
 		if (window.history && window.history.replaceState) {
@@ -878,6 +899,7 @@ function clearField() {
 	$("#clear").prop("checked", true);
 	$("#gscClear").prop("checked", true);
 	$("#gravity").prop("checked", false);
+	$("#sleet").prop("checked", false);
 	$("#srL").prop("checked", false);
 	$("#srR").prop("checked", false);
 	$("#spikesL0").prop("checked", true);
@@ -1143,7 +1165,7 @@ function loadCustomList(id) {
 
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
-	var g = GENERATION[params.get('gen')] || 8;
+	var g = 6;
 	$("#gen" + g).prop("checked", true);
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);
