@@ -21,7 +21,8 @@ var EV_ITEMS = [
 function isGrounded(pokemon, field) {
     return (field.isGravity ||
         (!pokemon.hasType('Flying') &&
-            !pokemon.hasAbility('Levitate') &&
+            !pokemon.hasAbility('Levitate')&&
+            !pokemon.hasAbility('Omnitype') &&
             !pokemon.hasItem('Air Balloon')));
 }
 exports.isGrounded = isGrounded;
@@ -62,7 +63,8 @@ function getFinalSpeed(gen, pokemon, field, side) {
     if ((pokemon.hasAbility('Chlorophyll') && weather.indexOf('Sun') !== -1) ||
         (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
         (pokemon.hasAbility('Swift Swim') && weather.indexOf('Rain') !== -1) ||
-        (pokemon.hasAbility('Slush Rush') && weather === 'Hail')) {
+        (pokemon.hasAbility('Slush Rush', 'Ice Cleats') && weather === 'Hail') ||
+        (pokemon.hasAbility('Shadow Dance') && weather === 'New Moon')) {
         speed *= 2;
     }
     else if (pokemon.hasAbility('Quick Feet') && !pokemon.hasStatus('Healthy')) {
@@ -97,6 +99,9 @@ function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity) {
         return 1;
     }
     else if (move.name === 'Freeze-Dry' && type === 'Water') {
+        return 2;
+    }
+    else if (move.name === 'Corrode' && type === 'Steel') {
         return 2;
     }
     else if (move.name === 'Flying Press') {
@@ -168,6 +173,16 @@ function checkDownload(source, target) {
     }
 }
 exports.checkDownload = checkDownload;
+function checkUnleafed(source) {
+    if (source.hasAbility('Unleafed')) {
+        source.boosts.atk = Math.min(6, source.boosts.atk + 1);
+        source.boosts.def = Math.min(6, source.boosts.def + 1);
+        source.boosts.spa = Math.min(6, source.boosts.spa + 1);
+        source.boosts.spd = Math.min(6, source.boosts.spd + 1);
+        source.boosts.spe = Math.min(6, source.boosts.spe + 1);
+    }
+}
+exports.checkUnleafed = checkUnleafed;
 function checkIntrepidSword(source) {
     if (source.hasAbility('Intrepid Sword')) {
         source.boosts.atk = Math.min(6, source.boosts.atk + 1);
