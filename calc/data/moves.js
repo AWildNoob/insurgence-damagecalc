@@ -3611,6 +3611,11 @@ var XY = util_1.extend(true, {}, XY, {
         category: 'Special',
         isSound: true
     },
+    'Aura Blast': {
+        bp: 50,
+        type: 'Fighting',
+        category: 'Special'
+    },
     'Corrode': {
         bp: 70,
         type: 'Poison',
@@ -3648,6 +3653,11 @@ var XY = util_1.extend(true, {}, XY, {
     	type: 'Dragon',
         category: 'Special',
         isSound: true
+    },
+    'Dynamic Fury': {
+        bp: 50,
+        type: 'Fighting',
+        category: 'Physical'
     },
     'Fairy Tempest': {
     	bp: 180,

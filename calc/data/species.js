@@ -5462,7 +5462,7 @@ var XY_BASE = util_1.extend(true, {}, BW, {
     Snubbull: { t1: 'Fairy' },
     Staraptor: { bs: { sd: 60 } },
     Starly: { ab: 'Reckless' },
-    Steelix: { formes: ['Steelix', 'Steelix-Mega', 'Steelix-Mega (Fire)'] },
+    Steelix: { formes: ['Steelix', 'Steelix-Mega'] },
     Stoutland: { bs: { at: 110 } },
     Swampert: { formes: ['Swampert', 'Swampert-Mega'] },
     Tepig: { ab: 'Thick Fat' },
@@ -6580,8 +6580,13 @@ var XY_BASE = util_1.extend(true, {}, BW, {
 
 var XY = util_1.extend(true, {}, XY_BASE, {
     //Form changes to core series Pokemon
-	Eevee: { formes: ["Eevee", "Eevee-Mega", "Eevee-Vaporeon", "Eevee-Jolteon", "Eevee-Flareon", "Eevee-Espeon", "Eevee-Umbreon", "Eevee-Leafeon", "Eevee-Glaceon", "Eevee-Sylveon"] },
+	Eevee: { formes: ["Eevee", "Eevee-Mega", "Eevee-Mega-Vaporeon", "Eevee-Mega-Jolteon",
+						"Eevee-Mega-Flareon", "Eevee-Mega-Espeon", "Eevee-Mega-Umbreon", "Eevee-Mega-Leafeon",
+						"Eevee-Mega-Glaceon", "Eevee-Mega-Sylveon"] },
+	Machamp: { formes: ["Machamp", "Machamp-Pokken", "Machamp-Pokken-Burst"] },
 	Marowak: { formes: ["Marowak", "Marowak-Mega"] },
+	Mewtwo: { formes: ["Mewtwo", "Mewtwo-Mega-Y", "Mewtwo-Mega-X", "Mewtwo-Armored", "Mewtwo-Shadow", 
+						"Mewtwo-Shadow-Burst", "Mewtwo-Shadow-Mega-X", "Mewtwo-Shadow-Mega-X-Burst"] },
 	Poliwrath: { formes: ["Poliwrath", "Poliwrath-Mega"] },
 	Donphan: { formes: ["Donphan", "Donphan-Mega"] },
 	Feraligatr: { formes: ["Feraligatr", "Feraligatr-Mega"] },
@@ -6590,32 +6595,41 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	Meganium: { formes: ["Meganium", "Meganium-Mega"] },
 	Miltank: { formes: ["Miltank", "Miltank-Mega"] },
 	Politoed: { formes: ["Politoed", "Politoed-Mega"] },
+    Steelix: { formes: ["Steelix", "Steelix-Mega", "Steelix-Mega-Fire"] },
 	Sudowoodo: { formes: ["Sudowoodo", "Sudowoodo-Mega"] },
-	Sunflora: { formes: ["Sunflora", "Sunflora-Mega (F)", "Sunflora-Mega (M)"] },
+	Sunflora: { formes: ["Sunflora", "Sunflora-Mega-F", "Sunflora-Mega-M"] },
 	Typhlosion: { formes: ["Typhlosion", "Typhlosion-Mega"] },
+    Tyranitar: { formes: ["Tyranitar", "Tyranitar-Mega", "Tyranitar-Armored"] },
 	Cacturne: { formes: ["Cacturne", "Cacturne-Mega"] },
 	Crawdaunt: { formes: ["Crawdaunt", "Crawdaunt-Mega"] },
-	Flygon: { formes: ["Flygon", "Armor Flygon", "Flygon-Mega"] },
+	Flygon: { formes: ["Flygon", "Flygon-Armored", "Flygon-Mega"] },
+    Gardevoir: { t2: "Fairy", formes: ["Gardevoir", "Gardevoir-Mega",
+    									"Gardevoir-Pokken", "Gardevoir-Pokken-Burst",
+    									"Gardevoir-Pokken-Mega", "Gardevoir-Pokken-Mega-Burst"] },
 	Jirachi: { formes: ["Jirachi", "Jirachi-Mega"] },
 	Milotic: { formes: ["Milotic", "Milotic-Mega"] },
 	Shiftry: { formes: ["Shiftry", "Shiftry-Mega"] },
-	Arceus: { formes: ["Arceus", "Primal Arceus"] },
+	Arceus: { formes: ["Arceus", "Arceus-Primal"] },
 	Chatot: { formes: ["Chatot", "Chatot-Mega"] },
 	Froslass: { formes: ["Froslass", "Froslass-Mega"] },
-	Giratina: { formes: ["Giratina", "Primal Giratina"] },
-	Regigigas: { formes: ["Regigigas", "Primal Regigigas"] },
+	Giratina: { formes: ["Giratina", "Giratina-Primal"] },
+	Lucario: { formes: ["Lucario", "Lucario-Mega",
+		"Lucario-Pokken", "Lucario-Pokken-Burst",
+		"Lucario-Pokken-Mega", "Lucario-Pokken-Mega-Burst"] },
+	Regigigas: { formes: ["Regigigas", "Regigigas-Primal"] },
 	Spiritomb: { formes: ["Spiritomb", "Spiritomb-Mega"] },
 	Bisharp: { formes: ["Bisharp", "Bisharp-Mega"] },
 	Cryogonal: { formes: ["Cryogonal", "Cryogonal-Mega"] },
 	Gothitelle: { formes: ["Gothitelle", "Gothitelle-Mega"] },
 	Haxorus: { formes: ["Haxorus", "Haxorus-Mega"] },
 	Hydreigon: { formes: ["Hydreigon", "Hydreigon-Mega"] },
-	Leavanny: { formes: ["Leavanny", "Armor Leavanny"] },
+	Leavanny: { formes: ["Leavanny", "Leavanny-Armored"] },
 	Reuniclus: { formes: ["Reuniclus", "Reuniclus-Mega"] },
 	Stunfisk: { formes: ["Stunfisk", "Stunfisk-Mega"] },
 	Zebstrika: { formes: ["Zebstrika", "Zebstrika-Mega"] },
-	Zekrom: { formes: ["Zekrom", "Armor Zekrom"] },
-	Zoroark: { formes: ["Zoroark", "Zoroark-Mega"] },
+	Zekrom: { formes: ["Zekrom", "Zekrom-Armored"] },
+    Zoroark: { formes: ["Zoroark", "Zoroark-Mega"] },
+    Zygarde: {formes: ["Zygarde", "Zygarde-10%", "Zygarde-Complete"]},
 	//Delta Pokemon
     "Delta Bulbasaur": {
         t1: 'Fairy',
@@ -8517,7 +8531,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 22.6
 	  },
-	  "Delta Beldum (Spider)": {
+	  "Delta Beldum-Spider": {
 		 t1: 'Ground',
 		 t2: 'Bug',
 		 bs: {
@@ -8530,7 +8544,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 47.5
 	  },
-	  "Delta Metang (Spider)": {
+	  "Delta Metang-Spider": {
 		 t1: 'Ground',
 		 t2: 'Bug',
 		 bs: {
@@ -8543,7 +8557,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 101.3
 	  },
-	  "Delta Metagross (Spider)": {
+	  "Delta Metagross-Spider": {
 		 t1: 'Ground',
 		 t2: 'Bug',
 		 bs: {
@@ -8554,13 +8568,13 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 90,
 		   sp: 70
 		 },
-		 w: 224.0,
+		 w: 225.0,
 		 formes: [
-		     "Delta Metagross (Spider)",
-		     "Delta Metagross (Spider)-Mega"
+		     "Delta Metagross-Spider",
+		     "Delta Metagross-Spider-Mega"
 		   ]
 	  },
-	  "Delta Beldum (Ruin)": {
+	  "Delta Beldum-Ruin": {
 		 t1: 'Rock',
 		 t2: 'Grass',
 		 bs: {
@@ -8573,7 +8587,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 95.2
 	  },
-	  "Delta Metang (Ruin)": {
+	  "Delta Metang-Ruin": {
 		 t1: 'Rock',
 		 t2: 'Grass',
 		 bs: {
@@ -8586,7 +8600,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 202.5
 	  },
-	  "Delta Metagross (Ruin)": {
+	  "Delta Metagross-Ruin": {
 		 t1: 'Rock',
 		 t2: 'Grass',
 		 bs: {
@@ -8599,8 +8613,9 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 550,
 		 formes: [
-		     "Delta Metagross (Ruin)",
-		     "Delta Metagross (Ruin)-Mega"
+		     "Delta Metagross-Ruin",
+		     "Delta Metagross-Ruin-Mega",
+		     "Delta Metagross-Ruin-Crystal"
 		   ]
 	  },
 	  "Delta Buneary": {
@@ -8723,7 +8738,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 200.5
 	  },
-	  "Delta Petilil (Water)": {
+	  "Delta Petilil-Water": {
 		 t1: 'Water',
 		 t2: 'Fire',
 		 bs: {
@@ -8736,7 +8751,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 6.6
 	  },
-	  "Delta Lilligant (Water)": {
+	  "Delta Lilligant-Water": {
 		 t1: 'Water',
 		 t2: 'Fire',
 		 bs: {
@@ -8749,7 +8764,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		  },
 		  w: 16.3
 	  },
-	  "Delta Petilil (Fairy)": {
+	  "Delta Petilil-Fairy": {
 		  t1: 'Fairy',
 		  t2: 'Flying',
 		  bs: {
@@ -8762,7 +8777,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		  },
 		  w: 6.6
 	  },
-	  "Delta Lilligant (Fairy)": {
+	  "Delta Lilligant-Fairy": {
 		  t1: 'Fairy',
 		  t2: 'Flying',
 		  bs: {
@@ -8852,7 +8867,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 28.0
 	  },
-	  "Delta Dwebble (Berry)": {
+	  "Delta Dwebble-Berry": {
 		 t1: 'Grass',
 		 t2: 'Poison',
 		 bs: {
@@ -8865,7 +8880,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 14.5
 	  },
-	  "Delta Crustle (Berry)": {
+	  "Delta Crustle-Berry": {
 		 t1: 'Grass',
 		 t2: 'Poison',
 		 bs: {
@@ -8878,7 +8893,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 150.0
 	  },
-	  "Delta Dwebble (Cake)": {
+	  "Delta Dwebble-Cake": {
 		 t1: 'Fairy',
 		 t2: 'Normal',
 		 bs: { 
@@ -8891,7 +8906,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 14.5
 	  },
-	  "Delta Crustle (Cake)": {
+	  "Delta Crustle-Cake": {
 		 t1: 'Fairy',
 		 t2: 'Normal',
 		 bs: {
@@ -9174,7 +9189,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 w: 46.0,
 		 formes: [
 		        "Delta Volcarona",
-		        "Armor D. Volcarona"
+		        "Delta Volcarona-Armored"
 		      ]
 	  },
 	  "Delta Amaura": {
@@ -9408,7 +9423,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Protean Maxima",
 	    isAlternateForm: true
 	  },
-	  "Eevee-Vaporeon": {
+	  "Eevee-Mega-Vaporeon": {
 		 t1: 'Water',
 		 bs: {
 		   hp: 130,
@@ -9423,7 +9438,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 ab: "Water Absorb",
 		 isAlternateForm: true
 	  },
-	  "Eevee-Jolteon": {
+	  "Eevee-Mega-Jolteon": {
 		 t1: 'Electric',
 		 bs: {
 		   hp: 65,
@@ -9438,7 +9453,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 ab: "Volt Absorb",
 		 isAlternateForm: true
 	  },
-	  "Eevee-Flareon": {
+	  "Eevee-Mega-Flareon": {
 	    t1: 'Fire',
 	    bs: {
 	      hp: 65,
@@ -9453,7 +9468,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Flash Fire",
 		 isAlternateForm: true
 	  },
-	  "Eevee-Espeon": {
+	  "Eevee-Mega-Espeon": {
 	    t1: 'Psychic',
 	    bs: {
 	      hp: 65,
@@ -9466,7 +9481,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    w: 26.5,
 		 isAlternateForm: true
 	  },
-	  "Eevee-Umbreon": {
+	  "Eevee-Mega-Umbreon": {
 	    t1: 'Dark',
 	    bs: {
 	      hp: 95,
@@ -9479,7 +9494,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    w: 27.0,
 		 isAlternateForm: true
 	  },
-	  "Eevee-Leafeon": {
+	  "Eevee-Mega-Leafeon": {
 	    t1: 'Grass',
 	    bs: {
 	      hp: 65,
@@ -9493,7 +9508,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Chlorophyll",
 		 isAlternateForm: true
 	  },
-	  "Eevee-Glaceon": {
+	  "Eevee-Mega-Glaceon": {
 	    t1: 'Ice',
 	    bs: {
 	      hp: 65,
@@ -9507,7 +9522,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Snow Cloak",
 		 isAlternateForm: true
 	  },
-	  "Eevee-Sylveon": {
+	  "Eevee-Mega-Sylveon": {
 	    t1: 'Fairy',
 	    bs: {
 	      hp: 95,
@@ -9592,7 +9607,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Drizzle",
 	    isAlternateForm: true
 	  },
-	  "Sunflora-Mega (M)": {
+	  "Sunflora-Mega-M": {
 	    t1: 'Grass',
 		t2: 'Fire',
 	    bs: {
@@ -9607,7 +9622,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Unleafed",
 	    isAlternateForm: true
 	  },
-	  "Sunflora-Mega (F)": {
+	  "Sunflora-Mega-F": {
 	    t1: 'Grass',
 	    bs: {
 	      hp: 75,
@@ -9636,7 +9651,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Spectral Jaws",
 	    isAlternateForm: true
 	  },
-	  "Steelix-Mega (Fire)": {
+	  "Steelix-Mega-Fire": {
 	    t1: 'Steel',
 		t2: 'Fire',
 	    bs: {
@@ -9828,7 +9843,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Fur Coat",
 	    isAlternateForm: true
 	  },
-	  "Primal Regigigas": {
+	  "Regigigas-Primal": {
 	    t1: 'Normal',
 	    bs: {
 	      hp: 110,
@@ -9842,7 +9857,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Unaware",
 		"isAlternateForme": true
 	  },
-	  "Primal Giratina": {
+	  "Giratina-Primal": {
 	    t1: 'Ghost',
 		t2: 'Dragon',
 	    bs: {
@@ -9857,7 +9872,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Omnitype",
 		"isAlternateForme": true
 	  },
-	  "Primal Arceus": {
+	  "Arceus-Primal": {
 	    t1: 'Normal',
 		t2: 'Dragon',
 	    bs: {
@@ -9892,10 +9907,10 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    bs: {
 	      hp: 60,
 	      at: 130,
-	      df: 100,
+	      df: 60,
 	      sa: 145,
-	      sd: 80,
-	      sp: 95
+	      sd: 90,
+	      sp: 125
 	    },
 	    w: 81.1,
 	    ab: "Trace",
@@ -10272,7 +10287,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    ab: "Absolution",
 	    isAlternateForm: true
 	  },
-	  "Delta Metagross-Mega (Spider)": {
+	  "Delta Metagross-Spider-Mega": {
 	    t1: 'Ground',
 		t2: 'Bug',
 	    bs: {
@@ -10283,11 +10298,11 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 110,
 	      sp: 110
 	    },
-	    w: 224,
+	    w: 471.5,
 	    ab: "Mold Breaker",
 	    isAlternateForm: true
 	  },
-	  "Delta Metagross-Mega (Ruin)": {
+	  "Delta Metagross-Ruin-Mega": {
 	    t1: 'Rock',
 		t2: 'Grass',
 	    bs: {
@@ -10298,8 +10313,23 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 110,
 	      sp: 110
 	    },
-	    w: 224,
+	    w: 942.9,
 	    ab: "Rock Head",
+	    isAlternateForm: true
+	  },
+	  "Delta Metagross-Ruin-Crystal": {
+	    t1: 'Grass',
+		t2: 'Crystal',
+	    bs: {
+	      hp: 80,
+	      at: 180,
+	      df: 100,
+	      sa: 120,
+	      sd: 100,
+	      sp: 100
+	    },
+	    w: 942.9,
+	    ab: "Weak Armor",
 	    isAlternateForm: true
 	  },
 	  "Delta Lopunny-Mega": {
@@ -10333,7 +10363,33 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	    isAlternateForm: true
 	  },
 	  //Other
-	  "Shadow Mewtwo": {
+	  "Machamp-Pokken": {
+		 t1: 'Fighting',
+		 bs: {
+		   hp: 90,
+		   at: 130,
+		   df: 80,
+		   sa: 65,
+		   sd: 85,
+		   sp: 55
+		 },
+	     w: 130.0,
+	     isAlternateForm: true
+	  },
+	  "Machamp-Pokken-Burst": {
+		 t1: 'Fighting',
+		 bs: {
+		   hp: 90,
+		   at: 130,
+		   df: 80,
+		   sa: 65,
+		   sd: 85,
+		   sp: 55
+		 },
+	     w: 130.0,
+	     isAlternateForm: true
+	  },
+	  "Mewtwo-Shadow": {
 		t1: 'Psychic',
 		t2: 'Dark',
 		bs: {
@@ -10346,12 +10402,24 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 },
 		 w: 6.5,
 		 ab: "Intimidate",
-		 formes: [
-		   "Shadow Mewtwo",
-		   "Shadow Mewtwo-Mega-X"
-		 ]
+		 isAlternateForm: true
 	  },
-	  "Shadow Mewtwo-Mega-X": {
+	  "Mewtwo-Shadow-Burst": {
+		t1: 'Psychic',
+		t2: 'Dark',
+		bs: {
+		   hp: 106,
+		   at: 110,
+		   df: 90,
+		   sa: 154,
+		   sd: 90,
+		   sp: 130
+		 },
+		 w: 6.5,
+		 ab: "Intimidate",
+		 isAlternateForm: true
+	  },
+	  "Mewtwo-Shadow-Mega-X": {
 		t1: 'Psychic',
 		t2: 'Fighting',
 		bs: {
@@ -10366,7 +10434,22 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 ab: "Shadow Synergy",
 		 isAlternateForm: true
 	  },
-	  "Armor Tyranitar": {
+	  "Mewtwo-Shadow-Mega-X-Burst": {
+		t1: 'Psychic',
+		t2: 'Fighting',
+		bs: {
+		   hp: 106,
+		   at: 190,
+		   df: 100,
+		   sa: 154,
+		   sd: 100,
+		   sp: 130
+		 },
+		 w: 6.5,
+		 ab: "Shadow Synergy",
+		 isAlternateForm: true
+	  },
+	  "Tyranitar-Armored": {
 		 t1: 'Rock',
 		 t2: 'Dark',
 		 bs: {
@@ -10381,7 +10464,63 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 ab: "Sand Stream",
 		 isAlternateForm: true
 	  },
-	  "Armor Flygon": {
+	  "Gardevoir-Pokken": {
+		 t1: 'Psychic',
+		 t2: 'Fairy',
+		 bs: {
+		   hp: 68,
+		   at: 65,
+		   df: 65,
+		   sa: 125,
+		   sd: 115,
+		   sp: 80
+		 },
+	     w: 48.4,
+	     isAlternateForm: true
+	  },
+	  "Gardevoir-Pokken-Burst": {
+		 t1: 'Psychic',
+		 t2: 'Fairy',
+		 bs: {
+		   hp: 68,
+		   at: 65,
+		   df: 65,
+		   sa: 125,
+		   sd: 115,
+		   sp: 80
+		 },
+	     w: 48.4,
+	     isAlternateForm: true
+	  },
+	  "Gardevoir-Pokken-Mega": {
+		 t1: 'Psychic',
+		 t2: 'Fairy',
+		 bs: {
+		   hp: 68,
+		   at: 85,
+		   df: 65,
+		   sa: 165,
+		   sd: 135,
+		   sp: 100
+		 },
+	     w: 48.4,
+	     isAlternateForm: true
+	  },
+	  "Gardevoir-Pokken-Mega-Burst": {
+		 t1: 'Psychic',
+		 t2: 'Fairy',
+		 bs: {
+		   hp: 68,
+		   at: 85,
+		   df: 65,
+		   sa: 165,
+		   sd: 135,
+		   sp: 100
+		 },
+	     w: 48.4,
+	     isAlternateForm: true
+	  },
+	  "Flygon-Armored": {
 		 t1: 'Ground',
 		 t2: 'Dragon',
 		 bs: {
@@ -10396,7 +10535,63 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 ab: "Levitate",
 		 isAlternateForm: true
 	  },
-	  "Armor Leavanny": {
+	  "Lucario-Pokken": {
+		 t1: 'Steel',
+		 t2: 'Fighting',
+		 bs: {
+		   hp: 70,
+		   at: 110,
+		   df: 70,
+		   sa: 115,
+		   sd: 70,
+		   sp: 90
+		 },
+	     w: 54.0,
+	     isAlternateForm: true
+	  },
+	  "Lucario-Pokken-Burst": {
+		 t1: 'Steel',
+		 t2: 'Fighting',
+		 bs: {
+		   hp: 70,
+		   at: 110,
+		   df: 70,
+		   sa: 115,
+		   sd: 70,
+		   sp: 90
+		 },
+	     w: 54.0,
+	     isAlternateForm: true
+	  },
+	  "Lucario-Pokken-Mega": {
+		 t1: 'Steel',
+		 t2: 'Fighting',
+		 bs: {
+		   hp: 70,
+		   at: 145,
+		   df: 88,
+		   sa: 140,
+		   sd: 70,
+		   sp: 112
+		 },
+	     w: 57.5,
+	     isAlternateForm: true
+	  },
+	  "Lucario-Pokken-Mega-Burst": {
+		 t1: 'Steel',
+		 t2: 'Fighting',
+		 bs: {
+		   hp: 70,
+		   at: 145,
+		   df: 88,
+		   sa: 140,
+		   sd: 70,
+		   sp: 112
+		 },
+	     w: 57.5,
+	     isAlternateForm: true
+	  },
+	  "Leavanny-Armored": {
 		 t1: 'Bug',
 		 t2: 'Grass',
 		 bs: {
@@ -10410,7 +10605,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 w: 20.5,
 		 isAlternateForm: true
 	  },
-	  "Armor Zekrom": {
+	  "Zekrom-Armored": {
 		 t1: 'Dragon',
 		 t2: 'Electric',
 		 bs: {
@@ -10425,7 +10620,25 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 ab: "Teravolt",
 		 isAlternateForm: true
 	  },
-	  "Armor D. Volcarona": {
+      'Zygarde-10%': {
+          t1: 'Dragon',
+          t2: 'Ground',
+          bs: { hp: 54, at: 100, df: 71, sa: 61, sd: 85, sp: 115 },
+          w: 33.5,
+          ab: 'Power Construct',
+          isAlternateForme: true,
+          gender: 'N'
+      },
+      'Zygarde-Complete': {
+          t1: 'Dragon',
+          t2: 'Ground',
+          bs: { hp: 216, at: 100, df: 121, sa: 91, sd: 95, sp: 85 },
+          w: 610,
+          ab: 'Power Construct',
+          isAlternateForme: true,
+          gender: 'N'
+      },
+	  "Delta Volcarona-Armored": {
 		 t1: 'Dark',
 		 t2: 'Poison',
 		 bs: {
@@ -10439,7 +10652,6 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 w: 46.0,
 		 isAlternateForm: true
 	  },
-      
 });
 var SM = util_1.extend(true, {}, XY, {
     'Alakazam-Mega': { bs: { sd: 105 } },

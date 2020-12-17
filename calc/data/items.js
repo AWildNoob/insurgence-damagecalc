@@ -89,7 +89,7 @@ var GSC = [
     'Safari Ball',
     'Scope Lens',
     'Sharp Beak',
-    'SilverPowder',
+    'Silver Powder',
     'Soft Sand',
     'Spell Tag',
     'Sport Ball',
@@ -123,7 +123,6 @@ var ADV = GSC.filter(function (i) { return !GSC_ONLY.includes(i); }).concat([
     'Apicot Berry',
     'Aspear Berry',
     'Belue Berry',
-    'Berry Juice',
     'Bluk Berry',
     'Cheri Berry',
     'Chesto Berry',
@@ -191,7 +190,6 @@ var DPP = ADV.concat([
     'Adamant Orb',
     'Armor Fossil',
     'Babiri Berry',
-    'Berry Juice',
     'Big Root',
     'Black Sludge',
     'Charti Berry',
@@ -374,7 +372,62 @@ exports.MEGA_STONES = {
     Steelixite: 'Steelix',
     Swampertite: 'Swampert',
     Tyranitarite: 'Tyranitar',
-    Venusaurite: 'Venusaur'
+    Venusaurite: 'Venusaur',
+
+    //Insurgence
+    Cacturnite: 'Cacturne',
+    Chatotite: 'Chatot',
+    Crawdite: 'Crawdaunt',
+    Cryogonite: 'Cryogonal',
+    Donphanite: 'Donphan',
+    Eevite: 'Eevee',
+    Etigirafarigite: 'Girafarig',
+    Feraligatite: 'Feraligatr',
+    Flygonite: 'Flygon',
+    Froslassite: 'Froslass',
+    Gothitite: 'Gothitelle',
+    Haxorite: 'Haxorus',
+    Hydreigonite: 'Hydreigon',
+    Jirachite: 'Jirachi',
+    Magcargonite: 'Magcargo',
+    Marowite: 'Marowak',
+    Meganiumite: 'Meganium',
+    Milotite: 'Milotic',
+    Miltankite: 'Miltank',
+    Politoedite: 'Politoed',
+    Poliwrathite: 'Poliwrath',
+    Reuniclite: 'Reuniclus',
+    Shiftrite: 'Shiftry',
+    Spiritombite: 'Spiritomb',
+    'Steelixite (Fire)': 'Steelix',
+    Stunfiskite: 'Stunfisk',
+    Sudowoodite: 'Sudowoodo',
+    Sunflorite: 'Sunflora',
+    Typhlosionite: 'Typhlosion',
+    Zebstrikite: 'Zebstrika',
+    Zoronite: 'Zoroak',
+
+    'Delta Bisharpite': 'Delta Bisharp',
+    'Delta Blastoisinite': 'Delta Blastoise',
+    'Delta Cameruptite': 'Delta Camerupt',
+    'Delta Charizardite': 'Delta Charizard',
+    'Delta Froslassite': 'Delta Froslass',
+    'Delta Galladite': 'Delta Gallade',
+    'Delta Gardevoirite': 'Delta Gardevoir',
+    'Delta Etigirafarigite': 'Delta Girafarig',
+    'Delta Glalitite': 'Delta Glalie',
+    'Delta Lopunnite': 'Delta Lopunny',
+    'Delta Lucarionite': 'Delta Lucario',
+    'Delta Mawilite': 'Delta Mawile',
+    'Delta Metagrossite (Spider)': 'Delta Metagross-Spider',
+    'Delta Metagrossite (Ruin)': 'Delta Metagross-Ruin',
+    'Delta Milotite': 'Delta Milotic',
+    'Delta Pidgeotite': 'Delta Pidgeot',
+    'Delta Sablenite': 'Delta Sableye',
+    'Delta Scizorite': 'Delta Scizor',
+    'Delta Sunflorite': 'Delta Sunflora',
+    'Delta Typhlosionite': 'Delta Typhlosion',
+    'Delta Venusaurite': 'Delta Venusaur'
 };
 var XY = BW.concat(__spreadArrays(Object.keys(exports.MEGA_STONES), [
     'Assault Vest',
@@ -394,6 +447,17 @@ var XY = BW.concat(__spreadArrays(Object.keys(exports.MEGA_STONES), [
     'Snowball',
     'Weakness Policy',
     'Whipped Dream',
+
+    //Insurgence
+    'D. Volcarona Armor',
+    'Flygon Armor',
+    'Leavanny Armor',
+    'Mewtwo Armor',
+    'Tyranitar Armor',
+    'Zekrom Armor',
+
+    'Dark Rock',
+    'Trick Rock'
 ]).sort());
 var SM = XY.filter(function (i) { return i !== 'Old Amber'; }).concat([
     'Adrenaline Orb',
@@ -625,7 +689,6 @@ var ITEMS_BY_ID = [];
 var gen = 0;
 for (var _i = 0, ITEMS_1 = exports.ITEMS; _i < ITEMS_1.length; _i++) {
     var items = ITEMS_1[_i];
-    gen++;
     var map = {};
     for (var _a = 0, items_1 = items; _a < items_1.length; _a++) {
         var item = items_1[_a];
@@ -633,5 +696,6 @@ for (var _i = 0, ITEMS_1 = exports.ITEMS; _i < ITEMS_1.length; _i++) {
         map[i.id] = i;
     }
     ITEMS_BY_ID.push(map);
+    gen++;
 }
 //# sourceMappingURL=items.js.map
