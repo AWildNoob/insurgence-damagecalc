@@ -56,7 +56,7 @@ function legacyStatToStat(st) {
 
 // input field validation
 var bounds = {
-	"level": [0, 100],
+	"level": [0, 120],
 	"base": [1, 255],
 	"evs": [0, 252],
 	"ivs": [0, 31],
@@ -365,16 +365,32 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
 	if (move.isMultiHit) {
 		moveGroupObj.children(".stat-drops").hide();
+		moveGroupObj.children(".aura-blast").hide();
+		moveGroupObj.children(".dynamic-fury").hide();
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
 		var moveHits = (pokemon.find(".ability").val() === 'Skill Link' || pokemon.find(".item").val() === 'Grip Claw') ? 5 : 3;
 		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (move.dropsStats) {
 		moveGroupObj.children(".move-hits").hide();
+		moveGroupObj.children(".aura-blast").hide();
+		moveGroupObj.children(".dynamic-fury").hide();
 		moveGroupObj.children(".stat-drops").show();
+	} else if (moveName === 'Aura Blast') {
+		moveGroupObj.children(".move-hits").hide();
+		moveGroupObj.children(".stat-drops").hide();
+		moveGroupObj.children(".dynamic-fury").hide();
+		moveGroupObj.children(".aura-blast").show();
+	} else if (moveName === 'Dynamic Fury') {
+		moveGroupObj.children(".move-hits").hide();
+		moveGroupObj.children(".stat-drops").hide();
+		moveGroupObj.children(".aura-blast").hide();
+		moveGroupObj.children(".dynamic-fury").show();
 	} else {
 		moveGroupObj.children(".move-hits").hide();
 		moveGroupObj.children(".stat-drops").hide();
+		moveGroupObj.children(".aura-blast").hide();
+		moveGroupObj.children(".dynamic-fury").hide();
 	}
 	moveGroupObj.children(".move-z").prop("checked", false);
 });
@@ -726,6 +742,11 @@ function getMoveDetails(moveInfo, ability, item, useMax) {
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
 	var hits = +moveInfo.find(".move-hits").val();
+	if (moveName === 'Aura Blast') {
+		hits = parseInt(moveInfo.find(".aura-blast").val()) + 1;
+	} else if (moveName === 'Dynamic Fury') {
+		hits = moveInfo.find(".dynamic-fury").val();
+	}
 	var usedTimes = +moveInfo.find(".stat-drops").val();
 	var metronomeCount = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
 	var overrides = {
@@ -742,7 +763,7 @@ function getMoveDetails(moveInfo, ability, item, useMax) {
 function createField() {
 	var gameType = $("input:radio[name='format']:checked").val();
 	var isGravity = $("#gravity").prop("checked");
-	var isSleet = $("#gravity").prop("checked");
+	var isSleet = $("#sleet").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var weather;
 	var spikes;
@@ -753,6 +774,7 @@ function createField() {
 		weather = $("input:radio[name='weather']:checked").val();
 		spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
 	}
+	var foundry = [$("#foundrysrL").prop("checked"), $("#foundrysrR").prop("checked")];
 	var steelsurge = [$("#steelsurgeL").prop("checked"), $("#steelsurgeR").prop("checked")];
 	var terrain = ($("input:checkbox[name='terrain']:checked").val()) ? $("input:checkbox[name='terrain']:checked").val() : "";
 	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
@@ -769,14 +791,14 @@ function createField() {
 
 	var createSide = function (i) {
 		return new calc.Side({
-			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
+			spikes: spikes[i], isSR: isSR[i], foundry: foundry[i], steelsurge: steelsurge[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
 			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isSwitching: isSwitching[i]
 		});
 	};
 	return new calc.Field({
-		gameType: gameType, weather: weather, terrain: terrain, isGravity: isGravity,
+		gameType: gameType, weather: weather, terrain: terrain, isGravity: isGravity, isSleet: isSleet,
 		attackerSide: createSide(0), defenderSide: createSide(1)
 	});
 }
