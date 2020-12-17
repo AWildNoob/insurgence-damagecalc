@@ -9,37 +9,19 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/colvis/1.1.1/css/dataTables.colVis.css" />
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="./css/main.css?05932931" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-26211653-3');
-
-        window.onerror = function(err, uri, line) {
-            gtag('event', 'exception', {'description': uri + ':' + line + ': ' + err});
-            return false;
-        };
-    </script>
 </head>
 
 <body>
 
-<div class="header"><div class="header-inner">
+<nav><div class="header"><div class="header-inner">
     <ul class="nav">
-        <li><a class="button nav-first" href="//pokemonshowdown.com"><img src="./img/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
-        <li><a class="button" href="//dex.pokemonshowdown.com">Pok&eacute;dex</a></li>
-        <li><a class="button" href="//replay.pokemonshowdown.com/">Replays</a></li>
-        <li><a class="button" href="//pokemonshowdown.com/ladder/">Ladder</a></li>
-        <li><a class="button nav-last" href="//pokemonshowdown.com/forums/">Forum</a></li>
-    </ul>
-    <ul class="nav nav-play">
-        <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
+        <li><a class="button nav-first" href="https://battling.p-insurgence.com"><img src="./img/insurgencelogo.png" href="https://p-insurgence.com/" style="height:40px">Battle</a></li>
+        <li><a class="button" href="https://forums.p-insurgence.com/">Forums</a></li>
+        <li><a class="button" href="https://discord.p-insurgence.com/">Discord</a></li>
+        <li><a class="button nav-last" href="https://github.com/AWildNoob/insurgence-damagecalc/">GitHub</a></li>
     </ul>
     <div style="clear:both"></div>
-</div></div>
+</div></div></nav>
 <div class="wrapper">
 
     <div>
@@ -428,141 +410,205 @@
                         Health <div class="hpbar"></div>
                     </div>
                     <div class="move1">
-                        <select class="move-selector small-select"></select>
-                        <input class="move-bp" value="50" />
-                        <select class="move-type"></select>
-                        <select class="move-cat gen-specific g4 g5 g6 g7 g8">
-                            <option value="Physical">Physical</option>
-                            <option value="Special">Special</option>
-                        </select>
-                        <input class="move-crit visually-hidden" type="checkbox" id="critL1" />
-                        <label class="btn crit-btn" for="critL1" title="Force this attack to be a critical hit?">Crit</label>
-                        <input class="move-z visually-hidden" type="checkbox" id="zL1"/>
-                        <label class="btn z-btn gen-specific g7" for="zL1" title="Make this attack a Z-move?">Z</label>
-                        <select class="move-hits hide">
-                            <option value="2">2 hits</option>
-                            <option value="3">3 hits</option>
-                            <option value="4">4 hits</option>
-                            <option value="5">5 hits</option>
-                        </select>
-                        <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
-                            <option value="1">Once</option>
-                            <option value="2">Twice</option>
-                            <option value="3">3 times</option>
-                            <option value="4">4 times</option>
-                            <option value="5">5 times</option>
-                        </select>
-                        <select class="metronome calc-trigger hide" title="How many times was this move successfully and consecutively used while holding Metronome before this turn?">
-                            <option value="0">Never</option>
-                            <option value="1">Once</option>
-                            <option value="2">Twice</option>
-                            <option value="3">3 times</option>
-                            <option value="4">4 times</option>
-                            <option value="5">5 times</option>
-                        </select>
-                    </div>
-                    <div class="move2">
-                        <select class="move-selector small-select"></select>
-                        <input class="move-bp" value="0" />
-                        <select class="move-type"></select>
-                        <select class="move-cat gen-specific g4 g5 g6 g7 g8">
-                            <option value="Physical">Physical</option>
-                            <option value="Special">Special</option>
-                        </select>
-                        <input class="move-crit visually-hidden" type="checkbox" id="critL2" />
-                        <label class="btn crit-btn" for="critL2" title="Force this attack to be a critical hit?">Crit</label>
-                        <input class="move-z visually-hidden" type="checkbox" id="zL2"/>
-                        <label class="btn z-btn gen-specific g7" for="zL2" title="Make this attack a Z-move?">Z</label>
-                        <select class="move-hits hide">
-                            <option value="2">2 hits</option>
-                            <option value="3">3 hits</option>
-                            <option value="4">4 hits</option>
-                            <option value="5">5 hits</option>
-                        </select>
-                        <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
-                            <option value="1">Once</option>
-                            <option value="2">Twice</option>
-                            <option value="3">3 times</option>
-                            <option value="4">4 times</option>
-                            <option value="5">5 times</option>
-                        </select>
-                        <select class="metronome calc-trigger hide" title="How many times was this move successfully and consecutively used while holding Metronome before this turn?">
-                            <option value="0">Never</option>
-                            <option value="1">Once</option>
-                            <option value="2">Twice</option>
-                            <option value="3">3 times</option>
-                            <option value="4">4 times</option>
-                            <option value="5">5 times</option>
-                        </select>
-                    </div>
-                    <div class="move3">
-                        <select class="move-selector small-select"></select>
-                        <input class="move-bp" value="0" />
-                        <select class="move-type"></select>
-                        <select class="move-cat gen-specific g4 g5 g6 g7 g8">
-                            <option value="Physical">Physical</option>
-                            <option value="Special">Special</option>
-                        </select>
-                        <input class="move-crit visually-hidden" type="checkbox" id="critL3" />
-                        <label class="btn crit-btn" for="critL3" title="Force this attack to be a critical hit?">Crit</label>
-                        <input class="move-z visually-hidden" type="checkbox" id="zL3"/>
-                        <label class="btn z-btn gen-specific g7" for="zL3" title="Make this attack a Z-move?">Z</label>
-                        <select class="move-hits hide">
-                            <option value="2">2 hits</option>
-                            <option value="3">3 hits</option>
-                            <option value="4">4 hits</option>
-                            <option value="5">5 hits</option>
-                        </select>
-                        <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
-                            <option value="1">Once</option>
-                            <option value="2">Twice</option>
-                            <option value="3">3 times</option>
-                            <option value="4">4 times</option>
-                            <option value="5">5 times</option>
-                        </select>
-                        <select class="metronome calc-trigger hide" title="How many times was this move successfully and consecutively used while holding Metronome before this turn?">
-                            <option value="0">Never</option>
-                            <option value="1">Once</option>
-                            <option value="2">Twice</option>
-                            <option value="3">3 times</option>
-                            <option value="4">4 times</option>
-                            <option value="5">5 times</option>
-                        </select>
-                    </div>
-                    <div class="move4">
-                        <select class="move-selector small-select"></select>
-                        <input class="move-bp" value="0" />
-                        <select class="move-type"></select>
-                        <select class="move-cat gen-specific g4 g5 g6 g7 g8">
-                            <option value="Physical">Physical</option>
-                            <option value="Special">Special</option>
-                        </select>
-                        <input class="move-crit visually-hidden" type="checkbox" id="critL4" />
-                        <label class="btn crit-btn" for="critL4" title="Force this attack to be a critical hit?">Crit</label>
-                        <input class="move-z visually-hidden" type="checkbox" id="zL4"/>
-                        <label class="btn z-btn gen-specific g7" for="zL4" title="Make this attack a Z-move?">Z</label>
-                        <select class="move-hits hide">
-                            <option value="2">2 hits</option>
-                            <option value="3">3 hits</option>
-                            <option value="4">4 hits</option>
-                            <option value="5">5 hits</option>
-                        </select>
-                        <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
-                          <option value="1">Once</option>
-                          <option value="2">Twice</option>
-                          <option value="3">3 times</option>
-                          <option value="4">4 times</option>
-                          <option value="5">5 times</option>
-                        </select>
-                        <select class="metronome calc-trigger hide" title="How many times was this move successfully and consecutively used while holding Metronome before this turn?">
-                            <option value="0">Never</option>
-                            <option value="1">Once</option>
-                            <option value="2">Twice</option>
-                            <option value="3">3 times</option>
-                            <option value="4">4 times</option>
-                            <option value="5">5 times</option>
-                        </select>
-                    </div>
+		                <select class="move-selector calc-trigger small-select"></select>
+		                <input class="move-bp calc-trigger" value="50" />
+		                <select class="move-type calc-trigger"></select>
+		                <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8">
+		                    <option value="Physical">Physical</option>
+		                    <option value="Special">Special</option>
+		                </select>
+		                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR1" />
+		                <label class="btn crit-btn" for="critR1" title="Force this attack to be a critical hit?">Crit</label>
+		                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR1"/>
+		                <label class="btn z-btn gen-specific g7 g8" for="zR1" title="Make this attack a Z-move?">Z</label>
+		                <select class="move-hits calc-trigger hide">
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                </select>
+		                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+		                    <option value="1">Once</option>
+		                    <option value="2">Twice</option>
+		                    <option value="3">3 times</option>
+		                    <option value="4">4 times</option>
+		                    <option value="5">5 times</option>
+		                </select>
+		                <select class="metronome calc-trigger hide" title="How many times was this move successfully and consecutively used while holding Metronome before this turn?">
+		                    <option value="0">Never</option>
+		                    <option value="1">Once</option>
+		                    <option value="2">Twice</option>
+		                    <option value="3">3 times</option>
+		                    <option value="4">4 times</option>
+		                    <option value="5">5 times</option>
+		                </select>
+		                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+		                    <option value="1">1 hit</option>
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                    <option value="6">6 hits</option>
+		                    <option value="7">7 hits</option>
+		                </select>
+		                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+		                    <option value="1">1 hit</option>
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                </select>
+		            </div>
+		            <div class="move2">
+		                <select class="move-selector calc-trigger small-select"></select>
+		                <input class="move-bp calc-trigger" value="0" />
+		                <select class="move-type calc-trigger"></select>
+		                <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8">
+		                    <option value="Physical">Physical</option>
+		                    <option value="Special">Special</option>
+		                </select>
+		                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR2" />
+		                <label class="btn crit-btn" for="critR2" title="Force this attack to be a critical hit?">Crit</label>
+		                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR2"/>
+		                <label class="btn z-btn gen-specific g7 g8" for="zR2" title="Make this attack a Z-move?">Z</label>
+		                <select class="move-hits calc-trigger hide">
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                </select>
+		                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+		                    <option value="1">Once</option>
+		                    <option value="2">Twice</option>
+		                    <option value="3">3 times</option>
+		                    <option value="4">4 times</option>
+		                    <option value="5">5 times</option>
+		                </select>
+		                <select class="metronome calc-trigger hide" title="How many times was this move successfully and consecutively used while holding Metronome before this turn?">
+		                    <option value="0">Never</option>
+		                    <option value="1">Once</option>
+		                    <option value="2">Twice</option>
+		                    <option value="3">3 times</option>
+		                    <option value="4">4 times</option>
+		                    <option value="5">5 times</option>
+		                </select>
+		                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+		                    <option value="1">1 hit</option>
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                    <option value="6">6 hits</option>
+		                    <option value="7">7 hits</option>
+		                </select>
+		                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+		                    <option value="1">1 hit</option>
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                </select>
+		            </div>
+		            <div class="move3">
+		                <select class="move-selector calc-trigger small-select"></select>
+		                <input class="move-bp calc-trigger" value="0" />
+		                <select class="move-type calc-trigger"></select>
+		                <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8">
+		                    <option value="Physical">Physical</option>
+		                    <option value="Special">Special</option>
+		                </select>
+		                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR3" />
+		                <label class="btn crit-btn" for="critR3" title="Force this attack to be a critical hit?">Crit</label>
+		                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR3"/>
+		                <label class="btn z-btn gen-specific g7 g8" for="zR3" title="Make this attack a Z-move?">Z</label>
+		                <select class="move-hits calc-trigger hide">
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                </select>
+		                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+		                    <option value="1">Once</option>
+		                    <option value="2">Twice</option>
+		                    <option value="3">3 times</option>
+		                    <option value="4">4 times</option>
+		                    <option value="5">5 times</option>
+		                </select>
+		                <select class="metronome calc-trigger hide" title="How many times was this move successfully and consecutively used while holding Metronome before this turn?">
+		                    <option value="0">Never</option>
+		                    <option value="1">Once</option>
+		                    <option value="2">Twice</option>
+		                    <option value="3">3 times</option>
+		                    <option value="4">4 times</option>
+		                    <option value="5">5 times</option>
+		                </select>
+		                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+		                    <option value="1">1 hit</option>
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                    <option value="6">6 hits</option>
+		                    <option value="7">7 hits</option>
+		                </select>
+		                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+		                    <option value="1">1 hit</option>
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                </select>
+		            </div>
+		            <div class="move4">
+		                <select class="move-selector calc-trigger small-select"></select>
+		                <input class="move-bp calc-trigger" value="0" />
+		                <select class="move-type calc-trigger"></select>
+		                <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8">
+		                    <option value="Physical">Physical</option>
+		                    <option value="Special">Special</option>
+		                </select>
+		                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR4" />
+		                <label class="btn crit-btn" for="critR4" title="Force this attack to be a critical hit?">Crit</label>
+		                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR4"/>
+		                <label class="btn z-btn gen-specific g7 g8" for="zR4" title="Make this attack a Z-move?">Z</label>
+		                <select class="move-hits calc-trigger hide">
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                </select>
+		                <select class="stat-drops calc-trigger hide" title="How many times was this move used in a row?">>
+		                    <option value="1">Once</option>
+		                    <option value="2">Twice</option>
+		                    <option value="3">3 times</option>
+		                    <option value="4">4 times</option>
+		                    <option value="5">5 times</option>
+		                </select>
+		                <select class="metronome calc-trigger hide" title="How many times was this move successfully and consecutively used while holding Metronome before this turn?">
+		                    <option value="0">Never</option>
+		                    <option value="1">Once</option>
+		                    <option value="2">Twice</option>
+		                    <option value="3">3 times</option>
+		                    <option value="4">4 times</option>
+		                    <option value="5">5 times</option>
+		                </select>
+		                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+		                    <option value="1">1 hit</option>
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                    <option value="6">6 hits</option>
+		                    <option value="7">7 hits</option>
+		                </select>
+		                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+		                    <option value="1">1 hit</option>
+		                    <option value="2">2 hits</option>
+		                    <option value="3">3 hits</option>
+		                    <option value="4">4 hits</option>
+		                    <option value="5">5 hits</option>
+		                </select>
+		            </div>
                 </div>
             </div>
         </fieldset>
@@ -619,10 +665,14 @@
                         <input class="visually-hidden" type="radio" name="gscWeather" value="Sand" id="gscSand" />
                         <label class="btn btn-small btn-right" for="gscSand">Sand</label>
                     </div>
-                    <div class="gen-specific g4 g5 g6 g7 g8" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
-                        <input class="visually-hidden" type="checkbox" id="gravity" />
-                        <label class="btn" for="gravity">Gravity</label>
-                    </div>
+	                <div class="gen-specific g4 g5 g6 g7 g8" style="margin: 5px auto;">
+	                    <span hidden id="gravityInstruction">Is gravity in effect?</span>
+	                    <input aria-describedby="gravityInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gravity" />
+	                    <label class="btn" for="gravity" style="width:6em; margin-right:0px" title="Is gravity in effect?">Gravity</label>
+	                    <span hidden id="sleetInstruction">Is Sleet in effect?</span>
+	                    <input aria-describedby="sleetInstruction" class="visually-hidden calc-trigger" type="checkbox" id="sleet" />
+	                    <label class="btn" for="sleet" style="width:6em; margin-left:0px" title="Is Sleet in effect?">Sleet</label>
+	                </div>
                     <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8" />
                     <div class="btn-group gen-specific g4 g5 g6 g7 g8">
                         <div class="left" title="Is Stealth Rock affecting this side of the field?">
@@ -633,6 +683,17 @@
                             <input class="visually-hidden" type="checkbox" id="srR" />
                             <label class="btn btn-xwide" for="srR">Stealth Rock</label>
                         </div>
+                    </div>
+                    <div class="gen-specific g4 g5 g6 g7 g8">
+                        <div hidden id="selectFoundryStealthRockInstruction">Is Stealth Rock affecting this side of the field?</div>
+                        <td><div class="left" title="Is Foundry Stealth Rock affecting this side of the field?">
+                            <input aria-describedby="selectFoundryStealthRockInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foundrysrL" />
+                            <label class="btn btn-xwide" for="foundrysrL">Foundry</label>
+                        </div></td>
+                        <td><div class="right" title="Is Foundry Stealth Rock affecting this side of the field?">
+                            <input aria-describedby="selectFoundryStealthRockInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foundrysrR" />
+                            <label class="btn btn-xwide" for="foundrysrR">Foundry</label>
+                        </div></td>
                     </div>
 						 <div class="btn-group gen-specific g8">
                         <div class="left" title="Is Steelsurge affecting this side of the field?">
@@ -853,10 +914,8 @@
     <script type="text/javascript" src="./js/shared_controls.js?60af443e"></script>
     <script type="text/javascript" src="./js/honkalculate_controls.js?974ebc25"></script>
 
-    <div style="clear:both;padding:20px;text-align:left">Created by Honko, maintained by Austin and pre
-        <ul><li><a href="https://github.com/smogon/damage-calc/contributors" target="_blank">Contributors</a></li>
-        <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" target="_blank">Bug Reports</a></li>
-        <li><a href="https://github.com/smogon/damage-calc" target="_blank">GitHub repository</a></li></ul>
+    <div class="credits">
+        Based off of the <a href="https://github.com/smogon/damage-calc/" target="_blank">Pokémon Showdown Damage Calculator</a>
     </div>
 
 </body>

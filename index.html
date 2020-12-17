@@ -3,38 +3,21 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Pok&eacute;mon Damage Calculator</title>
+    <title>Pok&eacute;mon Insurgence Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="./css/main.css?05932931" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-26211653-3');
-
-        window.onerror = function(err, uri, line) {
-            gtag('event', 'exception', {'description': uri + ':' + line + ': ' + err});
-            return false;
-        };
-    </script>
+    <link type="image/ico" rel="icon" href="./img/mew.ico">
 </head>
 
 <body>
 
 <nav><div class="header"><div class="header-inner">
     <ul class="nav">
-        <li><a class="button nav-first" href="//pokemonshowdown.com"><img src="./img/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
-        <li><a class="button" href="//dex.pokemonshowdown.com">Pok&eacute;dex</a></li>
-        <li><a class="button" href="//replay.pokemonshowdown.com/">Replays</a></li>
-        <li><a class="button" href="//pokemonshowdown.com/ladder/">Ladder</a></li>
-        <li><a class="button nav-last" href="//pokemonshowdown.com/forums/">Forum</a></li>
-    </ul>
-    <ul class="nav nav-play">
-        <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
+        <li><a class="button nav-first" href="https://battling.p-insurgence.com"><img src="./img/insurgencelogo.png" href="https://p-insurgence.com/" style="height:40px">Battle</a></li>
+        <li><a class="button" href="https://forums.p-insurgence.com/">Forums</a></li>
+        <li><a class="button" href="https://discord.p-insurgence.com/">Discord</a></li>
+        <li><a class="button nav-last" href="https://github.com/AWildNoob/insurgence-damagecalc/">GitHub</a></li>
     </ul>
     <div style="clear:both"></div>
 </div></div></nav>
@@ -514,6 +497,22 @@
                     <option value="4">4 times</option>
                     <option value="5">5 times</option>
                 </select>
+                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                    <option value="6">6 hits</option>
+                    <option value="7">7 hits</option>
+                </select>
+                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
             </div>
             <div class="move2">
                 <select class="move-selector calc-trigger small-select"></select>
@@ -547,6 +546,22 @@
                     <option value="3">3 times</option>
                     <option value="4">4 times</option>
                     <option value="5">5 times</option>
+                </select>
+                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                    <option value="6">6 hits</option>
+                    <option value="7">7 hits</option>
+                </select>
+                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
                 </select>
             </div>
             <div class="move3">
@@ -582,6 +597,22 @@
                     <option value="4">4 times</option>
                     <option value="5">5 times</option>
                 </select>
+                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                    <option value="6">6 hits</option>
+                    <option value="7">7 hits</option>
+                </select>
+                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
             </div>
             <div class="move4">
                 <select class="move-selector calc-trigger small-select"></select>
@@ -615,6 +646,22 @@
                     <option value="3">3 times</option>
                     <option value="4">4 times</option>
                     <option value="5">5 times</option>
+                </select>
+                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                    <option value="6">6 hits</option>
+                    <option value="7">7 hits</option>
+                </select>
+                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
                 </select>
             </div>
         </fieldset>
@@ -701,6 +748,17 @@
                             <td><div class="right" title="Is Stealth Rock affecting this side of the field?">
                                 <input aria-describedby="selectStealthRockInstruction" class="visually-hidden calc-trigger" type="checkbox" id="srR" />
                                 <label class="btn btn-xwide" for="srR">Stealth Rock</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g4 g5 g6 g7 g8">
+                            <div hidden id="selectFoundryStealthRockInstruction">Is Stealth Rock affecting this side of the field?</div>
+                            <td><div class="left" title="Is Foundry Stealth Rock affecting this side of the field?">
+                                <input aria-describedby="selectFoundryStealthRockInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foundrysrL" />
+                                <label class="btn btn-xwide" for="foundrysrL">Foundry</label>
+                            </div></td>
+                            <td><div class="right" title="Is Foundry Stealth Rock affecting this side of the field?">
+                                <input aria-describedby="selectFoundryStealthRockInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foundrysrR" />
+                                <label class="btn btn-xwide" for="foundrysrR">Foundry</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g8">
@@ -1291,6 +1349,22 @@
                     <option value="4">4 times</option>
                     <option value="5">5 times</option>
                 </select>
+                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                    <option value="6">6 hits</option>
+                    <option value="7">7 hits</option>
+                </select>
+                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
             </div>
             <div class="move2">
                 <select class="move-selector calc-trigger small-select"></select>
@@ -1324,6 +1398,22 @@
                     <option value="3">3 times</option>
                     <option value="4">4 times</option>
                     <option value="5">5 times</option>
+                </select>
+                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                    <option value="6">6 hits</option>
+                    <option value="7">7 hits</option>
+                </select>
+                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
                 </select>
             </div>
             <div class="move3">
@@ -1359,6 +1449,22 @@
                     <option value="4">4 times</option>
                     <option value="5">5 times</option>
                 </select>
+                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                    <option value="6">6 hits</option>
+                    <option value="7">7 hits</option>
+                </select>
+                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
             </div>
             <div class="move4">
                 <select class="move-selector calc-trigger small-select"></select>
@@ -1392,6 +1498,22 @@
                     <option value="3">3 times</option>
                     <option value="4">4 times</option>
                     <option value="5">5 times</option>
+                </select>
+                <select class="aura-blast calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                    <option value="6">6 hits</option>
+                    <option value="7">7 hits</option>
+                </select>
+                <select class="dynamic-fury calc-trigger hide" title="How many charges does the user have?">
+                    <option value="1">1 hit</option>
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
                 </select>
             </div>
         </fieldset>
@@ -1444,10 +1566,8 @@
     <script type="text/javascript" src="./js/moveset_import.js?d73090fe"></script>
 </div>
 
-<div class="credits">Created by Honko, maintained by Austin and pre
-    <ul><li><a href="https://github.com/smogon/damage-calc/contributors" target="_blank">Contributors</a></li>
-    <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" target="_blank">Bug Reports</a></li>
-    <li><a href="https://github.com/smogon/damage-calc" target="_blank">GitHub repository</a></li></ul>
+<div class="credits">
+    Based off of the <a href="https://github.com/smogon/damage-calc/" target="_blank">Pokémon Showdown Damage Calculator</a>
 </div>
 
 </body>
