@@ -6642,7 +6642,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 65,
           sp: 45
         },
-        w: 6.9
+        w: 6.9,
+        canEvolve: true
       },
       "Delta Ivysaur": {
         t1: 'Fairy',
@@ -6655,7 +6656,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 80,
           sp: 60
         },
-        w: 13.0
+        w: 13.0,
+        canEvolve: true
       },
       "Delta Venusaur": {
         t1: 'Fairy',
@@ -6685,7 +6687,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 50,
           sp: 65
         },
-        w: 8.5
+        w: 8.5,
+        canEvolve: true
       },
       "Delta Charmeleon": {
         t1: 'Ghost',
@@ -6698,7 +6701,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 65,
           sp: 80
         },
-        w: 19.0
+        w: 19.0,
+        canEvolve: true
       },
       "Delta Charizard": {
         t1: 'Ghost',
@@ -6728,7 +6732,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 64,
           sp: 43
         },
-        w: 9.0
+        w: 9.0,
+        canEvolve: true
       },
       "Delta Wartortle": {
         t1: 'Dark',
@@ -6741,7 +6746,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 80,
           sp: 58
         },
-        w: 22.5
+        w: 22.5,
+        canEvolve: true
       },
       "Delta Blastoise": {
         t1: 'Dark',
@@ -6771,7 +6777,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 40,
           sp: 60
         },
-        w: 10.2
+        w: 10.2,
+        canEvolve: true
       },
       "Delta Bisharp": {
         t1: 'Flying',
@@ -6801,7 +6808,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 35,
           sp: 40
         },
-        w: 6.6
+        w: 6.6,
+        canEvolve: true
       },
       "Delta Kirlia": {
         t1: 'Electric',
@@ -6814,7 +6822,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 55,
           sp: 50
         },
-        w: 20.2
+        w: 20.2,
+        canEvolve: true
       },
       "Delta Gardevoir": {
         t1: 'Electric',
@@ -6861,7 +6870,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 30,
           sp: 30
         },
-        w: 1.8
+        w: 1.8,
+        canEvolve: true
       },
       "Delta Sunflora": {
         t1: 'Fire',
@@ -6890,7 +6900,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 35,
           sp: 28
         },
-        w: 99.5
+        w: 99.5,
+        canEvolve: true
       },
       "Delta Avalugg": {
         t1: 'Rock',
@@ -6916,7 +6927,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 80,
           sp: 105
         },
-        w: 56.0
+        w: 56.0,
+        canEvolve: true
       },
       "Delta Scizor": {
         t1: 'Ice',
@@ -6945,7 +6957,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 70,
           sp: 48
         },
-        w: 11.8
+        w: 11.8,
+        canEvolve: true
       },
       "Delta Scrafty": {
         t1: 'Grass',
@@ -6970,7 +6983,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 42,
           sp: 70
         },
-        w: 5.5
+        w: 11.0,
+        canEvolve: true
       },
       "Delta Vespiquen": {
         t1: 'Steel',
@@ -6983,7 +6997,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 102,
           sp: 40
         },
-        w: 38.5
+        w: 77.0
       },
       "Delta Koffing": {
         t1: "Electrc",
@@ -6996,7 +7010,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 45,
           sp: 35
         },
-        w: 1.0
+        w: 1.0,
+        canEvolve: true
       },
       "Delta Weezing": {
         t1: 'Electric',
@@ -7022,7 +7037,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 37,
           sp: 66
         },
-        w: 10.1
+        w: 10.1,
+        canEvolve: true
       },
       "Delta Liepard": {
         t1: 'Ghost',
@@ -7048,7 +7064,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 60,
           sp: 38
         },
-        w: 7.0
+        w: 7.0,
+        canEvolve: true
       },
       "Delta Trevenant": {
         t1: 'Fairy',
@@ -7073,7 +7090,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 50,
           sp: 50
         },
-        w: 16.8
+        w: 16.8,
+        canEvolve: true
       },
       "Delta Glalie": {
         t1: 'Fire',
@@ -7119,7 +7137,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 34,
           sp: 45
         },
-        w: 9.5
+        w: 19.0,
+        canEvolve: true
       },
       "Delta Luxio": {
         t1: 'Steel',
@@ -7132,7 +7151,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 49,
           sp: 60
         },
-        w: 30.5
+        w: 71.0,
+        canEvolve: true
       },
       "Delta Luxray": {
         t1: 'Steel',
@@ -7145,7 +7165,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 79,
           sp: 70
         },
-        w: 42.0
+        w: 84.0
       },
       "Delta Noibat": {
         t1: 'Grass',
@@ -7158,7 +7178,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 40,
           sp: 55
         },
-        w: 8.0
+        w: 16.0,
+        canEvolve: true
       },
       "Delta Noivern": {
         t1: 'Grass',
@@ -7171,7 +7192,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 80,
           sp: 123
         },
-        w: 85.0
+        w: 170.0
       },
       "Delta Budew": {
         t1: 'Dark',
@@ -7184,7 +7205,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 70,
           sp: 55
         },
-        w: 1.2
+        w: 1.2,
+        canEvolve: true
       },
       "Delta Roselia": {
         t1: 'Dark',
@@ -7197,7 +7219,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 80,
           sp: 65
         },
-        w: 2.0
+        w: 2.0,
+        canEvolve: true
       },
       "Delta Roserade": {
         t1: 'Dark',
@@ -7212,6 +7235,33 @@ var XY = util_1.extend(true, {}, XY_BASE, {
         },
         w: 14.5
       },
+      "Delta Drifloon": {
+        t1: 'Fire',
+        t2: 'Flying',
+        bs: {
+          hp: 90,
+          at: 50,
+          df: 34,
+          sa: 60,
+          sd: 44,
+          sp: 70
+        },
+        w: 1.2,
+        canEvolve: true
+      },
+      "Delta Drifblim": {
+        t1: 'Fire',
+        t2: 'Flying',
+        bs: { 
+          hp: 150,
+          at: 80,
+          df: 44,
+          sa: 90,
+          sd: 54,
+          sp: 80
+        },
+        w: 15.0
+      },
       "Delta Grimer": {
         t1: 'Ground',
         bs: {
@@ -7222,7 +7272,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 50,
           sp: 25
         },
-        w: 30.0
+        w: 30.0,
+        canEvolve: true
       },
       "Delta Muk": {
 	    t1: 'Ground',
@@ -7340,7 +7391,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
           sd: 25,
           sp: 15
         },
-        w: 8.5
+        w: 8.5,
+        canEvolve: true
       },
 	  "Delta Quagsire": {
 	    t1: 'Grass',
@@ -7365,7 +7417,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 85,
 	      sp: 5
 	    },
-	    w: 105.0
+	    w: 105.0,
+        canEvolve: true
 	  },
 	  "Delta Snorlax": {
 	    t1: 'Grass',
@@ -7390,7 +7443,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 85,
 	      sp: 85
 	    },
-	    w: 1.0
+	    w: 1.0,
+        canEvolve: true
 	  },
 	  "Delta Mismagius": {
 	    t1: 'Ice',
@@ -7415,7 +7469,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 65
 		 },
-		 w: 7.9
+		 w: 7.9,
+         canEvolve: true
 	  },
 	  "Delta Quilava": {
 		 t1: 'Electric',
@@ -7428,7 +7483,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 65,
 		   sp: 80
 		 },
-		 w: 28.5
+		 w: 28.5,
+         canEvolve: true
 	  },
 	  "Delta Typhlosion": {
 		 t1: 'Electric',
@@ -7458,7 +7514,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 70
 		 },
-		 w: 5.0
+		 w: 5.0,
+         canEvolve: true
 	  },
 	  "Delta Grovyle": {
 		 t1: 'Normal',
@@ -7471,7 +7528,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 65,
 		   sp: 95
 		 },
-		 w: 21.6
+		 w: 21.6,
+         canEvolve: true
 	  },
 	  "Delta Sceptile": {
 		 t1: 'Dragon',
@@ -7496,7 +7554,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 45
 		 },
-		 w: 2.5
+		 w: 2.5,
+         canEvolve: true
 	  },
 	  "Delta Combusken": {
 		 t1: 'Psychic',
@@ -7508,7 +7567,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 60,
 		   sp: 55
 		    },
-		 w: 19.5
+		 w: 19.5,
+         canEvolve: true
 	  },
 	  "Delta Blaziken": {
 		 t1: 'Psychic',
@@ -7534,7 +7594,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 31
 		 },
-		 w: 10.2
+		 w: 10.2,
+         canEvolve: true
 	  },
 	   "Delta Grotle": {
 	     t1: 'Water',
@@ -7547,7 +7608,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	       sd: 65,
 	       sp: 36
 	     },
-	     w: 97.0
+	     w: 97.0,
+         canEvolve: true
 	  },
 	  "Delta Torterra": {
 		 t1: 'Water',
@@ -7572,7 +7634,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 63
 		 },
-		 w: 8.1
+		 w: 8.1,
+         canEvolve: true
 	  },
 	  "Delta Servine": {
 		 t1: 'Water',
@@ -7584,7 +7647,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 75,
 		   sp: 83
 		 },
-		 w: 16.0
+		 w: 16.0,
+         canEvolve: true
 	  },
 	  "Delta Serperior": {
 		 t1: 'Water',
@@ -7609,7 +7673,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 44,
 		   sp: 71
 		 },
-		 w: 7.0
+		 w: 7.0,
+         canEvolve: true
 	  },
 	  "Delta Frogadier": {
 		 t1: 'Grass',
@@ -7621,7 +7686,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 56,
 		   sp: 97
 		 },
-		 w: 10.9
+		 w: 10.9,
+         canEvolve: true
 	  },
 	  "Delta Greninja": {
 		 t1: 'Grass',
@@ -7647,7 +7713,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 35,
 		   sp: 56
 		 },
-		 w: 1.8
+		 w: 1.8,
+         canEvolve: true
 	  },
 	  "Delta Pidgeotto": {
 		 t1: 'Dark',
@@ -7660,7 +7727,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 71
 		 },
-		 w: 30.0
+		 w: 30.0,
+         canEvolve: true
 	  },
 	  "Delta Pidgeot": {
 		  t1: 'Dark',
@@ -7690,7 +7758,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 45,
 		   sp: 95
 		 },
-		 w: 0.8
+		 w: 0.8,
+         canEvolve: true
 	  },
 	  "Delta Dugtrio": {
 		 t1: 'Ice',
@@ -7716,7 +7785,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 60
 		 },
-		 w: 19.0
+		 w: 19.0,
+         canEvolve: true
 	  },
 	  "Delta Arcanine": {
 		 t1: 'Normal',
@@ -7742,7 +7812,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 30,
 		   sp: 20
 		 },
-		 w: 20.0
+		 w: 20.0,
+         canEvolve: true
 	  },
 	  "Delta Graveler": {
 		 t1: 'Psychic',
@@ -7755,7 +7826,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 45,
 		   sp: 35
 		 },
-		 w: 105.0
+		 w: 105.0,
+         canEvolve: true
 	  },
 	  "Delta Golem": {
 		 t1: 'Psychic',
@@ -7782,7 +7854,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 100,
 		   sp: 70
 		 },
-		 w: 45.5
+		 w: 45.5,
+         canEvolve: true
 	  },
 	  "Delta Tentacruel": {
 		 t1: 'Grass',
@@ -7805,10 +7878,10 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   df: 45,
 		   sa: 35,
 		   sd: 35,
-		   sp: 75,
-		   "sl": 35
+		   sp: 75
 		 },
-		 w: 39.2
+		 w: 39.2,
+         canEvolve: true
 	  },
 	  "Delta Dodrio": {
 		  t1: 'Psychic',
@@ -7832,7 +7905,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 40,
 		   sp: 60
 		 },
-		 w: 35.0
+		 w: 35.0,
+         canEvolve: true
 	  },
 	  "Delta Tangrowth": {
 		 t1: 'Ground',
@@ -7870,7 +7944,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 45,
 		   sp: 55
 		 },
-		 w: 11.5
+		 w: 11.5,
+         canEvolve: true
 	  },
 	  "Delta Kabutops": {
 		 t1: 'Bug',
@@ -7896,7 +7971,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 50
 		 },
-		 w: 3.3
+		 w: 3.3,
+         canEvolve: true
 	  },
 	  "Delta Dragonair": {
 		 t1: 'Electric',
@@ -7909,7 +7985,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 70,
 		   sp: 70
 		 },
-		 w: 16.5
+		 w: 16.5,
+         canEvolve: true
 	  },
 	  "Delta Dragonite": {
 		 t1: 'Electric',
@@ -7935,7 +8012,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 56,
 		   sp: 50
 		 },
-		 w: 21.2
+		 w: 21.2,
+         canEvolve: true
 	  },
 	  "Delta Noctowl": {
 		 t1: 'Ice',
@@ -7961,7 +8039,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 56,
 		   sp: 67
 		 },
-		 w: 12.0
+		 w: 12.0,
+         canEvolve: true
 	  },
 	  "Delta Lanturn": {
 		 t1: 'Ghost',
@@ -7987,11 +8066,12 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 35,
 		   sp: 60
 		 },
-		 w: 2.0
+		 w: 2.0,
+         canEvolve: true
 	  },
 	  "Delta Pikachu": {
-		 t1: 'Fairy',
-		 t2: 'Flying',
+		 t1: 'Flying',
+		 t2: 'Fairy',
 		 bs: {
 		   hp: 35,
 		   at: 55,
@@ -8000,11 +8080,12 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 40,
 		   sp: 90
 		 },
-		 w: 6.0
+		 w: 6.0,
+         canEvolve: true
 	  },
 	  "Delta Raichu": {
-		 t1: 'Fairy',
-		 t2: 'Flying',
+		 t1: 'Flying',
+		 t2: 'Fairy',
 		 bs: {
 		   hp: 60,
 		   at: 90,
@@ -8026,7 +8107,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 85
 		 },
-		 w: 11.5
+		 w: 11.5,
+         canEvolve: true
 	  },
 	  "Delta Ambipom": {
 		 t1: 'Ghost',
@@ -8052,7 +8134,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 45,
 		   sp: 95
 		 },
-		 w: 38.0
+		 w: 38.0,
+         canEvolve: true
 	  },
 	  "Delta Yanmega": {
 		 t1: 'Grass',
@@ -8078,7 +8161,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 65,
 		   sp: 85
 		 },
-		 w: 41.5,
+		 w: 83.0,
 		 formes: [
 		     "Delta Girafarig",
 		     "Delta Girafarig-Mega"
@@ -8108,7 +8191,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 230,
 		   sp: 5
 		 },
-		 w: 20.5
+		 w: 41.0
 	  },
 	  "Delta Remoraid": {
 		 t1: 'Fire',
@@ -8120,7 +8203,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 35,
 		   sp: 65
 		 },
-		 w: 12.0
+		 w: 12.0,
+         canEvolve: true
 	  },
 	  "Delta Octillery": {
 		 t1: 'Fire',
@@ -8144,7 +8228,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 95
 		 },
-		 w: 23.5
+		 w: 35.5,
+         canEvolve: true
 	  },
 	  "Delta Electabuzz": {
 		 t1: 'Rock',
@@ -8157,7 +8242,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sp: 105,
 		   "sl": 85
 		 },
-		 w: 30.0
+		 w: 45.0,
+         canEvolve: true
 	  },
 	  "Delta Electivire": {
 		 t1: 'Electric',
@@ -8169,7 +8255,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 85,
 		   sp: 95
 		 },
-		 w: 138.6
+		 w: 220.0
 	  },
 	  "Delta Magby": {
 		 t1: 'Water',
@@ -8181,7 +8267,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 83
 		 },
-		 w: 21.4
+		 w: 21.4,
+         canEvolve: true
 	  },
 	  "Delta Magmar": {
 		  t1: 'Water',
@@ -8193,7 +8280,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 			sd: 85,
 			sp: 93
 		  },
-		  w: 44.5
+		  w: 44.5,
+          canEvolve: true
 	  },
 	  "Delta Magmortar": {
 		 t1: 'Water',
@@ -8206,11 +8294,11 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 95,
 		   sp: 83
 		 },
-		 w: 68.0
+		 w: 102.0
 	  },
 	  "Delta Lotad": {
-		 t1: 'Water',
-		 t2: 'Psychic',
+		 t1: 'Psychic',
+		 t2: 'Water',
 		 bs: {
 		   hp: 40,
 		   at: 30,
@@ -8219,11 +8307,12 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 30
 		 },
-		 w: 2.6
+		 w: 2.6,
+         canEvolve: true
 	  },
 	  "Delta Lombre": {
-		 t1: 'Water',
-		 t2: 'Psychic',
+		 t1: 'Psychic',
+		 t2: 'Water',
 		 bs: {
 		   hp: 60,
 		   at: 50,
@@ -8232,11 +8321,12 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 70,
 		   sp: 50
 		 },
-		 w: 32.5
+		 w: 32.5,
+         canEvolve: true
 	  },
 	  "Delta Ludicolo": {
-		 t1: 'Water',
-		 t2: 'Psychic',
+		 t1: 'Psychic',
+		 t2: 'Water',
 		 bs: {
 		   hp: 80,
 		   at: 70,
@@ -8257,7 +8347,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 30,
 		   sp: 30
 		 },
-		 w: 4.0
+		 w: 4.0,
+         canEvolve: true
 	  },
 	  "Delta Nuzleaf": {
 		 t1: 'Electric',
@@ -8269,7 +8360,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 40,
 		   sp: 60
 		 },
-		 w: 28.0
+		 w: 28.0,
+         canEvolve: true
 	  },
 	  "Delta Shiftry": {
 		 t1: 'Electric',
@@ -8328,7 +8420,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 40,
 		   sp: 30
 		 },
-		 w: 60.0
+		 w: 60.0,
+         canEvolve: true
 	  },
 	  "Delta Lairon": {
 		 t1: 'Fire',
@@ -8341,7 +8434,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 40
 		 },
-		 w: 120.0
+		 w: 120.0,
+         canEvolve: true
 	  },
 	  "Delta Aggron": {
 		 t1: 'Fire',
@@ -8366,7 +8460,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 60
 		 },
-		 w: 11.2
+		 w: 11.2,
+         canEvolve: true
 	  },
 	  "Delta Medicham": {
 		 t1: 'Fairy',
@@ -8395,7 +8490,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 45,
 		   sp: 35
 		 },
-		 w: 24.0
+		 w: 24.0,
+         canEvolve: true
 	  },
 	  "Delta Camerupt": {
 		 t1: 'Poison',
@@ -8448,7 +8544,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   df: 35,
 		   sa: 70,
 		   sd: 35,
-		   sp: 60
+		   sp: 60,
+           canEvolve: true
 		 },
 		 w: 130.0
 	  },
@@ -8473,7 +8570,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   df: 20,
 		   sa: 10,
 		   sd: 55,
-		   sp: 80
+		   sp: 80,
+           canEvolve: true
 		 },
 		 w: 7.4
 	  },
@@ -8503,7 +8601,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 32
 		 },
-		 w: 52.5
+		 w: 52.5,
+         canEvolve: true
 	  },
 	  "Delta Huntail": {
 		 t1: 'Dragon',
@@ -8529,7 +8628,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 75,
 		   sp: 52
 		 },
-		 w: 22.6
+		 w: 22.6,
+         canEvolve: true
 	  },
 	  "Delta Beldum-Spider": {
 		 t1: 'Ground',
@@ -8542,7 +8642,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 60,
 		   sp: 30
 		 },
-		 w: 47.5
+		 w: 47.6,
+         canEvolve: true
 	  },
 	  "Delta Metang-Spider": {
 		 t1: 'Ground',
@@ -8575,8 +8676,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   ]
 	  },
 	  "Delta Beldum-Ruin": {
-		 t1: 'Rock',
-		 t2: 'Grass',
+		 t1: 'Grass',
+		 t2: 'Rock',
 		 bs: {
 		   hp: 40,
 		   at: 55,
@@ -8585,11 +8686,12 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 60,
 		   sp: 30
 		 },
-		 w: 95.2
+		 w: 95.2,
+         canEvolve: true
 	  },
 	  "Delta Metang-Ruin": {
-		 t1: 'Rock',
-		 t2: 'Grass',
+		 t1: 'Grass',
+		 t2: 'Rock',
 		 bs: {
 		   hp: 60,
 		   at: 75,
@@ -8598,11 +8700,12 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 80,
 		   sp: 50
 		 },
-		 w: 202.5
+		 w: 202.5,
+         canEvolve: true
 	  },
 	  "Delta Metagross-Ruin": {
-		 t1: 'Rock',
-		 t2: 'Grass',
+		 t1: 'Grass',
+		 t2: 'Rock',
 		 bs: {
 		   hp: 80,
 		   at: 135,
@@ -8628,7 +8731,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 56,
 		   sp: 85
 		 },
-		 w: 5.5
+		 w: 5.5,
+         canEvolve: true
 	  },
 	  "Delta Lopunny": {
 		 t1: 'Fighting',
@@ -8656,7 +8760,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 40,
 		   sp: 60
 		 },
-		 w: 20.2
+		 w: 20.2,
+         canEvolve: true
 	  },
 	  "Delta Lucario": {
 		 t1: 'Dark',
@@ -8685,7 +8790,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 40,
 		   sp: 50
 		 },
-		 w: 23.0
+		 w: 23.0,
+         canEvolve: true
 	  },
 	  "Delta Toxicroak": {
 		 t1: 'Fire',
@@ -8710,7 +8816,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 39,
 		   sp: 57
 		 },
-		 w: 5.3
+		 w: 8.0,
+         canEvolve: true
 	  },
 	  "Delta Whirlipede": {
 		 t1: 'Rock',
@@ -8723,7 +8830,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 79,
 		   sp: 47
 		 },
-		 w: 58.5
+		 w: 87.8,
+         canEvolve: true
 	  },
 	  "Delta Scolipede": {
 		 t1: 'Rock',
@@ -8736,7 +8844,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 69,
 		   sp: 112
 		 },
-		 w: 200.5
+		 w: 300.8
 	  },
 	  "Delta Petilil-Water": {
 		 t1: 'Water',
@@ -8749,7 +8857,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 30
 		 },
-		 w: 6.6
+		 w: 6.6,
+         canEvolve: true
 	  },
 	  "Delta Lilligant-Water": {
 		 t1: 'Water',
@@ -8775,7 +8884,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 			sd: 50,
 			sp: 30
 		  },
-		  w: 6.6
+		  w: 6.6,
+          canEvolve: true
 	  },
 	  "Delta Lilligant-Fairy": {
 		  t1: 'Fairy',
@@ -8801,7 +8911,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 20
 		 },
-		  w: 1.0
+		  w: 2.0,
+          canEvolve: true
 	  },
 	  "Delta Duosion": {
 		 t1: 'Ghost',
@@ -8814,7 +8925,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 60,
 		   sp: 30
 		 },
-		 w: 8.0
+		 w: 16.0,
+         canEvolve: true
 	  },
 	  "Delta Reuniclus": {
 		 t1: 'Ghost',
@@ -8827,7 +8939,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 85,
 		   sp: 30
 		 },
-		 w: 20.1
+		 w: 40.2
 	  },
 	  "Delta Darumaka": {
 		 t1: 'Dark',
@@ -8840,7 +8952,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 45,
 		   sp: 50
 		 },
-		 w: 37.5
+		 w: 37.5,
+         canEvolve: true
 	  },
 	  "Delta Darmanitan": {
 		 t1: 'Dark',
@@ -8865,7 +8978,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 67,
 		   sp: 60
 		 },
-		 w: 28.0
+		 w: 56.0
 	  },
 	  "Delta Dwebble-Berry": {
 		 t1: 'Grass',
@@ -8878,7 +8991,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 35,
 		   sp: 55
 		 },
-		 w: 14.5
+		 w: 10.6,
+         canEvolve: true
 	  },
 	  "Delta Crustle-Berry": {
 		 t1: 'Grass',
@@ -8904,7 +9018,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 35,
 		   sp: 55
 		 },
-		 w: 14.5
+		 w: 7.8,
+         canEvolve: true
 	  },
 	  "Delta Crustle-Cake": {
 		 t1: 'Fairy',
@@ -8930,7 +9045,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 65,
 		   sp: 30
 		 },
-		 w: 1.5
+		 w: 3.0,
+         canEvolve: true
 	  },
 	  "Delta Cofagrigus": {
 		 t1: 'Steel',
@@ -8943,7 +9059,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 105,
 		   sp: 30
 		 },
-		 w: 76.5
+		 w: 153.0
 	  },
 	  "Delta Emolga": {
 		 t1: 'Fire',
@@ -8968,7 +9084,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 45,
 		   sp: 60
 		 },
-		 w: 5.9
+		 w: 5.9,
+         canEvolve: true
 	  },
 	  "Delta Escavalier": {
 		 t1: 'Fairy',
@@ -8993,7 +9110,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 15
 		 },
-		 w: 1.0
+		 w: 1.0,
+         canEvolve: true
 	  },
 	  "Delta Amoonguss": {
 		 t1: 'Ghost',
@@ -9019,7 +9137,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 20
 		 },
-		 w: 3.1
+		 w: 3.1,
+         canEvolve: true
 	  },
 	  "Delta Lampent": {
 		 t1: 'Fairy',
@@ -9032,7 +9151,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 60,
 		   sp: 55
 		 },
-		 w: 13.0
+		 w: 13.0,
+         canEvolve: true
 	  },
 	  "Delta Chandelure": {
 		 t1: 'Fairy',
@@ -9057,7 +9177,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 40,
 		   sp: 57
 		 },
-		 w: 18.0
+		 w: 18.0,
+         canEvolve: true
 	  },
 	  "Delta Fraxure": {
 		 t1: 'Water',
@@ -9069,7 +9190,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 67
 		 },
-		 w: 36.0
+		 w: 36.0,
+         canEvolve: true
 	  },
 	  "Delta Haxorus": {
 		 t1: 'Water',
@@ -9082,7 +9204,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 70,
 		   sp: 97
 		 },
-		 w: 105.5
+		 w: 211.0
 	  },
 	  "Delta Golett": {
 		 t1: 'Fighting',
@@ -9095,7 +9217,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 35
 		 },
-		 w: 92.0
+		 w: 92.0,
+         canEvolve: true
 	  },
 	  "Delta Golurk": {
 		 t1: 'Fighting',
@@ -9121,7 +9244,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 66,
 		   sp: 65
 		 },
-		 w: 58.0
+		 w: 116.0
 	  },
 	  "Delta Deino": {
 		 t1: 'Ground',
@@ -9134,7 +9257,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 50,
 		   sp: 38
 		 },
-		 w: 17.3
+		 w: 17.3,
+         canEvolve: true
 	  },
 	  "Delta Zweilous": {
 		 t1: 'Ground',
@@ -9147,7 +9271,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 70,
 		   sp: 58
 		 },
-		 w: 50.0
+		 w: 50.0,
+         canEvolve: true
 	  },
 	  "Delta Hydreigon": {
 		 t1: 'Ground',
@@ -9173,7 +9298,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 55,
 		   sp: 60
 		 },
-		 w: 28.8
+		 w: 28.8,
+         canEvolve: true
 	  },
 	  "Delta Volcarona": {
 		 t1: 'Dark',
@@ -9203,7 +9329,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 63,
 		   sp: 46
 		 },
-		 w: 25.2
+		 w: 25.2,
+         canEvolve: true
 	  },
 	  "Delta Aurorus": {
 		 t1: 'Grass',
@@ -9229,7 +9356,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 75,
 		   sp: 40
 		 },
-		 w: 2.8
+		 w: 2.8,
+         canEvolve: true
 	  },
 	  "Delta Sliggoo": {
 		 t1: 'Ground',
@@ -9242,7 +9370,8 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		   sd: 113,
 		   sp: 60
 		 },
-		 w: 17.5
+		 w: 17.5,
+         canEvolve: true
 	  },
 	  "Delta Goodra": {
 		 t1: 'Ground',
@@ -9340,6 +9469,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	  },
 	  "Delta Hoopa-Unbound": {
 		 t1: 'Flying',
+		 t2: 'Fairy',
 		 bs: {
 		   hp: 80,
 		   at: 160,
@@ -10150,7 +10280,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 80,
 	      sp: 100
 	    },
-	    w: 256.5,
+	    w: 350.2,
 	    ab: "Reckless",
 	    isAlternateForm: true
 	  },
@@ -10195,7 +10325,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 80,
 	      sp: 121
 	    },
-	    w: 39.5,
+	    w: 50.5,
 	    ab: "Intimidate",
 	    isAlternateForm: true
 	  },
@@ -10210,7 +10340,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 95,
 	      sp: 85
 	    },
-	    w: 41.5,
+	    w: 83.0,
 	    ab: "Intimidate",
 	    isAlternateForm: true
 	  },
@@ -10225,7 +10355,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 115,
 	      sp: 20
 	    },
-	    w: 11.0,
+	    w: 161.0,
 	    ab: "Dry Skin",
 	    isAlternateForm: true
 	  },
@@ -10240,7 +10370,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 95,
 	      sp: 50
 	    },
-	    w: 11.5,
+	    w: 23.5,
 	    ab: "Arena Trap",
 	    isAlternateForm: true
 	  },
@@ -10269,7 +10399,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 105,
 	      sp: 20
 	    },
-	    w: 220.0,
+	    w: 320.5,
 	    ab: "Venomous",
 	    isAlternateForm: true
 	  },
@@ -10283,7 +10413,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 155,
 	      sp: 81
 	    },
-	    w: "162.0",
+	    w: 162.0,
 	    ab: "Absolution",
 	    isAlternateForm: true
 	  },
@@ -10343,7 +10473,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 96,
 	      sp: 135
 	    },
-	    w: 33.3,
+	    w: 28.3,
 	    ab: "Infiltrator",
 	    isAlternateForm: true
 	  },
@@ -10358,7 +10488,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 	      sd: 70,
 	      sp: 112
 	    },
-	    w: 54.0,
+	    w: 57.5,
 	    ab: "Defiant",
 	    isAlternateForm: true
 	  },
@@ -10621,22 +10751,36 @@ var XY = util_1.extend(true, {}, XY_BASE, {
 		 isAlternateForm: true
 	  },
       'Zygarde-10%': {
-          t1: 'Dragon',
-          t2: 'Ground',
-          bs: { hp: 54, at: 100, df: 71, sa: 61, sd: 85, sp: 115 },
-          w: 33.5,
-          ab: 'Power Construct',
-          isAlternateForme: true,
-          gender: 'N'
+        t1: 'Dragon',
+        t2: 'Ground',
+        bs: {
+          hp: 54,
+          at: 100,
+          df: 71,
+          sa: 61,
+          sd: 85,
+          sp: 115
+        },
+        w: 33.5,
+        ab: 'Power Construct',
+        isAlternateForme: true,
+        gender: 'N'
       },
       'Zygarde-Complete': {
-          t1: 'Dragon',
-          t2: 'Ground',
-          bs: { hp: 216, at: 100, df: 121, sa: 91, sd: 95, sp: 85 },
-          w: 610,
-          ab: 'Power Construct',
-          isAlternateForme: true,
-          gender: 'N'
+        t1: 'Dragon',
+        t2: 'Ground',
+        bs: {
+          hp: 216,
+          at: 100,
+          df: 121,
+          sa: 91,
+          sd: 95,
+          sp: 85
+        },
+        w: 610,
+        ab: 'Power Construct',
+        isAlternateForme: true,
+        gender: 'N'
       },
 	  "Delta Volcarona-Armored": {
 		 t1: 'Dark',
