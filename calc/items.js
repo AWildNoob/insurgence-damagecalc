@@ -28,7 +28,7 @@ function getItemBoostType(item) {
         case 'Never-Melt Ice':
             return 'Ice';
         case 'Insect Plate':
-        case 'SilverPowder':
+        case 'Silver Powder':
             return 'Bug';
         case 'Iron Plate':
         case 'Metal Coat':

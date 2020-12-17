@@ -1,17 +1,19 @@
 "use strict";
 exports.__esModule = true;
 var util_1 = require("./mechanics/util");
+var result_1 = require("./result");
 var util_2 = require("./util");
 function display(gen, attacker, defender, move, field, damage, rawDesc, notation, err) {
     if (notation === void 0) { notation = '%'; }
     if (err === void 0) { err = true; }
-    var minDamage = damage[0] * move.hits;
-    var maxDamage = damage[damage.length - 1] * move.hits;
-    var minDisplay = toDisplay(notation, minDamage, defender.maxHP());
-    var maxDisplay = toDisplay(notation, maxDamage, defender.maxHP());
-    var desc = buildDescription(rawDesc);
-    var damageText = minDamage + "-" + maxDamage + " (" + minDisplay + " - " + maxDisplay + notation + ")";
-    if (move.bp === 0)
+    var _a = result_1.damageRange(damage), minDamage = _a[0], maxDamage = _a[1];
+    var min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
+    var max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
+    var minDisplay = toDisplay(notation, min, defender.maxHP());
+    var maxDisplay = toDisplay(notation, max, defender.maxHP());
+    var desc = buildDescription(rawDesc, attacker, defender);
+    var damageText = min + "-" + max + " (" + minDisplay + " - " + maxDisplay + notation + ")";
+    if (move.category === 'Status' && !move.named('Nature Power'))
         return desc + ": " + damageText;
     var koChanceText = getKOChance(gen, attacker, defender, move, field, damage, err).text;
     return koChanceText ? desc + ": " + damageText + " -- " + koChanceText : desc + ": " + damageText;
@@ -19,10 +21,11 @@ function display(gen, attacker, defender, move, field, damage, rawDesc, notation
 exports.display = display;
 function displayMove(gen, attacker, defender, move, damage, notation) {
     if (notation === void 0) { notation = '%'; }
-    var minDamage = damage[0] * move.hits;
-    var maxDamage = damage[damage.length - 1] * move.hits;
-    var minDisplay = toDisplay(notation, minDamage, defender.maxHP());
-    var maxDisplay = toDisplay(notation, maxDamage, defender.maxHP());
+    var _a = result_1.damageRange(damage), minDamage = _a[0], maxDamage = _a[1];
+    var min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
+    var max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
+    var minDisplay = toDisplay(notation, min, defender.maxHP());
+    var maxDisplay = toDisplay(notation, max, defender.maxHP());
     var recoveryText = getRecovery(gen, attacker, defender, move, damage, notation).text;
     var recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
     return minDisplay + " - " + maxDisplay + notation + (recoveryText &&
@@ -31,25 +34,32 @@ function displayMove(gen, attacker, defender, move, damage, notation) {
 exports.displayMove = displayMove;
 function getRecovery(gen, attacker, defender, move, damage, notation) {
     if (notation === void 0) { notation = '%'; }
-    var minDamage = damage[0] * move.hits;
-    var maxDamage = damage[damage.length - 1] * move.hits;
+    var _a = result_1.damageRange(damage), minDamage = _a[0], maxDamage = _a[1];
+    var minD = typeof minDamage === 'number' ? [minDamage] : minDamage;
+    var maxD = typeof maxDamage === 'number' ? [maxDamage] : maxDamage;
     var recovery = [0, 0];
     var text = '';
     var ignoresShellBell = gen.num === 3 && (move.name === 'Doom Desire' || move.name === 'Future Sight');
     if (attacker.hasItem('Shell Bell') && !ignoresShellBell) {
-        var max = defender.maxHP() / 8;
-        recovery[0] += Math.min(minDamage / 8, max);
-        recovery[1] += Math.min(maxDamage / 8, max);
+        var max = Math.round(defender.maxHP() / 8);
+        for (var i = 0; i < minD.length; i++) {
+            recovery[0] += Math.min(Math.round(minD[i] * move.hits / 8), max);
+            recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 8), max);
+        }
     }
     if (move.givesHealth) {
         var max = defender.maxHP() * move.percentHealed;
-        recovery[0] += Math.min(minDamage * move.percentHealed, max);
-        recovery[1] += Math.min(maxDamage * move.percentHealed, max);
+        for (var i = 0; i < minD.length; i++) {
+            recovery[0] += Math.min(Math.round(minD[i] * move.hits * move.percentHealed), max);
+            recovery[1] += Math.min(Math.round(maxD[i] * move.hits * move.percentHealed), max);
+        }
     }
     if (attacker.hasAbility('Vampiric') && move.makesContact) {
-        var max = defender.maxHP() * 0.25;
-        recovery[0] += Math.min(minDamage * 0.25, max);
-        recovery[1] += Math.min(maxDamage * 0.25, max);
+        var max = Math.round(defender.maxHP() / 4);
+        for (var i = 0; i < minD.length; i++) {
+            recovery[0] += Math.min(Math.round(minD[i] * move.hits / 4), max);
+            recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 4), max);
+        }
     }
     if (recovery[1] === 0)
         return { recovery: recovery, text: text };
@@ -63,8 +73,9 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
 exports.getRecovery = getRecovery;
 function getRecoil(gen, attacker, defender, move, damage, notation) {
     if (notation === void 0) { notation = '%'; }
-    var minDamage = damage[0] * move.hits;
-    var maxDamage = damage[damage.length - 1] * move.hits;
+    var _a = result_1.damageRange(damage), minDamage = _a[0], maxDamage = _a[1];
+    var min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
+    var max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
     var recoil = [0, 0];
     var text = '';
     var damageOverflow = minDamage > defender.curHP || maxDamage > defender.curHP;
@@ -75,8 +86,8 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
             maxRecoilDamage = toDisplay(notation, defender.curHP * move.hasRecoil, attacker.maxHP(), 100);
         }
         else {
-            minRecoilDamage = toDisplay(notation, Math.min(minDamage, defender.curHP) * move.hasRecoil, attacker.maxHP(), 100);
-            maxRecoilDamage = toDisplay(notation, Math.min(maxDamage, defender.curHP) * move.hasRecoil, attacker.maxHP(), 100);
+        	minRecoilDamage = toDisplay(notation, Math.min(min, defender.curHP) * move.hasRecoil, attacker.maxHP(), 100);
+            maxRecoilDamage = toDisplay(notation, Math.min(max, defender.curHP) * move.hasRecoil, attacker.maxHP(), 100);
         }
         if (!attacker.hasAbility('Rock Head')) {
             recoil = [minRecoilDamage, maxRecoilDamage];
@@ -91,8 +102,8 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
             maxRecoilDamage = toDisplay(notation, defender.curHP * genMultiplier, attacker.maxHP(), 100);
         }
         else {
-            minRecoilDamage = toDisplay(notation, Math.min(minDamage, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
-            maxRecoilDamage = toDisplay(notation, Math.min(maxDamage, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
+            minRecoilDamage = toDisplay(notation, Math.min(min, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
+            maxRecoilDamage = toDisplay(notation, Math.min(max, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
         }
         recoil = [minRecoilDamage, maxRecoilDamage];
         switch (gen.num) {
@@ -139,6 +150,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
 exports.getRecoil = getRecoil;
 function getKOChance(gen, attacker, defender, move, field, damage, err) {
     if (err === void 0) { err = true; }
+    damage = combine(damage);
     if (isNaN(damage[0])) {
         util_2.error(err, 'damage[0] must be a number.');
         return { chance: 0, n: 0, text: '' };
@@ -156,9 +168,7 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
     }
     var hazards = getHazards(gen, defender, field.defenderSide);
     var eot = getEndOfTurn(gen, attacker, defender, move, field);
-    var toxicCounter = defender.status === 'Badly Poisoned' && defender.ability !== 'Magic Guard'
-        ? defender.toxicCounter
-        : 0;
+    var toxicCounter = defender.status === 'Badly Poisoned' && defender.ability !== 'Magic Guard' ? defender.toxicCounter : 0;
     var qualifier = '';
     if (move.hits > 1) {
         qualifier = 'approx. ';
@@ -179,10 +189,13 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
                 text: qualifier + Math.round(chance * 1000) / 10 + ("% chance to OHKO" + afterText)
             };
         }
+        if (damage.length === 256) {
+            qualifier = 'approx. ';
+        }
         for (var i = 2; i <= 4; i++) {
             var chance_1 = computeKOChance(damage, defender.curHP - hazards.damage, eot.damage, i, 1, defender.maxHP(), toxicCounter);
             if (chance_1 === 1) {
-                return { chance: chance_1, n: i, text: "guaranteed " + i + "HKO" + afterText };
+                return { chance: chance_1, n: i, text: "" + (qualifier || 'guaranteed ') + i + "HKO" + afterText };
             }
             else if (chance_1 > 0) {
                 return {
@@ -195,11 +208,11 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
         for (var i = 5; i <= 9; i++) {
             if (predictTotal(damage[0], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
                 defender.curHP - hazards.damage) {
-                return { chance: 1, n: i, text: "guaranteed " + i + "HKO" + afterText };
+                return { chance: 1, n: i, text: "" + (qualifier || 'guaranteed ') + i + "HKO" + afterText };
             }
             else if (predictTotal(damage[damage.length - 1], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
                 defender.curHP - hazards.damage) {
-                return { n: i, text: "possible " + i + "HKO" + afterText };
+                return { n: i, text: qualifier + ("possible " + i + "HKO" + afterText) };
             }
         }
     }
@@ -209,7 +222,7 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
             return {
                 chance: chance,
                 n: move.usedTimes,
-                text: "guaranteed KO in " + move.usedTimes + " turns" + afterText
+                text: (qualifier || 'guaranteed ') + "KO in " + move.usedTimes + " turns" + afterText
             };
         }
         else if (chance > 0) {
@@ -226,18 +239,39 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
             return {
                 chance: 1,
                 n: move.usedTimes,
-                text: "guaranteed KO in " + move.usedTimes + " turns" + afterText
+                text: (qualifier || 'guaranteed ') + "KO in " + move.usedTimes + " turns" + afterText
             };
         }
         else if (predictTotal(damage[damage.length - 1], eot.damage, move.hits, move.usedTimes, toxicCounter, defender.maxHP()) >=
             defender.curHP - hazards.damage) {
-            return { n: move.usedTimes, text: "possible KO in " + move.usedTimes + " turns" + afterText };
+            return { n: move.usedTimes, text: qualifier + ("possible KO in " + move.usedTimes + " turns" + afterText) };
         }
-        return { n: move.usedTimes, text: 'not a KO' };
+        return { n: move.usedTimes, text: qualifier + 'not a KO' };
     }
     return { chance: 0, n: 0, text: '' };
 }
 exports.getKOChance = getKOChance;
+function combine(damage) {
+    if (typeof damage === 'number')
+        return [damage];
+    if (damage.length > 2) {
+        if (damage[0] > damage[damage.length - 1])
+            damage = damage.slice().sort();
+        return damage;
+    }
+    if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
+        return [damage[0] + damage[1]];
+    }
+    var d = damage;
+    var combined = [];
+    for (var i = 0; i < d[0].length; i++) {
+        for (var j = 0; j < d[1].length; j++) {
+            combined.push(d[0][i] + d[1][j]);
+        }
+    }
+    return combined.sort();
+}
+var TRAPPING = ['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap'];
 function getHazards(gen, defender, defenderSide) {
     var damage = 0;
     var texts = [];
@@ -250,6 +284,13 @@ function getHazards(gen, defender, defenderSide) {
             (defender.type2 ? rockType.effectiveness[defender.type2] : 1);
         damage += Math.floor((effectiveness * defender.maxHP()) / 8);
         texts.push('Stealth Rock');
+    }
+    if (defenderSide.foundry && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
+        var fireType = gen.types.get('fire');
+        var effectiveness = fireType.effectiveness[defender.type1] *
+            (defender.type2 ? fireType.effectiveness[defender.type2] : 1);
+        damage += Math.floor((effectiveness * defender.maxHP()) / 8);
+        texts.push('Foundry Stealth Rock');
     }
     if (defenderSide.steelsurge && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
         var steelType = gen.types.get('steel');
@@ -327,8 +368,14 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         else if (!defender.hasType('Ice') &&
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak', 'Omnitype') &&
             !defender.hasItem('Safety Goggles')) {
-            damage -= Math.floor(defender.maxHP() / 16);
-            texts.push('hail damage');
+        	if (field.isSleet) {
+            	damage -= Math.floor(defender.maxHP() / 5);
+                texts.push('sleet damage');
+            }
+            else {
+            	damage -= Math.floor(defender.maxHP() / 16);
+                texts.push('hail damage');
+            }
         }
         if (defender.hasAbility('Phototroph')) {
             damage += Math.floor(defender.maxHP() / 16);
@@ -435,17 +482,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         damage -= Math.floor(defender.maxHP() / 8);
         texts.push('Vaporization');
     }
-    if ([
-        'Bind',
-        'Clamp',
-        'Fire Spin',
-        'Infestation',
-        'Magma Storm',
-        'Sand Tomb',
-        'Whirlpool',
-        'Wrap',
-    ].indexOf(move.name) !== -1 &&
-        !defender.hasAbility('Magic Guard')) {
+    if (!defender.hasAbility('Magic Guard') && TRAPPING.includes(move.name)) {
         if (attacker.hasItem('Binding Band')) {
             damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
             texts.push('trapping damage');
@@ -470,16 +507,13 @@ function computeKOChance(damage, hp, eot, hits, moveHits, maxHP, toxicCounter) {
     var maxDamage = damage[n - 1];
     if (hits === 1) {
         for (var i = 0; i < n; i++) {
+        	if (damage[n - 1] < hp) {
+        		return 0;
+        	}
             if (damage[i] >= hp) {
                 return (n - i) / n;
             }
         }
-    }
-    if (predictTotal(maxDamage, eot, hits, moveHits, toxicCounter, maxHP) < hp) {
-        return 0;
-    }
-    else if (predictTotal(minDamage, eot, hits, moveHits, toxicCounter, maxHP) >= hp) {
-        return 1;
     }
     var toxicDamage = 0;
     if (toxicCounter > 0) {
@@ -487,8 +521,15 @@ function computeKOChance(damage, hp, eot, hits, moveHits, maxHP, toxicCounter) {
         toxicCounter++;
     }
     var sum = 0;
+    var lastc = 0;
     for (var i = 0; i < n; i++) {
-        var c = computeKOChance(damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, moveHits, maxHP, toxicCounter);
+    	var c = void 0;
+        if (i === 0 || damage[i] !== damage[i - 1]) {
+            c = computeKOChance(damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, moveHits, maxHP, toxicCounter);
+        }
+        else {
+            c = lastc;
+        }
         if (c === 1) {
             sum += n - i;
             break;
@@ -496,6 +537,7 @@ function computeKOChance(damage, hp, eot, hits, moveHits, maxHP, toxicCounter) {
         else {
             sum += c;
         }
+        lastc = c;
     }
     return sum / n;
 }
@@ -529,82 +571,35 @@ function squashMultihit(gen, d, hits, err) {
     }
     else if (d.length === 16) {
         switch (hits) {
-            case 2:
-                return [
-                    2 * d[0],
-                    d[2] + d[3],
-                    d[4] + d[4],
-                    d[4] + d[5],
-                    d[5] + d[6],
-                    d[6] + d[6],
-                    d[6] + d[7],
-                    d[7] + d[7],
-                    d[8] + d[8],
-                    d[8] + d[9],
-                    d[9] + d[9],
-                    d[9] + d[10],
-                    d[10] + d[11],
-                    d[11] + d[11],
-                    d[12] + d[13],
-                    2 * d[15],
-                ];
-            case 3:
-                return [
-                    3 * d[0],
-                    d[3] + d[3] + d[4],
-                    d[4] + d[4] + d[5],
-                    d[5] + d[5] + d[6],
-                    d[5] + d[6] + d[6],
-                    d[6] + d[6] + d[7],
-                    d[6] + d[7] + d[7],
-                    d[7] + d[7] + d[8],
-                    d[7] + d[8] + d[8],
-                    d[8] + d[8] + d[9],
-                    d[8] + d[9] + d[9],
-                    d[9] + d[9] + d[10],
-                    d[9] + d[10] + d[10],
-                    d[10] + d[11] + d[11],
-                    d[11] + d[12] + d[12],
-                    3 * d[15],
-                ];
-            case 4:
-                return [
-                    4 * d[0],
-                    4 * d[4],
-                    d[4] + d[5] + d[5] + d[5],
-                    d[5] + d[5] + d[6] + d[6],
-                    4 * d[6],
-                    d[6] + d[6] + d[7] + d[7],
-                    4 * d[7],
-                    d[7] + d[7] + d[7] + d[8],
-                    d[7] + d[8] + d[8] + d[8],
-                    4 * d[8],
-                    d[8] + d[8] + d[9] + d[9],
-                    4 * d[9],
-                    d[9] + d[9] + d[10] + d[10],
-                    d[10] + d[10] + d[10] + d[11],
-                    4 * d[11],
-                    4 * d[15],
-                ];
-            case 5:
-                return [
-                    5 * d[0],
-                    d[4] + d[4] + d[4] + d[5] + d[5],
-                    d[5] + d[5] + d[5] + d[5] + d[6],
-                    d[5] + d[6] + d[6] + d[6] + d[6],
-                    d[6] + d[6] + d[6] + d[6] + d[7],
-                    d[6] + d[6] + d[7] + d[7] + d[7],
-                    5 * d[7],
-                    d[7] + d[7] + d[7] + d[8] + d[8],
-                    d[7] + d[7] + d[8] + d[8] + d[8],
-                    5 * d[8],
-                    d[8] + d[8] + d[8] + d[9] + d[9],
-                    d[8] + d[9] + d[9] + d[9] + d[9],
-                    d[9] + d[9] + d[9] + d[9] + d[10],
-                    d[9] + d[10] + d[10] + d[10] + d[10],
-                    d[10] + d[10] + d[11] + d[11] + d[11],
-                    5 * d[15],
-                ];
+	        case 2:
+	            return [
+	                2 * d[0], d[2] + d[3], d[4] + d[4], d[4] + d[5], d[5] + d[6], d[6] + d[6],
+	                d[6] + d[7], d[7] + d[7], d[8] + d[8], d[8] + d[9], d[9] + d[9], d[9] + d[10],
+	                d[10] + d[11], d[11] + d[11], d[12] + d[13], 2 * d[15],
+	            ];
+	        case 3:
+	            return [
+	                3 * d[0], d[3] + d[3] + d[4], d[4] + d[4] + d[5], d[5] + d[5] + d[6],
+	                d[5] + d[6] + d[6], d[6] + d[6] + d[7], d[6] + d[7] + d[7], d[7] + d[7] + d[8],
+	                d[7] + d[8] + d[8], d[8] + d[8] + d[9], d[8] + d[9] + d[9], d[9] + d[9] + d[10],
+	                d[9] + d[10] + d[10], d[10] + d[11] + d[11], d[11] + d[12] + d[12], 3 * d[15],
+	            ];
+	        case 4:
+	            return [
+	                4 * d[0], 4 * d[4], d[4] + d[5] + d[5] + d[5], d[5] + d[5] + d[6] + d[6],
+	                4 * d[6], d[6] + d[6] + d[7] + d[7], 4 * d[7], d[7] + d[7] + d[7] + d[8],
+	                d[7] + d[8] + d[8] + d[8], 4 * d[8], d[8] + d[8] + d[9] + d[9], 4 * d[9],
+	                d[9] + d[9] + d[10] + d[10], d[10] + d[10] + d[10] + d[11], 4 * d[11], 4 * d[15],
+	            ];
+	        case 5:
+	            return [
+	                5 * d[0], d[4] + d[4] + d[4] + d[5] + d[5], d[5] + d[5] + d[5] + d[5] + d[6],
+	                d[5] + d[6] + d[6] + d[6] + d[6], d[6] + d[6] + d[6] + d[6] + d[7],
+	                d[6] + d[6] + d[7] + d[7] + d[7], 5 * d[7], d[7] + d[7] + d[7] + d[8] + d[8],
+	                d[7] + d[7] + d[8] + d[8] + d[8], 5 * d[8], d[8] + d[8] + d[8] + d[9] + d[9],
+	                d[8] + d[9] + d[9] + d[9] + d[9], d[9] + d[9] + d[9] + d[9] + d[10],
+	                d[9] + d[10] + d[10] + d[10] + d[10], d[10] + d[10] + d[11] + d[11] + d[11], 5 * d[15],
+	            ];
             default:
                 util_2.error(err, "Unexpected # of hits: " + hits);
                 return d;
@@ -612,93 +607,57 @@ function squashMultihit(gen, d, hits, err) {
     }
     else if (d.length === 39) {
         switch (hits) {
-            case 2:
-                return [
-                    2 * d[0],
-                    2 * d[7],
-                    2 * d[10],
-                    2 * d[12],
-                    2 * d[14],
-                    d[15] + d[16],
-                    2 * d[17],
-                    d[18] + d[19],
-                    d[19] + d[20],
-                    2 * d[21],
-                    d[22] + d[23],
-                    2 * d[24],
-                    2 * d[26],
-                    2 * d[28],
-                    2 * d[31],
-                    2 * d[38],
-                ];
-            case 3:
-                return [
-                    3 * d[0],
-                    3 * d[9],
-                    3 * d[12],
-                    3 * d[13],
-                    3 * d[15],
-                    3 * d[16],
-                    3 * d[17],
-                    3 * d[18],
-                    3 * d[20],
-                    3 * d[21],
-                    3 * d[22],
-                    3 * d[23],
-                    3 * d[25],
-                    3 * d[26],
-                    3 * d[29],
-                    3 * d[38],
-                ];
-            case 4:
-                return [
-                    4 * d[0],
-                    2 * d[10] + 2 * d[11],
-                    4 * d[13],
-                    4 * d[14],
-                    2 * d[15] + 2 * d[16],
-                    2 * d[16] + 2 * d[17],
-                    2 * d[17] + 2 * d[18],
-                    2 * d[18] + 2 * d[19],
-                    2 * d[19] + 2 * d[20],
-                    2 * d[20] + 2 * d[21],
-                    2 * d[21] + 2 * d[22],
-                    2 * d[22] + 2 * d[23],
-                    4 * d[24],
-                    4 * d[25],
-                    2 * d[27] + 2 * d[28],
-                    4 * d[38],
-                ];
-            case 5:
-                return [
-                    5 * d[0],
-                    5 * d[11],
-                    5 * d[13],
-                    5 * d[15],
-                    5 * d[16],
-                    5 * d[17],
-                    5 * d[18],
-                    5 * d[19],
-                    5 * d[19],
-                    5 * d[20],
-                    5 * d[21],
-                    5 * d[22],
-                    5 * d[23],
-                    5 * d[25],
-                    5 * d[27],
-                    5 * d[38],
-                ];
+	        case 2:
+	            return [
+	                2 * d[0], 2 * d[7], 2 * d[10], 2 * d[12], 2 * d[14], d[15] + d[16],
+	                2 * d[17], d[18] + d[19], d[19] + d[20], 2 * d[21], d[22] + d[23],
+	                2 * d[24], 2 * d[26], 2 * d[28], 2 * d[31], 2 * d[38],
+	            ];
+	        case 3:
+	            return [
+	                3 * d[0], 3 * d[9], 3 * d[12], 3 * d[13], 3 * d[15], 3 * d[16],
+	                3 * d[17], 3 * d[18], 3 * d[20], 3 * d[21], 3 * d[22], 3 * d[23],
+	                3 * d[25], 3 * d[26], 3 * d[29], 3 * d[38],
+	            ];
+	        case 4:
+	            return [
+	                4 * d[0], 2 * d[10] + 2 * d[11], 4 * d[13], 4 * d[14], 2 * d[15] + 2 * d[16],
+	                2 * d[16] + 2 * d[17], 2 * d[17] + 2 * d[18], 2 * d[18] + 2 * d[19],
+	                2 * d[19] + 2 * d[20], 2 * d[20] + 2 * d[21], 2 * d[21] + 2 * d[22],
+	                2 * d[22] + 2 * d[23], 4 * d[24], 4 * d[25], 2 * d[27] + 2 * d[28], 4 * d[38],
+	            ];
+	        case 5:
+	            return [
+	                5 * d[0], 5 * d[11], 5 * d[13], 5 * d[15], 5 * d[16], 5 * d[17],
+	                5 * d[18], 5 * d[19], 5 * d[19], 5 * d[20], 5 * d[21], 5 * d[22],
+	                5 * d[23], 5 * d[25], 5 * d[27], 5 * d[38],
+	            ];
             default:
                 util_2.error(err, "Unexpected # of hits: " + hits);
                 return d;
         }
+    }
+    else if (d.length === 256) {
+        if (hits > 1) {
+            util_2.error(err, "Unexpected # of hits for Parental Bond: " + hits);
+        }
+        var r = [];
+        for (var i = 0; i < 16; i++) {
+            var val = 0;
+            for (var j = 0; j < 16; j++) {
+                val += d[i + j];
+            }
+            r[i] = Math.round(val / 16);
+        }
+        return r;
     }
     else {
         util_2.error(err, "Unexpected # of possible damage values: " + d.length);
         return d;
     }
 }
-function buildDescription(description) {
+function buildDescription(description, attacker, defender) {
+    var _a = getDescriptionLevels(attacker, defender), attackerLevel = _a[0], defenderLevel = _a[1];
     var output = '';
     if (description.attackBoost) {
         if (description.attackBoost > 0) {
@@ -706,6 +665,7 @@ function buildDescription(description) {
         }
         output += description.attackBoost + ' ';
     }
+    output = appendIfSet(output, attackerLevel);
     output = appendIfSet(output, description.attackEVs);
     output = appendIfSet(output, description.attackerItem);
     output = appendIfSet(output, description.attackerAbility);
@@ -734,7 +694,14 @@ function buildDescription(description) {
         output += '(' + description.moveType + ') ';
     }
     if (description.hits) {
-        output += '(' + description.hits + ' hits) ';
+        if (description.moveName === 'Aura Blast') {
+			output += '(' + (description.hits - 1) + ' hits) ';
+		}
+		else {
+			output += '(' + description.hits + ' hits) ';
+		}
+    } else if (description.moveName === 'Aura Blast' || description.moveName === 'Dynamic Fury') {
+    	output += '(1 hit) ';
     }
     output = appendIfSet(output, description.moveTurns);
     output += 'vs. ';
@@ -744,6 +711,7 @@ function buildDescription(description) {
         }
         output += description.defenseBoost + ' ';
     }
+    output = appendIfSet(output, defenderLevel);
     output = appendIfSet(output, description.HPEVs);
     if (description.defenseEVs) {
         output += '/ ' + description.defenseEVs + ' ';
@@ -781,6 +749,17 @@ function buildDescription(description) {
         output += ' on a critical hit';
     }
     return output;
+}
+function getDescriptionLevels(attacker, defender) {
+    if (attacker.level !== defender.level) {
+        return [
+            attacker.level === 100 ? '' : "Lvl " + attacker.level,
+            defender.level === 100 ? '' : "Lvl " + defender.level
+        ];
+    }
+    var elide = [100, 50, 5].includes(attacker.level);
+    var level = elide ? '' : "Lvl " + attacker.level;
+    return [level, level];
 }
 function serializeText(arr) {
     if (arr.length === 0) {

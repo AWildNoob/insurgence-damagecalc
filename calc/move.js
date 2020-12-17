@@ -31,7 +31,9 @@ var Move = (function () {
                 ? options.hits || (options.ability === 'Skill Link' || options.item === 'Grip Claw' ? 5 : 3)
                 : data.isTwoHit
                     ? 2
-                    : 1;
+                    : (data.name === 'Aura Blast' || data.name === 'Dynamic Fury')
+                    	? options.hits
+                    			: 1;
             this.metronomeCount = options.metronomeCount;
         }
         this.usedTimes = (data.dropsStats && options.usedTimes) || 1;

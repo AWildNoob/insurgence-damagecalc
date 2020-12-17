@@ -7,6 +7,7 @@ var Field = (function () {
         this.terrain = field.terrain;
         this.weather = field.weather;
         this.isGravity = !!field.isGravity;
+        this.isSleet = !!field.isSleet;
         this.attackerSide = new Side(field.attackerSide || {});
         this.defenderSide = new Side(field.defenderSide || {});
     }
@@ -28,6 +29,7 @@ var Field = (function () {
             weather: this.weather,
             terrain: this.terrain,
             isGravity: this.isGravity,
+            isSleet: this.isSleet,
             attackerSide: this.attackerSide,
             defenderSide: this.defenderSide
         });
@@ -40,6 +42,7 @@ var Side = (function () {
         this.spikes = side.spikes || 0;
         this.steelsurge = !!side.steelsurge;
         this.isSR = !!side.isSR;
+        this.foundry = !!side.foundry;
         this.isReflect = !!side.isReflect;
         this.isLightScreen = !!side.isLightScreen;
         this.isProtected = !!side.isProtected;
