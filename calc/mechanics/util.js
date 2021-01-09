@@ -357,7 +357,7 @@ function countBoosts(gen, boosts) {
     var STATS = gen.num === 1
     	? ['atk', 'def', 'spa', 'spe']
     	: ['atk', 'def', 'spa', 'spd', 'spe'];
-    for (var i = 1; i < STATS.length; i++) {
+    for (var i = 0; i < STATS.length; i++) {
         var boost = boosts[STATS[i]];
         if (boost && boost > 0)
             sum += boost;

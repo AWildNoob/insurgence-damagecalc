@@ -243,7 +243,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     if (fixedDamage) {
     	if (attacker.hasAbility('Parental Bond')) {
     		result.damage = [fixedDamage, fixedDamage];
-    		desc.attackerAbility = attacker.ability;
+    		description.attackerAbility = attacker.ability;
     	}
     	else {
     		result.damage = fixedDamage;
@@ -502,24 +502,24 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     // It's not actually clear if the terrain modifiers are base damage mods like weather or are
     // base power mods like in Gen 7+, but the research doesn't exist for this yet so we match PS here
     if (util_2.isGrounded(attacker, field)) {
-      if (field.type === 'Electric' && move.type === 'Electric') {
+      if (field.terrain === 'Electric' && move.type === 'Electric') {
         bpMods.push(0x1800);
-        desc.terrain = field.terrain;
-      } else if (field.type === 'Grassy' && move.type === 'Grass') {
+        description.terrain = field.terrain;
+      } else if (field.terrain === 'Grassy' && move.type === 'Grass') {
         bpMods.push(0x1800);
-        desc.terrain = field.terrain;
-      } else if (field.type === 'Psychic' && move.type === 'Psychic') {
+        description.terrain = field.terrain;
+      } else if (field.terrain === 'Psychic' && move.type === 'Psychic') {
         bpMods.push(0x1800);
-        desc.terrain = field.terrain;
+        description.terrain = field.terrain;
       }
     }
     if (util_2.isGrounded(defender, field)) {
-      if (field.type === 'Misty' && move.type === 'Dragon') {
+      if (field.terrain === 'Misty' && move.type === 'Dragon') {
         bpMods.push(0x800);
-        desc.terrain = field.terrain;
-      } else if (field.type === 'Grass' && ['Bulldoze', 'Earthquake'].indexOf(move.name) !== -1) {
+        description.terrain = field.terrain;
+      } else if (field.terrain === 'Grassy' && ['Bulldoze', 'Earthquake'].indexOf(move.name) !== -1) {
         bpMods.push(0x800);
-        desc.terrain = field.terrain;
+        description.terrain = field.terrain;
       }
     }
     basePower = util_2.OF16(Math.max(1, util_2.pokeRound((basePower * util_2.chainMods(bpMods)) / 0x1000)));
@@ -817,7 +817,7 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     var finalMod = util_2.chainMods(finalMods);
     var childDamage;
 	var regurgitationDamage;
-    if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !move.isSpread) {
+    if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !(field.gameType !== 'Singles' && move.isSpread)) {
         var child = attacker.clone();
         child.ability = 'Parental Bond (Child)';
         util_2.checkMultihitBoost(gen, child, defender, move, field, description);
