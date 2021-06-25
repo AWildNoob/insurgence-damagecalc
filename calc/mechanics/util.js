@@ -196,7 +196,7 @@ function checkDownload(source, target) {
 }
 exports.checkDownload = checkDownload;
 function checkUnleafed(source) {
-    if (source.hasAbility('Unleafed')) {
+    if (source.hasAbility('Unleafed') && source.abilityOn) {
         source.boosts.atk = Math.min(6, source.boosts.atk + 1);
         source.boosts.def = Math.min(6, source.boosts.def + 1);
         source.boosts.spa = Math.min(6, source.boosts.spa + 1);
@@ -209,7 +209,9 @@ function checkBlazeBoost(source, move) {
     if (source.hasAbility('Blaze Boost') && move.type === 'Fire') {
         source.boosts.atk = Math.min(6, source.boosts.atk + 1);
         source.boosts.spa = Math.min(6, source.boosts.spa + 1);
-        source.boosts.spe = Math.min(6, source.boosts.spe + 1);
+        //Not necessary since no Fire-type attacks depend on the user's speed
+        //Will not have effect without changing order of computeFinalStats in gen56.js
+        //source.boosts.spe = Math.min(6, source.boosts.spe + 1);
     }
 }
 exports.checkBlazeBoost = checkBlazeBoost;

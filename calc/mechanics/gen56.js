@@ -14,13 +14,13 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     util_2.checkKlutz(defender);
     util_2.checkSeedBoost(attacker, field);
     util_2.checkSeedBoost(defender, field);
+    util_2.checkUnleafed(attacker);
+    util_2.checkUnleafed(defender);
     util_2.computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
     util_2.checkIntimidate(attacker, defender);
     util_2.checkIntimidate(defender, attacker);
     util_2.checkDownload(attacker, defender);
     util_2.checkDownload(defender, attacker);
-    util_2.checkUnleafed(attacker);
-    util_2.checkUnleafed(defender);
     util_2.checkBlazeBoost(attacker, move);
     util_2.computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
     util_2.checkInfiltrator(attacker, field.defenderSide);
@@ -612,13 +612,26 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         atMods.push(0x2000);
         description.attackerAbility = attacker.ability;
     }
+    else if (attacker.hasAbility('Winter Joy (Winter)')) {
+        atMods.push(0x1666);
+        description.attackerAbility = 'Winter Joy';
+        description.winterJoy = 'buffed';
+    }
+    else if (attacker.hasAbility('Winter Joy (Summer)')) {
+        atMods.push(0xb33);
+        description.attackerAbility = 'Winter Joy';
+        description.winterJoy = 'nerfed';
+    }
     if ((attacker.hasItem('Thick Club') &&
         attacker.named('Cubone', 'Marowak', 'Marowak-Alola') &&
         move.category === 'Physical') ||
         (attacker.hasItem('Deep Sea Tooth') &&
             attacker.named('Clamperl') &&
             move.category === 'Special') ||
-        (attacker.hasItem('Light Ball') && attacker.named('Pikachu') && !move.isZ)) {
+        (attacker.hasItem('Light Ball') && attacker.named('Pikachu', 'Delta Pikachu') && !move.isZ) ||
+        (attacker.hasItem('Dragon Fang') &&
+            attacker.named('Delta Clamperl') &&
+            move.category === 'Physical')) {
         atMods.push(0x2000);
         description.attackerItem = attacker.item;
     }
@@ -676,7 +689,8 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         description.defenderItem = defender.item;
     }
     if ((defender.hasItem('Metal Powder') && defender.named('Ditto') && hitsPhysical) ||
-        (defender.hasItem('Deep Sea Scale') && defender.named('Clamperl') && !hitsPhysical)) {
+        (defender.hasItem('Deep Sea Scale') && defender.named('Clamperl') && !hitsPhysical) ||
+        (defender.hasItem('Dragon Scale') && defender.named('Delta Clamperl') && hitsPhysical)) {
         dfMods.push(0x2000);
         description.defenderItem = defender.item;
     }
