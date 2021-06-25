@@ -282,7 +282,8 @@ var XY = XY_BASE.concat([
 	'Vampiric',
 	'Vaporization',
 	'Venomous',
-	'Wind Force',
+    'Wind Force',
+    'Winter Joy',
 	'Winter Joy (Summer)',
 	'Winter Joy (Winter)',
 ]);
