@@ -149,12 +149,10 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         description.attackerAbility = attacker.ability
     }
     else if (defender.ability === 'Ethereal Shroud') {
-    	if ((move.type === "Normal" || move.type === "Fighting") && !(attacker.ability === "Scrappy" || field.isForesight)) {
-    		typeEffectiveness = 0;
-    	}
-    	else if (move.type === "Poison" || move.type === "Bug") {
-    		typeEffectiveness *= 0.5;
-    	}
+        var ghostTypeEffectiveness = util_2.getMoveEffectiveness(gen, move, 'Ghost', isGhostRevealed, field.isGravity);
+        if (ghostTypeEffectiveness < 1) {
+            typeEffectiveness *= ghostTypeEffectiveness;
+        }
     	description.defenderAbility = defender.ability
     }
     else if (defender.ability === 'Omnitype') {
@@ -244,7 +242,10 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     	if (attacker.hasAbility('Parental Bond')) {
     		result.damage = [fixedDamage, fixedDamage];
     		description.attackerAbility = attacker.ability;
-    	}
+        }
+        else if (attacker.hasAbility('Regurgitation (Dark)', 'Regurgitation (Fire)', 'Regurgitation (Grass)', 'Regurgitation (Normal)', 'Regurgitation (Psychic)', 'Regurgitation (Water)')) {
+            result.damage = [fixedDamage, util_2.getRegurgitationDamage(gen, attacker.ability, defender)];
+        }
     	else {
     		result.damage = fixedDamage;
     	}
@@ -252,6 +253,10 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     }
     if (move.name === 'Final Gambit') {
     	result.damage = attacker.curHP;
+        return result;
+    }
+    if (move.name === 'Regurgitation (ability damage)') {
+        result.damage = util_2.getRegurgitationDamage(gen, attacker.ability, defender)
         return result;
     }
     if (move.hits > 1) {
@@ -838,38 +843,11 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         childDamage = calculateBWXY(gen, child, defender, move, field).damage;
         description.attackerAbility = attacker.ability;
     }
-    if (attacker.hasAbility('Regurgitation') && move.hits === 1) {
-        var child = attacker.clone();
-		var regurgitationMove = new Move(move.gen, 'Regurgitation', {
-			bp: 40,
-			category: move.category,
-			type: 'Psychic',
-            isCrit: move.isCrit
-        });
-		switch (attacker.name) {
-			case 'Delta Muk (Horsea)':
-				regurgitationMove.type = 'Water';
-				break;
-			case 'Delta Muk (Bellsprout)':
-				regurgitationMove.type = 'Grass';
-				break;
-			case 'Delta Muk (Magby)':
-				regurgitationMove.type = 'Fire';
-				break;
-			case 'Delta Muk (Deino)':
-				regurgitationMove.type = 'Dark';
-				break;
-			case 'Delta Muk (Whismur)':
-				regurgitationMove.type = 'Normal';
-				break;
-			default:
-				regurgitationMove.type = 'Psychic';
-		}
-        child.ability = 'Regurgitation (Second hit)';
-        util_2.checkMultihitBoost(gen, child, defender, regurgitationMove, field, description);
-        regurgitationDamage = calculateBWXY(gen, child, defender, regurgitationMove, field).damage;
+    if (attacker.hasAbility('Regurgitation (Dark)', 'Regurgitation (Fire)', 'Regurgitation (Grass)', 'Regurgitation (Normal)', 'Regurgitation (Psychic)', 'Regurgitation (Water)')) {
+        regurgitationDamage = [util_2.getRegurgitationDamage(gen, attacker.ability, defender)];
         description.attackerAbility = attacker.ability;
     }
+    //Directly multiplies damage output, should be close enough to actual effect
     var damage = [];
     for (var i = 0; i < 16; i++) {
         damage[i] = util_2.getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
@@ -882,17 +860,13 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         }
     }
     if (move.dropsStats && (move.usedTimes || 0) > 1) {
-    	console.log("Testing stat-dropping moves");
         var simpleMultiplier = attacker.hasAbility('Simple') ? 2 : 1;
         description.moveTurns = 'over ' + move.usedTimes + ' turns';
         var hasWhiteHerb = attacker.item === 'White Herb';
         var usedWhiteHerb = false;
         var dropCount = attacker.boosts[attackStat];
         var _loop_1 = function (times) {
-            console.log(attack);
-            console.log(dropCount);
         	var newAttack = util_2.getModifiedStat(attack, dropCount);
-        	console.log(newAttack);
             var damageMultiplier = 0;
             damage = damage.map(function (affectedAmount) {
                 if (times) {
