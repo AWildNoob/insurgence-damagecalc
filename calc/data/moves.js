@@ -3717,16 +3717,17 @@ var XY = util_1.extend(true, {}, XY, {
         category: 'Special',
         hasPriority: true
     },
-    'Regurgitation': {
-    	bp: 40,
-    	type: 'Psychic',
-        category: 'Physical'
-    },
     'Zombie Strike': {
     	bp: 90,
     	type: 'Ghost',
         category: 'Physical',
         makesContact: true
+    },
+    //Not a named move, used to calculate damage if the base move does no damage
+    'Regurgitation (ability damage)': {
+    	bp: 1,
+    	type: '???',
+        category: 'Physical'
     },
     //Not Insurgence-exclusive but not present in Gen 6 calculator
     'Core Enforcer': {
