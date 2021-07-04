@@ -6933,50 +6933,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
     "Delta Muk": {
 	    t1: 'Ground',
 	    bs: { hp: 105, at: 105, df: 75, sa: 65, sd: 100, sp: 50 },
-	    w: 30.0,
-		formes: ["Delta Muk", "Delta Muk (Horsea)", "Delta Muk (Bellsprout)", "Delta Muk (Magby)", "Delta Muk (Deino)", "Delta Muk (Whismur)", "Delta Muk (Natu)"]
-	},
-    "Delta Muk (Horsea)": {
-	    t1: 'Ground',
-	    bs: { hp: 105, at: 105, df: 75, sa: 65, sd: 100, sp: 50 },
-	    w: 30.0,
-	    ab: "Regurgitation",
-		isAlternateForme: true
-	},
-    "Delta Muk (Bellsprout)": {
-	    t1: 'Ground',
-	    bs: { hp: 105, at: 105, df: 75, sa: 65, sd: 100, sp: 50 },
-	    w: 30.0,
-	    ab: "Regurgitation",
-		isAlternateForme: true
-	},
-    "Delta Muk (Magby)": {
-	    t1: 'Ground',
-	    bs: { hp: 105, at: 105, df: 75, sa: 65, sd: 100, sp: 50 },
-	    w: 30.0,
-	    ab: "Regurgitation",
-		isAlternateForme: true
-	},
-    "Delta Muk (Deino)": {
-	    t1: 'Ground',
-	    bs: { hp: 105, at: 105, df: 75, sa: 65, sd: 100, sp: 50 },
-	    w: 30.0,
-	    ab: "Regurgitation",
-		isAlternateForme: true
-	},
-    "Delta Muk (Whismur)": {
-	    t1: 'Ground',
-	    bs: { hp: 105, at: 105, df: 75, sa: 65, sd: 100, sp: 50 },
-	    w: 30.0,
-	    ab: "Regurgitation",
-		isAlternateForme: true
-	},
-    "Delta Muk (Natu)": {
-	    t1: 'Ground',
-	    bs: { hp: 105, at: 105, df: 75, sa: 65, sd: 100, sp: 50 },
-	    w: 30.0,
-	    ab: "Regurgitation",
-		isAlternateForme: true
+	    w: 30.0
 	},
     "Delta Wooper": {
    	    t1: 'Grass',
@@ -8623,7 +8580,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
     "Delta Volcarona-Armored": {
         t1: 'Dark',
         t2: 'Poison',
-        bs: { hp: 85, at: 60, df: 90, sa: 135, sd: 130, sp: 100 },
+        bs: { hp: 85, at: 60, df: 85, sa: 135, sd: 137, sp: 100 },
         w: 46.0,
         isAlternateForme: true
     },
