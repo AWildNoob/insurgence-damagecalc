@@ -438,15 +438,21 @@ function calculateBWXY(gen, attacker, defender, move, field) {
         bpMods.push(0x2000);
         description.moveBP = move.bp * 2;
     }
-    else if (move.name === 'Solar Beam' && field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
-        bpMods.push(0x800);
-        description.moveBP = move.bp / 2;
-        description.weather = field.weather;
+    else if (move.name === 'Solar Beam') {
+        if (field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
+            bpMods.push(0x800);
+            description.moveBP = move.bp / 2;
+            description.weather = field.weather;
+        }
+        else if (move.name === 'Solar Beam' && field.hasWeather('New Moon')) {
+            bpMods.push(0x4CD);
+            description.moveBP = move.bp * 0.3;
+            description.weather = field.weather;
+        }
     }
-    else if (move.name === 'Solar Beam' && field.hasWeather('New Moon')) {
-        bpMods.push(0x4CD);
-        description.moveBP = move.bp * 0.3;
-        description.weather = field.weather;
+    else if (move.name === 'Surf' && field.hasWeather('New Moon')) {
+        bpMods.push(0x1800);
+        description.moveBP = move.bp * 1.5;
     }
     else if (gen.num > 5 && move.name === 'Knock Off' && !resistedKnockOffDamage) {
         bpMods.push(0x1800);
