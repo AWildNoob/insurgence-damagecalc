@@ -8046,7 +8046,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
     "Girafarig-Mega": {
 	    t1: 'Normal',
 		t2: 'Psychic',
-	    bs: { hp: 70, at: 100, df: 85, sa: 130, sd: 95, sp: 85  },
+	    bs: { hp: 70, at: 80, df: 95, sa: 130, sd: 95, sp: 85  },
 	    w: 41.5,
 	    ab: "Spectral Jaws",
 	    isAlternateForme: true
@@ -8344,7 +8344,7 @@ var XY = util_1.extend(true, {}, XY_BASE, {
     "Delta Girafarig-Mega": {
 	    t1: 'Steel',
 		t2: 'Poison',
-	    bs: { hp: 70, at: 100, df: 95, sa: 130, sd: 95, sp: 85 },
+	    bs: { hp: 70, at: 80, df: 95, sa: 130, sd: 95, sp: 85 },
 	    w: 83.0,
 	    ab: "Intimidate",
 	    isAlternateForme: true
