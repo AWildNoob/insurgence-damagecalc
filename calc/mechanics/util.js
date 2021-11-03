@@ -155,6 +155,13 @@ function checkForecast(pokemon, weather) {
             case 'Hail':
                 pokemon.type1 = 'Ice';
                 break;
+            case 'Sandstorm':
+                pokemon.type1 = 'Rock';
+                pokemon.type2 = 'Ground';
+                break;
+            case 'New Moon':
+                pokemon.type1 = 'Dark';
+                break;
             default:
                 pokemon.type1 = 'Normal';
         }
@@ -390,6 +397,16 @@ function handleFixedDamageMoves(attacker, move) {
     return 0;
 }
 exports.handleFixedDamageMoves = handleFixedDamageMoves;
+function getRegurgitationDamage(gen, ability, defender) {
+    var regurgitationType = gen.types.get(ability.substring(15, ability.length - 1).toLowerCase());
+    if (typeof regurgitationType === 'undefined') {
+        return 0;
+    }
+    var effectiveness = regurgitationType.effectiveness[defender.type1] *
+            (defender.type2 ? regurgitationType.effectiveness[defender.type2] : 1);
+    return Math.floor((effectiveness * defender.maxHP()) / 6);
+}
+exports.getRegurgitationDamage = getRegurgitationDamage;
 function pokeRound(num) {
     return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
 }

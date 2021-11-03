@@ -670,6 +670,7 @@ function buildDescription(description, attacker, defender) {
     output = appendIfSet(output, description.attackerItem);
     output = appendIfSet(output, description.attackerAbility);
     output = appendIfSet(output, description.rivalry);
+    output = appendIfSet(output, description.winterJoy);
     if (description.isBurned) {
         output += 'burned ';
     }
